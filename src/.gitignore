@@ -1,0 +1,11 @@
+*.pyc
+*~
+/.vscode
+__pycache__
+myenv
+db.sqlite3
+thrust/static
+.DS_Store
+
+
+

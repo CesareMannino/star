@@ -1,0 +1,36 @@
+<title>Electron</title>
+
+{% block content%}
+
+
+<h1>Electron</h1>
+<h2>Reusability : under testing</h2>
+<h2>de-orbit & landing : yes</h2>
+<h2>landing sites : spaceports & droneships</h2>
+<h2>crew certified : no</h2>
+<h2>Number of launches</h2>
+
+<p>
+{{my_text}} {{my_number}}
+</p>
+
+<ul> 
+    <li>item 1</li>
+    <li>item 2</li>
+</ul>
+
+<ul>
+{% for abc in my_list %}
+    {% if abc == 312 %}
+        <li>{{ forloop.counter }} - {{ abc|add:22 }}</li>   
+    {% elif abc == "Abc" %}
+        <li>This is not the network</li> 
+    {% else %}
+        <li>{{ forloop.counter }} - {{ abc }}</li>
+    {% endif %}
+
+{% endfor %}
+</ul>
+
+
+{% endblock content %}
