@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn rockets.wsgi --preload --log-file -
+web: gunicorn starships.wsgi --preload --log-file -
