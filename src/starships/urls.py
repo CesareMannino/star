@@ -21,7 +21,7 @@ from thrust.views import home_view, Falcon9_view, Electron_view, New_Shepard_vie
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
-    # path('', home_view, name='home_view'),
+    path('', home_view, name='home_view'),
     path('home/',home_view),
     #path is a django method,as argument got the url address as a 
     #string and as second argument the function from view
