@@ -7,9 +7,9 @@ The 'supports' rule will only run if your browser supports CSS grid.
 Flexbox is used as a fallback so that browsers which don't support grid will still receive an identical layout.
 
 */
-* {
+/* * {
     border: 1px solid red !important;
- }
+ } */
   
    @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap')
  
@@ -24,53 +24,14 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
    *, *:before, *:after {
      box-sizing: inherit;
    }
-   
- #topnav {
-   overflow: hidden;
-   background-color: #333;
-   /* position: relative; */
-   margin:5rem -2.7rem; 
-   z-index:2;
-   position: sticky;
-   top: 0px;
-   /* width: 100vw; */
- }
- 
- 
- #topnav #myLinks {
-   display: none;
- }
- 
- #topnav a {
-   float: left;
-   color: white;
-   padding: 14px 16px;
-   text-decoration: none;
-   font-size: 19px;
-   font-family: "Bangers", Arial, sans-serif;
- }
- 
- #topnav a.icon {
-   float: right;
- }
- 
- #topnav a:hover {
-   background-color: #bd00b7;
-   color: black;
- }
- 
- .active {
-   background-color: #4CAF50;
-   color: white;
- }
- 
+
  
  
    body {
      min-height: 100vh;
-     height:900vh;
+     height:735vh;
      background-color: #fafafa;
-      background-image: url("https://cdn.squaremile.com/uploads/5b8321a6c7200.jpeg");
+     background-image: url(../images/starships.jpg);
      position:relative;
      
  /*     width:100vw; */
@@ -1284,14 +1245,3 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
      border-bottom: 1px solid #3cb3e3;
    } */
  
- footer {
-   position:absolute;  
-   background-color: #000;
-   left:0;  
-   bottom:0;
-   width: 100%;
-   text-align:left;
-   color: white;
-   padding: 0.5em;
-   
-   }

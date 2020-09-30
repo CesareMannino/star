@@ -20,9 +20,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
 
-
-
-
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 
 
@@ -31,23 +30,31 @@
     <div id="topnav">
       <a href="/home"  class="active">ROCKET</a>
       <div id="myLinks">
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
+        <a href="/News">News</a>
+        <a href="/contact">Contact</a>
+        <a href="/about">About</a>
       </div>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
       </a>
     </div>
-    <footer>&copy; 2020 Rockethub</footer>
+
+
+     <footer>
+            <ul>
+          <li>
+           
+            <i class="fab fa-twitter">  </i>
+            
+          </li>
+          <l>  &copy; 2020 Rockethub</l>
+        </ul>
+        
+    </footer>
+  
 
 
 <style>
- 
-
-
-
-
 html {
   box-sizing: border-box;
 }
@@ -102,7 +109,7 @@ color: white;
 
 body {
   min-height: 100vh;
-  height:900vh;
+  height:700vh;
   background-color: #fafafa;
    /* background-image: url("https://cdn.squaremile.com/uploads/5b8321a6c7200.jpeg"); */
   position:relative;
@@ -127,9 +134,119 @@ footer {
   width: 100%;
   text-align:left;
   color: white;
-  padding: 0.5em;
+  /* padding: 0.5em; */
   
   }
+
+  footer l{
+left:0;
+position:absolute;
+}
+
+/* twitter body */
+body ul{
+    display: flex;
+  /* height: 100vh; */
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  /* background: #262626; */
+}
+
+ul{
+  display: flex;
+}
+/* bird color */
+ul li{
+  position: relative;
+  display: block;
+  color: #666;
+  font-size: 20px;
+  height: 30px;
+  width: 30px;
+  background: #171515;
+  line-height: 30px;
+  border-radius: 50%;
+  /* margin: 0 15px; */
+  cursor: pointer;
+  transition: .5s;
+}
+
+/* twitter bird animation */
+ul li:before{
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: inherit;
+  width: inherit;
+  /* background: #d35400; */
+  border-radius: 50%;
+  transform: scale(.9);
+  z-index: -1;
+  transition: .5s;
+}
+ul li:nth-child(1):before{
+  background: #4267B2;
+}
+ul li:nth-child(2):before{
+  background: #1DA1F2;
+}
+ul li:nth-child(3):before{
+  background: #E1306C;
+}
+ul li:nth-child(4):before{
+  background: #2867B2;
+}
+ul li:nth-child(5):before{
+  background: #ff0000;
+}
+ul li:hover:before{
+  filter: blur(3px);
+  transform: scale(1.2);
+
+}
+ul li:nth-child(1):hover:before{
+  box-shadow: 0 0 15px #4267B2;
+}
+ul li:nth-child(2):hover:before{
+  box-shadow: 0 0 15px #1DA1F2;
+}
+ul li:nth-child(3):hover:before{
+  box-shadow: 0 0 15px #E1306C;
+}
+ul li:nth-child(4):hover:before{
+  box-shadow: 0 0 15px #2867B2;
+}
+ul li:nth-child(5):hover:before{
+  box-shadow: 0 0 15px #ff0000;
+}
+ul li:nth-child(1):hover{
+  color: #456cba;
+  box-shadow: 0 0 15px #4267B2;
+  text-shadow: 0 0 15px #4267B2;
+}
+ul li:nth-child(2):hover{
+  color: #26a4f2;
+  box-shadow: 0 0 15px #1DA1F2;
+  text-shadow: 0 0 15px #1DA1F2;
+}
+ul li:nth-child(3):hover{
+  color: #e23670;
+  box-shadow: 0 0 15px #E1306C;
+  text-shadow: 0 0 15px #E1306C;
+}
+ul li:nth-child(4):hover{
+  color: #2a6cbb;
+  box-shadow: 0 0 15px #2867B2;
+  text-shadow: 0 0 15px #2867B2;
+}
+ul li:nth-child(5):hover{
+  color: #ff1a1a;
+  box-shadow: 0 0 15px #ff0000;
+  text-shadow: 0 0 15px #ff0000;
+}
+
 
 </style>
 </head>

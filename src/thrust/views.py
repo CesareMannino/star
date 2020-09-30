@@ -20,3 +20,13 @@ def New_Shepard_view(request,*args, **kwargs):
 
 def News_view(request,*args,**kwargs):
     return render(request,"News.html",{})
+
+def Relativity_view(request,*args,**kwargs):
+    return render(request,"relativity.html",{})
+
+def About_view(request,*args,**kwargs):
+    return render(request,"about.html",{})
+
+def Contact_view(request,*args,**kwargs):
+    return render(request,"contact.html",{})
+

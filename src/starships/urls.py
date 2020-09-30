@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from thrust.views import home_view, Falcon9_view, Electron_view, New_Shepard_view, News_view
+from thrust.views import home_view, Falcon9_view, Electron_view, New_Shepard_view, News_view, Relativity_view, About_view, Contact_view
 
 
 urlpatterns = [
@@ -29,5 +29,9 @@ urlpatterns = [
     path("Electron/", Electron_view),
     path("Falcon9/",Falcon9_view),
     path('admin/', admin.site.urls),
-    path('News/',News_view)
+    path('News/',News_view),
+    path('relativity/',Relativity_view),
+    path('about/',About_view),
+    path('contact/',Contact_view)
+
 ]
