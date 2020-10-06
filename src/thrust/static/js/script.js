@@ -1,67 +1,95 @@
-var target_date = new Date().getTime() + (5000 * 3600 * 48); // set the countdown date
-var days, hours, minutes, seconds; // variables for time units
+// Set the date we're counting down to
 
-var countdown = document.getElementById("tiles"); // get tag element
+// electron
+var countDownDate = new Date("Oct 4 , 2020 08:00:00").getTime();
+// falcon  
+var countDownDate1 = new Date("Oct 6, 2020 11:29:00").getTime();
+// newshepard  
+var countDownDate2 = new Date("Oct 4, 2020 08:00:00").getTime();
+// spaceshiptwo  
+var countDownDate3 = new Date("Oct 22, 2020 08:00:00").getTime();
 
-getCountdown(countdown);
+  // Update the count down every 1 second
+var x = setInterval(function() {
 
-setInterval(function() {
-  getCountdown(countdown);
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+  var distance1 = countDownDate1 - now;
+  var distance2 = countDownDate2 - now;
+  var distance3 = countDownDate3 - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  
+  // electron
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+  // falcon
+  var days1 = Math.floor(distance1 / (1000 * 60 * 60 * 24));
+  var hours1 = Math.floor((distance1 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes1 = Math.floor((distance1 % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds1 = Math.floor((distance1 % (1000 * 60)) / 1000);
+
+  // newshepard
+
+  var days2 = Math.floor(distance2 / (1000 * 60 * 60 * 24));
+  var hours2 = Math.floor((distance2 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes2 = Math.floor((distance2 % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds2 = Math.floor((distance2 % (1000 * 60)) / 1000);
+
+  // spaceshiptwo
+
+var days3 = Math.floor(distance3 / (1000 * 60 * 60 * 24));
+  var hours3 = Math.floor((distance3 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes3 = Math.floor((distance3 % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds3 = Math.floor((distance3 % (1000 * 60)) / 1000);
+
+
+
+  // Output the result in an element with id= rocket name
+  document.getElementById("electron").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+ 
+  document.getElementById("falcon").innerHTML = days1 + "d " + hours1 + "h "
+  + minutes1 + "m " + seconds1 + "s ";
+
+  document.getElementById("newshepard").innerHTML = days2 + "d " + hours2 + "h "
+  + minutes2 + "m " + seconds2 + "s ";
+
+  document.getElementById("spaceshiptwo").innerHTML = days3 + "d " + hours3 + "h "
+  + minutes3 + "m " + seconds3 + "s ";
+
+ 
+  
+   
+  
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("electron").innerHTML = "EXPIRED";}
+    
+    if (distance1 < 0) {
+      clearInterval(x);
+    document.getElementById("falcon").innerHTML = "EXPIRED";}
+    
+    if (distance2 < 0) {
+      clearInterval(x);
+    document.getElementById("newshepard").innerHTML = "EXPIRED";}
+
+    if (distance3 < 0) {
+      clearInterval(x);
+    document.getElementById("spaceshiptwo").innerHTML = "EXPIRED";}
+    
+    
+  //   document.getElementById("spaceshiptwo").innerHTML = "EXPIRED";
+    
+  // }
 }, 1000);
-
-var countdown2 = document.getElementById("tiles2"); // get tag element
-
-getCountdown(countdown2);
-
-setInterval(function() {
-  getCountdown(countdown2);
-}, 1000);
-
-var countdown3 = document.getElementById("tiles3"); // get tag element
-
-getCountdown(countdown3);
-
-setInterval(function() {
-  getCountdown(countdown3);
-}, 1000);
-
-
-var countdown4 = document.getElementById("tiles4"); // get tag element
-
-getCountdown(countdown4);
-
-setInterval(function() {
-  getCountdown(countdown4);
-}, 1000);
-
-
-
-
-
-
-function getCountdown(element) {
-
-  // find the amount of "seconds" between now and target
-  var current_date = new Date().getTime();
-  var seconds_left = (target_date - current_date) / 1000;
-
-  days = pad(parseInt(seconds_left / 86400));
-  seconds_left = seconds_left % 86400;
-
-  hours = pad(parseInt(seconds_left / 3600));
-  seconds_left = seconds_left % 3600;
-
-  minutes = pad(parseInt(seconds_left / 60));
-  seconds = pad(parseInt(seconds_left % 60));
-
-  // format countdown string + set tag value
-  element.innerHTML = "<span>" + days + "</span><span>" + hours + "</span><span>" + minutes + "</span><span>" + seconds + "</span>";
-}
-
-function pad(n) {
-  return (n < 10 ? '0' : '') + n;
-}
-
 
 // navbar burger menu click
 function myFunction() {

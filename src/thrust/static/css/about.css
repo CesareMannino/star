@@ -1,0 +1,97 @@
+
+
+/* * {
+   border: 1px solid red !important;
+} */
+
+/* h2{
+    position:relative;
+
+} */
+
+/* .fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+} */
+
+
+body {
+    position:relative;
+    background-image: url(../images/about.jpg);
+    height:130vh;
+    background-color: #fafafa;
+    background-size: 122rem;
+}
+
+
+
+.container {
+    /* flex: 1 0 24rem; */
+    display: flex;
+    justify-content:space-between;
+    font-family:"Bangers", Arial, sans-serif; 
+    font-size: 2rem;
+    /* flex-direction: column; */
+    
+}
+
+.container > sopra {
+    
+    color:white;
+    width: 20rem;
+    /* height: 100rem; */
+
+}
+
+.container > sotto {
+    position:relative;
+    color:white;
+    top:20rem;
+    width: 20rem;
+    background:green;
+    /* height: 100rem; */
+
+}
+
+
+/* 
+.container h2 {
+    flex: 1 0 24rem;
+    position:relative; 
+    margin:10px;
+    font-family:"Bangers", Arial, sans-serif;
+    font-size: 2rem;
+    max-width: 30rem;
+    text-align: center;
+    color: white;
+
+}
+
+.container h1{
+    flex: 1 0 24rem;
+    position:relative; 
+    margin:290px 0px 10px 900px;
+    font-family:"Bangers", Arial, sans-serif;
+    font-size: 2rem;
+    max-width: 30rem;
+    text-align: center;
+    color:white
+  
+
+} */

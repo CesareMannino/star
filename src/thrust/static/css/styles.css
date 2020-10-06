@@ -11,12 +11,12 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
     border: 1px solid red !important;
  } */
   
-   @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap')
+   @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
  
  /* Base font size  */
-   :root {
+   /* :root {
    font-size: 5vw;
-   }
+   } */
    
    html {
      box-sizing: border-box;
@@ -25,8 +25,33 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
      box-sizing: inherit;
    }
 
+   body ciao{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
  
- 
+  ciao icon{
+    bottom:40px;
+    position: relative;
+    color: #666;
+    font-size: 60px;
+    font-family: 'bangers';
+    height: 5rem;
+    line-height: 60px;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: .5s;
+  }
+
+  ciao icon:nth-child(1):hover{
+    color: #e23670;
+  /*   box-shadow: 0 0 15px #E1306C; */
+    text-shadow: 0 0 15px #E1306C;
+  }
+
+
    body {
      min-height: 100vh;
      height:735vh;
@@ -38,6 +63,10 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
  /*    left:-10px;
      top:-10px; */
    }
+
+
+  
+
    
    .container {
      max-width: 200vw;
@@ -46,7 +75,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
  /*     overflow:hidden; */
    }
    
-   .heading {
+   /* .{
      font-family: "Bangers", Arial, sans-serif;
      display:flex;
      justify-content:center;
@@ -59,29 +88,33 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
      margin:10vw auto;
      color: #a11300;
      
-   }
+   } */
+
+   
+   
+
  
-   /* heading over */
-   h1:hover {
+   /* over */
+   /* h1:hover {
      animation-name: background-color;
      animation-duration: 500ms;
      animation-fill-mode: forwards;
      
-   }
+   } */
    
-   @keyframes background-color {
+   /* @keyframes background-color {
      100% {
        background-color: white;
        
-     } 
- }
+     }  */
  
  
- /* top part of the news  */
+ 
+ /* div of the news */
  
  .top_text{
    position:relative;
-   top:2rem;
+   top:10rem;
    font-family: 'Haettenschweiler'; 
    background-color:white;
    height:120vh;
@@ -149,28 +182,40 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
      
    }
  
+#watchlive_falcon{
+  font-size: 33px;
+  text-align: center;
+}
+   
    .gallery-item {
      /* Minimum width of 24rem and grow to fit available space */
      flex: 1 0 24rem;
-     background-color:white;
+     background-color:rgb(255, 255, 255);
      /* Margin value should be half of grid-gap value as margins on flex items don't collapse */
      margin:0 -1rem 0 -1rem;
      box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
      border-style: groove;
      border-color:#e428fc;
  /*     overflow: hidden; */
-       object-fit: cover; 
+     /* object-fit: cover; */
+     /* border-radius: 10%;  */
+
    }
    
    .gallery-image {
+     margin:10px;
+     margin-left: 1.3rem;
      display: block;
-     max-width: 100%;
+     max-width: 90%;
      max-height: auto;
      background-position: 50% 50%;
      background-repeat: no-repeat;
      background-size: cover; 
      transition: transform 400ms ease-out;
+     border-radius: 4%;
    }
+
+   
    
    .gallery-image:hover {
      transform: scale(1.03);
@@ -189,443 +234,57 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
        display: grid;
        grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
        grid-gap: 6rem;
-       padding:0 0 9vh 0;
- /*       margin:0 auto; */
-       overflow:hidden;
+       /* padding:0 0 9vh 0; */
+       margin:0 auto;
+       /* overflow:hidden; */
        
      }
    }
-     
-     
+
+#utc{
+
+  color:white;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 0px;
+  background:black;
+}
+
+     /* COUNTDOWN */
+   #electron {
+    text-align: center;
+    font-size: 60px;
+    margin-top: 0px;
+    color:red;
+  }  
     
+  #falcon {
+    text-align: center;
+    font-size: 60px;
+    margin-top: 0px;
+    color:red;
+  }  
      
-   /* countdown electron*/
-   body #countdown {
-     font: normal 13px/20px Arial, Helvetica, sans-serif;
-     word-wrap: break-word;
-     color: black;
-     background: #eb8334;
-   }
-   #countdown   {
-     width: 205px;
-     height: 40px;
-     text-align: center;
-     background: #222;
-     background-image: -webkit-linear-gradient(top, #222, #333, #333, #222);
-     background-image: -moz-linear-gradient(top, #222, #333, #333, #222);
-     background-image: -ms-linear-gradient(top, #222, #333, #333, #222);
-     background-image: -o-linear-gradient(top, #222, #333, #333, #222);
-     border: 2px solid #111;
-     border-radius: 5px;
-     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
-     margin: auto;
-     padding: 0px 0px;
-     position: relative;
-     top: 0px;
-     bottom: 0px;
-     left: 0px;
-     right: 0;
-   }
-   #countdown #tiles {
-     position: relative;
-     z-index: 1;
-     left: -19px;
-   }
-   /* select a specific children of the id selector selected  */
-   #countdown #tiles > span {
-     width: 35px;
-     height: 0px;
-     max-width: 92px;
-     font: bold 28px "Bangers";
-     text-align: center;
-     color: green;
-     background-color: #ddd;
-     background-image: -webkit-linear-gradient(top, #bbb, #eee);
-     background-image: -moz-linear-gradient(top, #bbb, #eee);
-     background-image: -ms-linear-gradient(top, #bbb, #eee);
-     background-image: -o-linear-gradient(top, #bbb, #eee);
-     border-top: 1px solid #fff;
-     border-radius: 3px;
-     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.7);
-     margin: 4px 4px 0px 0px;
-     padding: 23px 4px 40px 0px;
-     display: inline-block;
-     position: relative;
-     top:0px;
-   }
-   
-   #countdown #tiles > span:before {
-     content: "";
-     width: 100%;
-     height: -20px;
-     background: #111;
-     display: block;
-     padding: 0px 21px;
-     position: relative;
-     top: 43%;
-     left: -5px;
-     z-index: -1;
-   }
-   /* content of counter */
-   #countdown #tiles > span:after {
-     content: "";
-     width: 100%;
-     height: 2px;
-     background: white;
-     border-top: 2px solid #333;
-     border-bottom: 1px solid white;
-     display: block;
-     position: absolute;
-     top: 55%;
-     
-   }
-   
-   #countdown .labels {
-     width: 100%;
-     height: 0px;
-     text-align: center;
-     position: relative;
-     bottom: 0px;
-     left: -21px;
-   }
-   
-   #countdown .labels li {
- /*     padding: 0.1px; */
-     margin:0px 2px;
-     width:auto;
-     font: bold 10px "Droid Sans", Arial, sans-serif;
-     color: white;
-     text-shadow: 1px 1px 0px #000;
-   /*   word-spacing: -10px; */
-     text-align: center;
-     text-transform: uppercase;
-     display: inline-block;
-   }
-   
-   
-   /*  countdown falcon */
-     body #countdownfalcon {
-     font: normal 13px/20px Arial, Helvetica, sans-serif;
-     word-wrap: break-word;
-     color: black;
-     background: #eb8334;
-   }
-   #countdownfalcon   {
-    width: 205px;
-     height: 40px;
-     text-align: center;
-     background: #222;
-     background-image: -webkit-linear-gradient(top, #222, #333, #333, #222);
-     background-image: -moz-linear-gradient(top, #222, #333, #333, #222);
-     background-image: -ms-linear-gradient(top, #222, #333, #333, #222);
-     background-image: -o-linear-gradient(top, #222, #333, #333, #222);
-     border: 2px solid #111;
-     border-radius: 5px;
-     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
-     margin: auto;
-     padding: 0px 0px;
-     position: relative;
-     top: 0px;
-     bottom: 0px;
-     left: 0px;
-     right: 0;
-   }
-   #countdownfalcon #tiles2 {
-     position: relative;
-     z-index: 1;
-     left: -19px;
-   }
-   /* select a specific children of the id selector selected  */
-   #countdownfalcon #tiles2 > span {
-     width: 35px;
-     height: 0px;
-     max-width: 92px;
-     font: bold 28px "Bangers";
-     text-align: center;
-     color: green;
-     background-color: #ddd;
-     background-image: -webkit-linear-gradient(top, #bbb, #eee);
-     background-image: -moz-linear-gradient(top, #bbb, #eee);
-     background-image: -ms-linear-gradient(top, #bbb, #eee);
-     background-image: -o-linear-gradient(top, #bbb, #eee);
-     border-top: 1px solid #fff;
-     border-radius: 3px;
-     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.7);
-     margin: 4px 4px 0px 0px;
-     padding: 23px 4px 40px 0px;
-     display: inline-block;
-     position: relative;
-     top:0px;
-   }
-   
-   #countdownfalcon #tiles2 > span:before {
-     content: "";
-     width: 100%;
-     height: -20px;
-     background: #111;
-     display: block;
-     padding: 0px 21px;
-     position: relative;
-     top: 43%;
-     left: -5px;
-     z-index: -1;
-   }
-   /* content of counter */
-   #countdownfalcon #tiles2 > span:after {
-     content: "";
-     width: 100%;
-     height: 2px;
-     background: white;
-     border-top: 2px solid #333;
-     border-bottom: 1px solid white;
-     display: block;
-     position: absolute;
-     top: 55%;
-     
-   }
-   
-   #countdownfalcon .labels2 {
-     width: 100%;
-     height: 0px;
-     text-align: center;
-     position: relative;
-     bottom: 0px;
-     left: -21px;
-   }
-   
-   #countdownfalcon .labels2 li {
- /*     padding: 0.1px; */
-     margin:0px 2px;
-     width:auto;
-     font: bold 10px "Droid Sans", Arial, sans-serif;
-     color: white;
-     text-shadow: 1px 1px 0px #000;
-   /*   word-spacing: -10px; */
-     text-align: center;
-     text-transform: uppercase;
-     display: inline-block;
-   }
-     
-   /* countdown new shepard */
-   
-     body #countdown3 {
-     font: normal 13px/20px Arial, Helvetica, sans-serif;
-     word-wrap: break-word;
-     color: black;
-     background: #eb8334;
-   }
-   #countdown3   {
-     width: 205px;
-     height: 40px;
-     text-align: center;
-     background: #222;
-     background-image: -webkit-linear-gradient(top, #222, #333, #333, #222);
-     background-image: -moz-linear-gradient(top, #222, #333, #333, #222);
-     background-image: -ms-linear-gradient(top, #222, #333, #333, #222);
-     background-image: -o-linear-gradient(top, #222, #333, #333, #222);
-     border: 2px solid #111;
-     border-radius: 5px;
-     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
-     margin: auto;
-     padding: 0px 0px;
-     position: relative;
-     top: 1.9rem;
-     bottom: 0px;
-     left: 0px;
-     right: 0;
-   }
-   #countdown3 #tiles3 {
-     position: relative;
-     z-index: 1;
-     left: -19px;
-   }
-   /* select a specific children of the id selector selected  */
-   #countdown3 #tiles3 > span {
-     width: 35px;
-     height: 0px;
-     max-width: 92px;
-     font: bold 28px "Bangers";
-     text-align: center;
-     color: green;
-     background-color: #ddd;
-     background-image: -webkit-linear-gradient(top, #bbb, #eee);
-     background-image: -moz-linear-gradient(top, #bbb, #eee);
-     background-image: -ms-linear-gradient(top, #bbb, #eee);
-     background-image: -o-linear-gradient(top, #bbb, #eee);
-     border-top: 1px solid #fff;
-     border-radius: 3px;
-     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.7);
-     margin: 4px 4px 0px 0px;
-     padding: 23px 4px 40px 0px;
-     display: inline-block;
-     position: relative;
-     top:0px;
-   }
-   
-   #countdown3 #tiles3 > span:before {
-     content: "";
-     width: 100%;
-     height: -20px;
-     background: #111;
-     display: block;
-     padding: 0px 21px;
-     position: relative;
-     top: 43%;
-     left: -5px;
-     z-index: -1;
-   }
-   /* content of counter */
-   #countdown3 #tiles3 > span:after {
-     content: "";
-     width: 100%;
-     height: 2px;
-     background: white;
-     border-top: 2px solid #333;
-     border-bottom: 1px solid white;
-     display: block;
-     position: absolute;
-     top: 55%;
-     
-   }
-   
-   #countdown3 .labels3 {
-    width: 100%;
-     height: 0px;
-     text-align: center;
-     position: relative;
-     bottom: 0px;
-     left: -21px;
-   }
-   
-   #countdown3 .labels3 li {
-    /*     padding: 0.1px; */
-     margin:0px 2px;
-     width:auto;
-     font: bold 10px "Droid Sans", Arial, sans-serif;
-     color: white;
-     text-shadow: 1px 1px 0px #000;
-   /*   word-spacing: -10px; */
-     text-align: center;
-     text-transform: uppercase;
-     display: inline-block;
-   }
-   
+  #newshepard {
+    text-align: center;
+    font-size: 60px;
+    margin-top: 0px;
+    color:red;
+  }  
      
    
-   
-   
-     /* countdown spaceship 2  */
-   
-     body #countdown4 {
-     font: normal 13px/20px Arial, Helvetica, sans-serif;
-     word-wrap: break-word;
-     color: black;
-     background: #eb8334;
-       
-   }
-  #countdown4   {
-     width: 205px;
-     height: 40px;
-     text-align: center;
-     background: #222;
-     background-image: -webkit-linear-gradient(top, #222, #333, #333, #222);
-     background-image: -moz-linear-gradient(top, #222, #333, #333, #222);
-     background-image: -ms-linear-gradient(top, #222, #333, #333, #222);
-     background-image: -o-linear-gradient(top, #222, #333, #333, #222);
-     border: 2px solid #111;
-     border-radius: 5px;
-     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
-      margin: auto;
-      padding: 0px 0px;
-     position: relative;
-     top: 0px;
-     bottom: 0px;
-     left: 0px;
-     right: 0; 
-   }
-   #countdown4 #tiles4 {
-     position: relative;
-     z-index: 1;
-     left: -19px;
-   }
-   /* select a specific children of the id selector selected  */
-   #countdown4 #tiles4 > span {
-     width: 35px;
-     height: 0px;
-     max-width: 92px;
-     font: bold 28px "Bangers";
-     text-align: center;
-     color: green;
-     background-color: #ddd;
-     background-image: -webkit-linear-gradient(top, #bbb, #eee);
-     background-image: -moz-linear-gradient(top, #bbb, #eee);
-     background-image: -ms-linear-gradient(top, #bbb, #eee);
-     background-image: -o-linear-gradient(top, #bbb, #eee);
-     border-top: 1px solid #fff;
-     border-radius: 3px;
-     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.7);
-     margin: 4px 4px 0px 0px;
-     padding: 23px 4px 40px 0px;
-     display: inline-block;
-     position: relative;
-     top:0px;
-   }
-   
-   #countdown4 #tiles4 > span:before {
-     content: "";
-     width: 100%;
-     height: -20px;
-     background: #111;
-     display: block;
-     padding: 0px 21px;
-     position: relative;
-     top: 43%;
-     left: -5px;
-     z-index: -1;
-   }
-   /* content of counter */
-   #countdown4 #tiles4 > span:after {
-     content: "";
-     width: 100%;
-     height: 2px;
-     background: white;
-     border-top: 2px solid #333;
-     border-bottom: 1px solid white;
-     display: block;
-     position: absolute;
-     top: 55%;
-     
-   }
-   
-   #countdown4 .labels4 {
-     width: 100%;
-     height: 0px;
-     text-align: center;
-     position: relative;
-     bottom: 0px;
-     left: -21px;
-   }
-   
-   #countdown4 .labels4 li {
-      /*     padding: 0.1px; */
-     margin:0px 2px;
-     width:auto;
-     font: bold 10px "Droid Sans", Arial, sans-serif;
-     color: white;
-     text-shadow: 1px 1px 0px #000;
-   /*   word-spacing: -10px; */
-     text-align: center;
-     text-transform: uppercase;
-     display: inline-block;
-   }
-     
+  #spaceshiptwo {
+    text-align: center;
+    font-size: 60px;
+    margin-top: 0px;
+    color:red;
+  }  
    
    
    
     .css-typing-electron  p {
      border-right: 1em solid green;
      font-family: "Press Start 2P";
-     -webkit-animation: type 2s steps(60, end);
      color: green;
      font-size: 10px;
      white-space: nowrap;
@@ -778,7 +437,6 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
    .css-typing-falcon p {
      border-right: 1em solid green;
      font-family: "Press Start 2P";
-     -webkit-animation: type 2s steps(60, end);
      color: green;
      font-size: 10px;
      white-space: nowrap;
@@ -928,7 +586,6 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
    .css-typing-newshepard p {
      border-right: 1em solid green;
      font-family: "Press Start 2P";
-     -webkit-animation: type 2s steps(60, end);
      color: green;
      font-size: 10px;
      white-space: nowrap;
@@ -940,6 +597,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
      width: 0px; 
      margin:15px;
    }
+
    .css-typing-newshepard p:nth-child(1) {
      width: 14.8em;
      -webkit-animation: type 2s steps(60, end);
@@ -1077,7 +735,6 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
    .css-typing-spaceshiptwo p {
      border-right: 1em solid green;
      font-family: "Press Start 2P";
-     -webkit-animation: type 2s steps(60, end);
      color: green;
      font-size: 10px;
       position:relative;

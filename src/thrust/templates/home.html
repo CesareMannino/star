@@ -13,28 +13,37 @@
 </header>
 <!-- fonts link and css/html link -->
 <head>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bangers">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+</html>
+
 </head>
 
-
-<body>
   <div class="container">
     
+    
 
-
+    <body>
+      <ciao>
+      <icon>
+        <i> Upcoming launches</i>
+      </icon>
+    </ciao>
+    </body>
    
-
-    <h1 class="heading">Active missions & Countdowns for next launches</h1>
-
+    
+  
 
 
 
     <div class="gallery">
 
+      
 
 
       <div class="gallery-item">
@@ -58,19 +67,18 @@
             Key person : PETER BECK
           </p>
 
-          <div id="countdown">
-            <div id="tiles"></div>
-            <div class="labels">
-              <li>Days</li>
-              <li>Hours</li>
-              <li>Mins</li>
-              <li>Secs</li>
-            </div>
-          </div>
+          <div id=utc>UTC</div>
+          <div id="electron">please wait...</div>
+
+          
         </div>
       </div>
 
       <div class="gallery-item">
+        <!-- link to watch live -->
+        <a href="https://www.spacex.com/launches/" target="_blank">
+        <div id=watchlive_falcon>watch</div>
+
         <a href="https://lh3.googleusercontent.com/FaLm8JGhDhgTlEcR3Y8v1_6eKxSO6HlK-2ft3ZeY0VikPTOf-E-CT1bsQtc7TevGa1Zt1bgUB_TiGy5TO72GYs4lAALCa7bfdqS0hq5fB55slwxUG3Q9B5SicP5TpjfJCxKqwxjnCg3a_4QdXTlv8xrGPVv_w4TsNHfR-2zu4p1HgyPNu2FG0KdrLmsMbbIu3R8aHMjhTZRYC2ejatVLlvjwgJr2KO9kUATJ97HrKX2YxBBdQR5fA_uYWYpUw_L4vAAdJSg9F7gIXlYClYaC1EcePWy6Plazv3rSHnORqMCj_SMxaVWxj3AJ4ChHWi_hzejoPqb3h8iJZAF4xh1pDPbqC4gn8UTBK0f1QwJmeEpMTSZ9CkfNVpkLr8CfzS1l2UYAqERO-socm3qpI6n0hcSg6ztUPGjJL4dTDzPYyyOvnty2Q3NMTe98BshCOq8YUmQIbNv_ciC1B4l4HupJSaAeRs2QhdGFmklfriYA9WC7rDvoIjYPrznaJBTxm8UVMjHRhLjmjBB0d9KoNHhTvdRZw3J2-Vs5pNy0Sk4udy2iPo0PvFm3mXBd57FtNBCFFnpOLv9LwnSpyDgmp97Lu-uwKHZGfNjFhqlATgfrs2BixuHRg3-TguRshLMkzDdwddZkSc8oyuk_lv9JVoTRwlJcd1XETPdgwsuAiC_-7Qsu2aonRKBT9O8DMMo1=w820-h548-no?authuser=0"
           target="_blank">
           <img class="gallery-image"
@@ -90,16 +98,9 @@
           <p>
             Key person : ELON MUSK
           </p>
-
-          <div id="countdownfalcon">
-            <div id="tiles2"></div>
-            <div class="labels2">
-              <li>Days</li>
-              <li>Hours</li>
-              <li>Mins</li>
-              <li>Secs</li>
-            </div>
-          </div>
+          <div id=utc>UTC</div>
+          <div id="falcon">please wait...</div>
+         
         </div>
       </div>
 
@@ -120,15 +121,9 @@
           <p>
             Key person : JEFF BEZOS
           </p>
-          <div id="countdown3">
-            <div id="tiles3"></div>
-            <div class="labels3">
-              <li>Days</li>
-              <li>Hours</li>
-              <li>Mins</li>
-              <li>Secs</li>
-            </div>
-          </div>
+          <div id=utc>UTC</div>
+          <div id="newshepard">please wait...</div>
+
         </div>
       </div>
 
@@ -151,16 +146,9 @@
           <p>
             Key person : RICHARD BRANSON
           </p>
-
-          <div id="countdown4">
-            <div id="tiles4"></div>
-            <div class="labels4">
-              <li>Days</li>
-              <li>Hours</li>
-              <li>Mins</li>
-              <li>Secs</li>
-            </div>
-          </div>
+          <div id=utc>UTC</div>
+          <div id="spaceshiptwo">please wait...</div>
+          
         </div>
       </div>
 
@@ -197,7 +185,7 @@
       </div>
     </div>
   </div>
-</body>
+
 <script type="text/javascript" src="{% static 'js/script.js' %}"> </script>
 
 </html>
