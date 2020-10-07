@@ -3,7 +3,7 @@
 // electron
 var countDownDate = new Date("Oct 4 , 2020 08:00:00").getTime();
 // falcon  
-var countDownDate1 = new Date("Oct 6, 2020 11:29:00").getTime();
+var countDownDate1 = new Date("Oct 31, 2020 06:40:00").getTime();
 // newshepard  
 var countDownDate2 = new Date("Oct 4, 2020 08:00:00").getTime();
 // spaceshiptwo  
