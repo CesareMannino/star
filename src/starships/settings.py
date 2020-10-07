@@ -26,9 +26,9 @@ with open('C:/Users/CESARE/astronavi/src/starships/secret_key.txt') as f:
     SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['test81.pythonanywhere.com', '127.0.0.1']
+ALLOWED_HOSTS = ['devmanny81.pythonanywhere.com','127.0.0.1']
 
 
 # Application definition
