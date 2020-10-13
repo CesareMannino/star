@@ -34,9 +34,20 @@
 body {
     position:relative;
     background-image: url(../images/about.jpg);
-    height:130vh;
+    max-height:57rem;
     background-color: #fafafa;
     background-size: 122rem;
+    /*background-repeat: no-repeat;*/
+  /*background-size: contain;*/
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    background-position: 50% 50%;
+    background-size: 79rem;
+    background-repeat: no-repeat;
+    max-height:40rem;
+  }
 }
 
 
@@ -45,16 +56,31 @@ body {
     /* flex: 1 0 24rem; */
     display: flex;
     justify-content:space-between;
-    font-family:"Bangers", Arial, sans-serif; 
+    font-family:"Bangers", Arial, sans-serif;
     font-size: 2rem;
     /* flex-direction: column; */
-    
+
+}
+
+
+@media screen and (min-width: 601px) {
+  div.container {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  div.container {
+    font-size: 15px;
+  }
 }
 
 .container > sopra {
-    
-    color:white;
+
+   color: #e23670;
+    text-shadow: 0 0 15px #E1306C;
     width: 20rem;
+    background:white;
     /* height: 100rem; */
 
 }
@@ -70,10 +96,10 @@ body {
 }
 
 
-/* 
+/*
 .container h2 {
     flex: 1 0 24rem;
-    position:relative; 
+    position:relative;
     margin:10px;
     font-family:"Bangers", Arial, sans-serif;
     font-size: 2rem;
@@ -85,13 +111,13 @@ body {
 
 .container h1{
     flex: 1 0 24rem;
-    position:relative; 
+    position:relative;
     margin:290px 0px 10px 900px;
     font-family:"Bangers", Arial, sans-serif;
     font-size: 2rem;
     max-width: 30rem;
     text-align: center;
     color:white
-  
+
 
 } */

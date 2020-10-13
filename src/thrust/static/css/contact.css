@@ -18,7 +18,7 @@ body {
   background-image: url(../images/contact.jpg);
   background-size: 97rem;
   background-repeat: no-repeat;
-  max-height:10vh;
+  max-height:50rem;
   background-color: #000;
 }
 
@@ -40,7 +40,7 @@ email h1{
     cursor: pointer;
     transition: .5s;
   }
-    
+
 
 
 email h1:nth-child(1):hover{
@@ -68,7 +68,7 @@ email h1:nth-child(1):hover{
     cursor: pointer;
     transition: .5s;
   }
-    
+
 
 
 twitter h1:nth-child(1):hover{

@@ -22,13 +22,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-with open('C:/Users/CESARE/astronavi/src/starships/secret_key.txt') as f:
+with open('/home/devmanny81/star/src/starships/secret_key.txt') as f:
     SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['devmanny81.pythonanywhere.com','127.0.0.1']
+ALLOWED_HOSTS = ['www.spacetraffic.net','devmanny81.pythonanywhere.com','127.0.0.1']
 
 
 # Application definition

@@ -1,7 +1,7 @@
 /*
 
-All grid code is placed in a 'supports' rule (feature query) at the bottom of the CSS (Line 77). 
-        
+All grid code is placed in a 'supports' rule (feature query) at the bottom of the CSS (Line 77).
+
 The 'supports' rule will only run if your browser supports CSS grid.
 
 Flexbox is used as a fallback so that browsers which don't support grid will still receive an identical layout.
@@ -10,14 +10,14 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
 /* * {
     border: 1px solid red !important;
  } */
-  
+
    @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
- 
+
  /* Base font size  */
    /* :root {
    font-size: 5vw;
    } */
-   
+
    html {
      box-sizing: border-box;
    }
@@ -31,7 +31,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
     align-items: center;
     justify-content: center;
   }
- 
+
   ciao icon{
     bottom:40px;
     position: relative;
@@ -52,29 +52,49 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
   }
 
 
+
+@media screen and (max-width: 600px) {
+  ciao icon {
+color: #e23670;
+  /*   box-shadow: 0 0 15px #E1306C; */
+    text-shadow: 0 0 15px #E1306C;
+  }
+}
+
+
+
+
    body {
      min-height: 100vh;
-     height:735vh;
+     height:230rem;
      background-color: #fafafa;
      background-image: url(../images/starships.jpg);
      position:relative;
-     
- /*     width:100vw; */
+
+     max-width:100%;
  /*    left:-10px;
      top:-10px; */
    }
 
 
-  
+@media screen and (max-width: 600px) {
+  body {
+    background-position: 50% 50%;
+    background-size: 60rem;
 
-   
+  }
+}
+
+
+
+
    .container {
      max-width: 200vw;
      margin: 0 auto;
-     padding: 0rem 2rem 2rem;
+     /*padding: 0rem 2rem 2rem;*/
  /*     overflow:hidden; */
    }
-   
+
    /* .{
      font-family: "Bangers", Arial, sans-serif;
      display:flex;
@@ -87,112 +107,112 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
      text-align: center;
      margin:10vw auto;
      color: #a11300;
-     
+
    } */
 
-   
-   
 
- 
+
+
+
    /* over */
    /* h1:hover {
      animation-name: background-color;
      animation-duration: 500ms;
      animation-fill-mode: forwards;
-     
+
    } */
-   
+
    /* @keyframes background-color {
      100% {
        background-color: white;
-       
+
      }  */
- 
- 
- 
+
+
+
  /* div of the news */
- 
+
  .top_text{
    position:relative;
    top:10rem;
-   font-family: 'Haettenschweiler'; 
+   font-family: 'Haettenschweiler';
    background-color:white;
    height:120vh;
    margin:0 auto;
    text-align:center;
  }
- 
+
  /* Picture descritption  */
  description {
    position:relative;
-   font-family: 'Haettenschweiler'; 
+   font-family: 'Haettenschweiler';
    font-weight: 1000;
    top:2rem;
  }
- 
+
  /* bottom part of the new */
- 
+
  .bottom_text{
    position:inherit;
-   font-family: 'Haettenschweiler'; 
+   font-family: 'Haettenschweiler';
    margin:1rem auto -1.1rem auto;
    padding:1rem;
    text-align:center;
    background:white;
  }
-   
+
   /* .news h1 {
    position: inherit;
    background:white;
    text-align:center;
  } */
- 
+
  /* unvisited link */
  .top_text:link {
    color:red;
  }
- 
+
  /* visited link */
  .top_text:visited {
    color: green;
  }
- 
+
  /* mouse over link */
  .top_text:hover {
    color: black;
  }
- 
+
  /* selected link */
  .top_text:active {
    color: blue;
  }
- 
- 
- 
+
+
+
    .gallery {
-     
+
      display: flex;
      flex-wrap: wrap;
-    
-     
-   
-      
+
+
+
+
      /* Compensate for excess margin on outer gallery flex items */
      margin: -1rem -1rem;
-     
+
    }
- 
+
 #watchlive_falcon{
   font-size: 33px;
   text-align: center;
 }
-   
+
    .gallery-item {
      /* Minimum width of 24rem and grow to fit available space */
      flex: 1 0 24rem;
      background-color:rgb(255, 255, 255);
      /* Margin value should be half of grid-gap value as margins on flex items don't collapse */
-     margin:0 -1rem 0 -1rem;
+     /*margin:0 -1rem 0 -1rem;*/
      box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
      border-style: groove;
      border-color:#e428fc;
@@ -201,7 +221,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
      /* border-radius: 10%;  */
 
    }
-   
+
    .gallery-image {
      margin:10px;
      margin-left: 1.3rem;
@@ -210,23 +230,23 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
      max-height: auto;
      background-position: 50% 50%;
      background-repeat: no-repeat;
-     background-size: cover; 
+     background-size: cover;
      transition: transform 400ms ease-out;
      border-radius: 4%;
    }
 
-   
-   
+
+
    .gallery-image:hover {
      transform: scale(1.03);
    }
-   
+
    /*
-   
+
    The following rule will only run if your browser supports CSS grid.
-   
-   Remove or comment-out the code block below to see how the browser will fall-back to flexbox styling. 
-   
+
+   Remove or comment-out the code block below to see how the browser will fall-back to flexbox styling.
+
    */
  /*   to adjust the resize of the image play with the minmax value */
    @supports (display: grid) {
@@ -237,7 +257,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
        /* padding:0 0 9vh 0; */
        margin:0 auto;
        /* overflow:hidden; */
-       
+
      }
    }
 
@@ -256,32 +276,32 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
     font-size: 60px;
     margin-top: 0px;
     color:red;
-  }  
-    
+  }
+
   #falcon {
     text-align: center;
     font-size: 60px;
     margin-top: 0px;
     color:red;
-  }  
-     
+  }
+
   #newshepard {
     text-align: center;
     font-size: 60px;
     margin-top: 0px;
     color:red;
-  }  
-     
-   
+  }
+
+
   #spaceshiptwo {
     text-align: center;
     font-size: 60px;
     margin-top: 0px;
     color:red;
-  }  
-   
-   
-   
+  }
+
+
+
     .css-typing-electron  p {
      border-right: 1em solid green;
      font-family: "Press Start 2P";
@@ -292,21 +312,21 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
      position:inherit;
      left: 0px;
      top: 0px;
-     width: 0px; 
+     width: 0px;
      margin:15px;
      background-color:white;
-    
+
    }
-   
+
    .css-typing-electron p:nth-child(1) {
      width: 8.8em;
      -webkit-animation: type3 2s steps(60, end);
      animation: type 0.6s steps(60, end);
      -webkit-animation-fill-mode: forwards;
      animation-fill-mode: forwards;
-     
+
    }
-   
+
    .css-typing-electron p:nth-child(2) {
      width: 19em;
      -webkit-animation: type3 2s steps(40, end);
@@ -316,9 +336,9 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
      animation-delay: 0.9s;
      -webkit-animation-fill-mode: forwards;
      animation-fill-mode: forwards;
-    
+
    }
-   
+
    .css-typing-electron p:nth-child(3) {
      width: 27.1em;
      opacity: 0;
@@ -328,9 +348,9 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
      animation-delay: 2.5s;
      -webkit-animation-fill-mode: forwards;
      animation-fill-mode: forwards;
-     
+
    }
-   
+
    .css-typing-electron p:nth-child(4) {
      width: 24.1em;
      opacity: 0;
@@ -340,9 +360,9 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
      animation-delay: 4.5s;
      -webkit-animation-fill-mode: forwards;
      animation-fill-mode: forwards;
-     
+
    }
-   
+
    @keyframes type {
      0% {
        width: 0;
@@ -354,7 +374,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
        border: none;
      }
    }
-   
+
    @-webkit-keyframes type {
      0% {
        width: 0;
@@ -366,7 +386,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
        border: none;
      }
    }
-   
+
    @keyframes type2 {
      0% {
        width: 0;
@@ -382,7 +402,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
        border: none;
      }
    }
-   
+
    @-webkit-keyframes type2 {
      0% {
        width: 0;
@@ -398,7 +418,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
        border: none;
      }
    }
-   
+
    @keyframes type3 {
      0% {
        width: 0;
@@ -410,7 +430,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
        opacity: 1;
      }
    }
-   
+
    @-webkit-keyframes type3 {
      0% {
        width: 0;
@@ -422,7 +442,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
        opacity: 1;
      }
    }
-   
+
    @keyframes blink {
      50% {
        border-color: transparent;
@@ -433,7 +453,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
        border-color: tranparent;
      }
    }
-     
+
    .css-typing-falcon p {
      border-right: 1em solid green;
      font-family: "Press Start 2P";
@@ -445,9 +465,9 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
      position:inherit;
      left: 0px;
      top: 0px;
-     width: 0px; 
+     width: 0px;
      margin:15px;
-     
+
    }
    .css-typing-falcon p:nth-child(1) {
      width: 8.8em;
@@ -458,7 +478,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
      animation-fill-mode: forwards;
      animation-delay: 7s;
    }
-   
+
    .css-typing-falcon p:nth-child(2) {
      width: 19em;
      -webkit-animation: type3 2s steps(40, end);
@@ -469,7 +489,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
      -webkit-animation-fill-mode: forwards;
      animation-fill-mode: forwards;
    }
-   
+
    .css-typing-falcon p:nth-child(3) {
      width: 27.1em;
      opacity: 0;
@@ -480,7 +500,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
      -webkit-animation-fill-mode: forwards;
      animation-fill-mode: forwards;
    }
-   
+
    .css-typing-falcon p:nth-child(4) {
      width: 23em;
      opacity: 0;
@@ -491,7 +511,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
      -webkit-animation-fill-mode: forwards;
      animation-fill-mode: forwards;
    }
-   
+
    @keyframes type {
      0% {
        width: 0;
@@ -503,7 +523,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
        border: none;
      }
    }
-   
+
    @-webkit-keyframes type {
      0% {
        width: 0;
@@ -515,7 +535,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
        border: none;
      }
    }
-   
+
    @keyframes type2 {
      0% {
        width: 0;
@@ -531,7 +551,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
        border: none;
      }
    }
-   
+
    @-webkit-keyframes type2 {
      0% {
        width: 0;
@@ -547,7 +567,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
        border: none;
      }
    }
-   
+
    @keyframes type3 {
      0% {
        width: 0;
@@ -559,7 +579,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
        opacity: 1;
      }
    }
-   
+
    @-webkit-keyframes type3 {
      0% {
        width: 0;
@@ -571,7 +591,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
        opacity: 1;
      }
    }
-   
+
    @keyframes blink {
      50% {
        border-color: transparent;
@@ -582,7 +602,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
        border-color: tranparent;
      }
    }
-   
+
    .css-typing-newshepard p {
      border-right: 1em solid green;
      font-family: "Press Start 2P";
@@ -594,7 +614,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
         position:inherit;
      left: 0px;
      top: 0px;
-     width: 0px; 
+     width: 0px;
      margin:15px;
    }
 
@@ -607,7 +627,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
      animation-fill-mode: forwards;
      animation-delay: 13.7s;
    }
-   
+
    .css-typing-newshepard p:nth-child(2) {
      width: 19em;
      -webkit-animation: type3 2s steps(40, end);
@@ -618,7 +638,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
      -webkit-animation-fill-mode: forwards;
      animation-fill-mode: forwards;
    }
-   
+
    .css-typing-newshepard p:nth-child(3) {
      width: 27.1em;
      opacity: 0;
@@ -629,7 +649,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
      -webkit-animation-fill-mode: forwards;
      animation-fill-mode: forwards;
    }
-   
+
    .css-typing-newshepard p:nth-child(4) {
      width: 24em;
      opacity: 0;
@@ -640,7 +660,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
      -webkit-animation-fill-mode: forwards;
      animation-fill-mode: forwards;
    }
-   
+
    @keyframes type {
      0% {
        width: 0;
@@ -652,7 +672,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
        border: none;
      }
    }
-   
+
    @-webkit-keyframes type {
      0% {
        width: 0;
@@ -664,7 +684,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
        border: none;
      }
    }
-   
+
    @keyframes type2 {
      0% {
        width: 0;
@@ -680,7 +700,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
        border: none;
      }
    }
-   
+
    @-webkit-keyframes type2 {
      0% {
        width: 0;
@@ -696,7 +716,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
        border: none;
      }
    }
-   
+
    @keyframes type3 {
      0% {
        width: 0;
@@ -708,7 +728,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
        opacity: 1;
      }
    }
-   
+
    @-webkit-keyframes type3 {
      0% {
        width: 0;
@@ -720,7 +740,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
        opacity: 1;
      }
    }
-   
+
    @keyframes blink {
      50% {
        border-color: transparent;
@@ -731,7 +751,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
        border-color: tranparent;
      }
    }
-   
+
    .css-typing-spaceshiptwo p {
      border-right: 1em solid green;
      font-family: "Press Start 2P";
@@ -752,7 +772,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
      animation-fill-mode: forwards;
      animation-delay: 20.2s;
    }
-   
+
    .css-typing-spaceshiptwo p:nth-child(2) {
      width: 19em;
      -webkit-animation: type3 2s steps(40, end);
@@ -763,7 +783,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
      -webkit-animation-fill-mode: forwards;
      animation-fill-mode: forwards;
    }
-   
+
    .css-typing-spaceshiptwo p:nth-child(3) {
      width: 27.1em;
      opacity: 0;
@@ -774,7 +794,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
      -webkit-animation-fill-mode: forwards;
      animation-fill-mode: forwards;
    }
-   
+
    .css-typing-spaceshiptwo p:nth-child(4) {
      width: 29em;
      opacity: 0;
@@ -785,7 +805,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
      -webkit-animation-fill-mode: forwards;
      animation-fill-mode: forwards;
    }
-   
+
    @keyframes type {
      0% {
        width: 0;
@@ -797,7 +817,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
        border: none;
      }
    }
-   
+
    @-webkit-keyframes type {
      0% {
        width: 0;
@@ -809,7 +829,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
        border: none;
      }
    }
-   
+
    @keyframes type2 {
      0% {
        width: 0;
@@ -825,7 +845,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
        border: none;
      }
    }
-   
+
    @-webkit-keyframes type2 {
      0% {
        width: 0;
@@ -841,7 +861,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
        border: none;
      }
    }
-   
+
    @keyframes type3 {
      0% {
        width: 0;
@@ -853,7 +873,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
        opacity: 1;
      }
    }
-   
+
    @-webkit-keyframes type3 {
      0% {
        width: 0;
@@ -865,7 +885,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
        opacity: 1;
      }
    }
-   
+
    @keyframes blink {
      50% {
        border-color: transparent;
@@ -876,7 +896,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
        border-color: tranparent;
      }
    }
-   
+
    /* h1 {
      font-family: 'Gotham', sans-serif;
      font-size: 26px;
@@ -884,13 +904,13 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
      line-height: 1.1em;
      margin-bottom: 0px;
    } */
-   
+
    /* see all */
    /* .cta {
      display: block;
      margin-left: 10px;
    }
-   
+
    a # {
      font-family: "Gotham", sans-serif;
      font-size: 14px;
@@ -901,4 +921,4 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
      text-decoration: none;
      border-bottom: 1px solid #3cb3e3;
    } */
- 
+

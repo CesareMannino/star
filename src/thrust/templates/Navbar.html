@@ -43,34 +43,53 @@
      <footer>
             <ul>
           <li>
-           
+ <a href="https://twitter.com/SpacetrafficN">
             <i class="fab fa-twitter">  </i>
-            
+</a>
           </li>
-          <l>  &copy; 2020 Rockethub</l>
+          <l>&copy; 2020 Spacetraffic</l>
+          <div class=credits>
+    <a href=https://albertourra.com/>
+          <c>Photo credit</c>
+        </a>
+        </div>
         </ul>
-        
     </footer>
-  
+
 
 
 <style>
 /* html {
   box-sizing: border-box;
 } */
+
+ /** {*/
+ /*   border: 1px solid red !important;*/
+ /*}*/
+
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
+body {
+  min-height: 70vh;
+  height:700vh;
+  background-color: #fafafa;
+   /* background-image: url("https://cdn.squaremile.com/uploads/5b8321a6c7200.jpeg"); */
+  position:relative;
+/*     width:100vw; */
+/*    left:-10px;
+  top:-10px; */
+}
 
- 
 
 #topnav {
 overflow: hidden;
 background-color: #333;
 position: sticky;
 
-margin:5rem -0.6rem; 
+margin:5rem -0.6rem;
 z-index:2;
 top: 0px;
 
@@ -107,34 +126,24 @@ color: white;
 
 
 
-body {
-  min-height: 100vh;
-  height:700vh;
-  background-color: #fafafa;
-   /* background-image: url("https://cdn.squaremile.com/uploads/5b8321a6c7200.jpeg"); */
-  position:relative;
-/*     width:100vw; */
-/*    left:-10px;
-  top:-10px; */
-}
 
 .container {
   max-width: 200vw;
   margin: 0 auto;
-  padding: 0rem 2rem 2rem;
+  /*padding: 0rem 2rem 2rem;*/
 /*     overflow:hidden; */
 }
 
 footer {
-  position:absolute;  
+  position:absolute;
   background-color: #000;
-  left:0;  
-  bottom:0;
+  left:0px;
+  bottom:0px;
   width: 100%;
   text-align:left;
   color: white;
   /* padding: 0.5em; */
-  
+
   }
 
   footer l{
@@ -175,7 +184,7 @@ ul li{
 ul li:before{
   position: absolute;
   content: '';
-  top: 0;
+  bottom: 0;
   left: 0;
   height: inherit;
   width: inherit;
@@ -246,6 +255,14 @@ ul li:nth-child(5):hover{
   text-shadow: 0 0 15px #ff0000;
 }
 
+.credits c{
+    text-align: center;
+  align-items: center;
+  justify-content: center;
+    color:white;
+    position:absolute;
+    right:0;
+}
 
 </style>
 </head>
