@@ -12,7 +12,6 @@
 
 
 
-<<<<<<< HEAD
 body {
   position:relative;
   /* display: block; */
@@ -48,16 +47,6 @@ email h1:nth-child(1):hover{
     color: #e23670;
   /*   box-shadow: 0 0 15px #E1306C; */
     text-shadow: 0 0 15px #E1306C;
-=======
-   body {
-    position:relative;
-    /* display: block; */
-    background-image: url(../images/contact.jpg);
-    background-size: 97rem;
-    background-repeat: no-repeat;
-    max-height:50rem;
-    background-color: #000;
->>>>>>> ac66853f8e65f1a0d059f599de6d3b0ad830f37d
   }
   
   
@@ -74,7 +63,6 @@ email h1:nth-child(1):hover{
       /*   background: #171515; */
       /* line-height: 60px; */
     /*   border-radius: 100%; */
-<<<<<<< HEAD
     margin: 0 auto;
     cursor: pointer;
     transition: .5s;
@@ -87,45 +75,3 @@ twitter h1:nth-child(1):hover{
   /* box-shadow: 0 0 15px #4267B2; */
   text-shadow: 0 0 15px #4267B2;
   }
-=======
-      margin: 0 auto;
-      cursor: pointer;
-      transition: .5s;
-    }
-  
-  
-  
-  email h1:nth-child(1):hover{
-      color: #e23670;
-    /*   box-shadow: 0 0 15px #E1306C; */
-      text-shadow: 0 0 15px #E1306C;
-    }
-  
-  
-    twitter h1{
-      /* left:-260px; */
-      top:100px;
-      color:white;
-      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-      font-size: 20px;
-      position: relative;
-      /* padding-bottom: 2.2em; */
-      max-width: 10em;
-      /* display: block; */
-      /* height: 5rem; */
-      /*   background: #171515; */
-      /* line-height: 60px; */
-      /*   border-radius: 100%; */
-      margin: 0 auto;
-      cursor: pointer;
-      transition: .5s;
-    }
-  
-  
-  
-  twitter h1:nth-child(1):hover{
-    color: #456cba;
-    /* box-shadow: 0 0 15px #4267B2; */
-    text-shadow: 0 0 15px #4267B2;
-    }
->>>>>>> ac66853f8e65f1a0d059f599de6d3b0ad830f37d
