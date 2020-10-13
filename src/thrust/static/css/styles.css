@@ -52,9 +52,21 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
   }
 
 
+
+@media screen and (max-width: 600px) {
+  ciao icon {
+color: #e23670;
+  /*   box-shadow: 0 0 15px #E1306C; */
+    text-shadow: 0 0 15px #E1306C;
+  }
+}
+
+
+
+
    body {
      min-height: 100vh;
-     height:735vh;
+     height:230rem;
      background-color: #fafafa;
      background-image: url(../images/starships.jpg);
      position:relative;
@@ -64,6 +76,14 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
      top:-10px; */
    }
 
+
+@media screen and (max-width: 600px) {
+  body {
+    background-position: 50% 50%;
+    background-size: 60rem;
+
+  }
+}
 
 
 
