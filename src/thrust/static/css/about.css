@@ -33,22 +33,17 @@
 
 body {
     position:relative;
+    overflow-x: hidden;
     background-image: url(../images/about.jpg);
-    max-height:57rem;
+    /* max-height:57rem; */
     background-color: #fafafa;
-    background-size: 122rem;
+    background-size: 83rem;
+    height: 49rem;
     /*background-repeat: no-repeat;*/
   /*background-size: contain;*/
 }
 
-@media screen and (max-width: 600px) {
-  body {
-    background-position: 50% 50%;
-    background-size: 79rem;
-    background-repeat: no-repeat;
-    max-height:40rem;
-  }
-}
+
 
 
 
@@ -63,6 +58,50 @@ body {
 }
 
 
+
+
+
+.container > sopra {
+  position:relative;
+   color: #e23670;
+    text-shadow: 0 0 15px #E1306C;
+    width: 20rem;
+    height:12rem;
+    background:white;
+    /* height: 100rem; */
+
+}
+
+
+  
+
+
+.container > sotto {
+    position:relative;
+    color:white;
+    top:10rem;
+    width: 20rem;
+    background:green;
+    /* height: 100rem; */
+
+}
+
+
+/* MOBILE PHONE */
+
+
+@media screen and (max-width: 600px) {
+  body {
+    position: relative;
+    margin-top:1rem;
+    background-position: 50% 50%;
+    background-size: 100rem;
+    background-repeat: no-repeat;
+    height:60rem;
+  }
+}
+
+
 @media screen and (min-width: 601px) {
   div.container {
     font-size: 30px;
@@ -71,29 +110,28 @@ body {
 
 @media screen and (max-width: 600px) {
   div.container {
-    font-size: 15px;
+    font-size: 25px;
   }
 }
 
-.container > sopra {
 
-   color: #e23670;
-    text-shadow: 0 0 15px #E1306C;
-    width: 20rem;
-    background:white;
-    /* height: 100rem; */
-
-}
-
-.container > sotto {
+@media screen and (max-width: 600px){
+  .container > sopra {
     position:relative;
-    color:white;
-    top:20rem;
-    width: 20rem;
-    background:green;
-    /* height: 100rem; */
+    top:10rem;
+    height:10rem;
+    width: 19rem;
+  
+    }
+  }
 
-}
+  @media screen and (max-width: 600px){
+    .container > sotto {
+     position: relative;
+     top:27rem;
+      }
+    }
+  
 
 
 /*

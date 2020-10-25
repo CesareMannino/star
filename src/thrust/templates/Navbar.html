@@ -18,26 +18,58 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bangers">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-
-
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+</style>
   <!-- <link rel="stylesheet" href="style.css"> -->
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 
+  <div id='top1'>
+    <ul>SpaceTraffic</ul>
+  </div>
 
+  
 
     <!-- Top Navigation Menu -->
-    <div id="topnav">
-      <a href="/home"  class="active">ROCKET</a>
-      <div id="myLinks">
+    <body>
+     
+      
+<!-- navbar mobile phone -->
+      <div class="topnav" id="myTopnav">
+        
+        <a href="/home" class="active">HOME</a>
         <a href="/News">News</a>
         <a href="/contact">Contact</a>
         <a href="/about">About</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
       </div>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-      </a>
-    </div>
+
+      <!-- navbar desktop -->
+      <div class="topnav2" id="myTopnav2">
+        
+        <a href="/home" class="active2">SpaceTraffic</a>
+        <a href="/News">News</a>
+        <a href="/contact">Contact</a>
+        <a href="/about">About</a>
+        <a href="javascript:void(0);" class="icon2" onclick="myFunction()">
+          <i class="fa fa-bars2"></i>
+        </a>
+      </div>
+
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+      </script>
 
 
      <footer>
@@ -47,19 +79,16 @@
             <i class="fab fa-twitter">  </i>
 </a>
           </li>
-<<<<<<< HEAD
-          <l>&copy; 2020 Spacetraffic</l>
+
+          <l>&copy; 2020 SpaceTraffic</l>
           <div class=credits>
-    <a href=https://albertourra.com/>
+    <a href=https://albertourra.com>
           <c>Photo credit</c>
         </a>
         </div>
         </ul>
-=======
-          <l>  &copy; 2020 Spacetraffic</l>
-        </ul>
 
->>>>>>> ac66853f8e65f1a0d059f599de6d3b0ad830f37d
+
     </footer>
 
 
@@ -69,33 +98,41 @@
   box-sizing: border-box;
 } */
 
- /** {*/
- /*   border: 1px solid red !important;*/
- /*}*/
+/* * {
+    border: 1px solid red !important;
+ } */
 
-
-*, *:before, *:after {
+/* *, *:before, *:after {
   box-sizing: inherit;
-}
+} */
 
 body {
-  min-height: 70vh;
-  height:700vh;
-  background-color: #fafafa;
+  margin:0;
+  font-family: 'Syne Mono', monospace, Arial, sans-serif;
+ 
    /* background-image: url("https://cdn.squaremile.com/uploads/5b8321a6c7200.jpeg"); */
-  position:relative;
+  /* position:relative; */
 /*     width:100vw; */
 /*    left:-10px;
   top:-10px; */
 }
 
 
-#topnav {
+/* rimozione navbar su versione desktop */
+@media screen and (min-width: 600px) {
+  .topnav{display:none;
+  }
+}
+
+
+/* NAVBAR MOBILE PHONE */
+.topnav {
 overflow: hidden;
 background-color: #333;
 position: sticky;
+/* height:3rem; */
 
-margin:5rem -0.6rem;
+margin:19rem -0.6rem 6rem;
 z-index:2;
 top: 0px;
 
@@ -103,44 +140,232 @@ top: 0px;
 }
 
 
-#topnav #myLinks {
+/* #topnav #myLinks {
 display: none;
-}
+} */
 
-#topnav a {
+.topnav a {
 float: left;
+display: block;
+text-align: center;
 color: white;
 padding: 14px 16px;
 text-decoration: none;
 font-size: 19px;
-font-family: "Bangers", Arial, sans-serif;
+
 }
 
-#topnav a.icon {
-float: right;
+/* @media only screen and (max-width: 600px) {
+  .topnav a {
+    font-size: 15px;
+  }
+} */
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
 }
 
-#topnav a:hover {
+.topnav a.active {
+  background-color: #ad0ec2;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+
+/* NAVBAR DESKTOP */
+
+/* the below code hide the desktop navbar in mobile version */
+ @media only screen and (max-width: 600px) {
+  .topnav2 {
+    display:none;
+  }
+} 
+
+.active2{
+  font-family: 'Orbitron';
+}
+
+.topnav2 {
+overflow: hidden;
+background-color: #333;
+position: sticky;
+/* height:3rem; */
+
+margin:0rem -0.6rem 6rem;
+z-index:2;
+top: 0px;
+
+/* width: 100vw; */
+}
+
+
+/* #topnav #myLinks {
+display: none;
+} */
+
+.topnav2 a {
+float: left;
+display: block;
+text-align: center;
+color: white;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 19px;
+
+}
+
+/* @media only screen and (max-width: 600px) {
+  .topnav a {
+    font-size: 15px;
+  }
+} */
+
+.topnav2 a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav2 a.active2 {
+  background-color: #000;
+  color: white;
+}
+
+.topnav2 .icon2 {
+  display: none;
+}
+
+
+/* MOBILE DEVICES SECTION 600PX */
+
+/* burger menu icon */
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+
+
+@media screen and (max-width: 600px){
+#top1{
+   /* top:5rem; */
+    color:white;
+    position:absolute;
+    font-size: 20px;
+    z-index: 100;
+   
+    
+    font-family:'Orbitron', sans-serif; 
+    
+    width:100%;
+    
+  }
+}
+
+#top1 ul{
+  display:flex;
+  position:absolute;
+  margin:0 auto;
+  top:-10px;
+  left:-30px;
+  z-index: 100;
+  background-color: black;
+width:100%;
+justify-content: left;
+height:32px;
+}
+
+
+
+
+/* navbar */
+@media screen and (max-width: 600px) {
+  .topnav {
+    overflow: hidden;
+    top:-18.5rem;
+    position: absolute;
+    width:102%;
+   
+  }
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    
+    float: none;
+    display:block;
+    text-align: left;
+  }
+} 
+
+
+
+/* space traffic logo  */
+@media screen and (min-width: 601px){
+#top1{
+  display:none;
+}
+}
+
+@media screen and (max-width: 600px){
+  #top1{
+    color:white;
+    position:absolute;
+    font-size: 20px;
+    top:-10px;
+  }
+}
+
+/* .topnav .icon {
+display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+
+.topnav a:hover {
 background-color: #e23670;
 color: black;
 }
 
-.active {
+.topnav  a.active {
 background-color: #4CAF50;
 color: white;
 }
 
+ */
 
 
 
-.container {
-  max-width: 200vw;
-  margin: 0 auto;
-  /*padding: 0rem 2rem 2rem;*/
-/*     overflow:hidden; */
-}
-
-footer {
+ footer {
   position:absolute;
   background-color: #000;
   left:0px;
@@ -152,8 +377,20 @@ footer {
 
   }
 
+  .credits c{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+  align-items: center;
+  justify-content: center;
+    color:white;
+    position:absolute;
+    right:0.5rem;
+}
+
+
   footer l{
-left:0;
+    font-family: 'Courier New', Courier, monospace;
+left:0.5rem;
 position:absolute;
 }
 
@@ -261,14 +498,7 @@ ul li:nth-child(5):hover{
   text-shadow: 0 0 15px #ff0000;
 }
 
-.credits c{
-    text-align: center;
-  align-items: center;
-  justify-content: center;
-    color:white;
-    position:absolute;
-    right:0;
-}
+
 
 </style>
 </head>

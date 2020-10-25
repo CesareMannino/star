@@ -22,23 +22,59 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
    font-size: 5vw;
    } */
 
-   html {
+   /* html {
      box-sizing: border-box;
    }
    *, *:before, *:after {
      box-sizing: inherit;
+   } */
+  
+
+
+/* top image of the home page */
+    #top {
+      text-align: center;
+    position:relative;
+    top:-29rem; 
+    color:white;
+    margin-left:-5px;
+    margin-right: -5px;
+    background-image: url(../images/purple.jpg);
+    /* width:100%; */
+    height: 21rem;
+    /* background-position: 50% 50%; */
+    background-size: cover;
+    /* overflow: hidden; */
+    /* z-index:100; */
    }
 
-   body ciao{
+   
+   #top ul{
+     position:relative;
+     margin-left:-45px;
+    margin-right: -10px;
+     font-size: 80px;
+     top:6rem;
+     font-family: 'Orbitron', sans-serif;
+   }
+
+   h1{
+     position:relative;
+     top:0rem;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 20px;
+
+   }
+/* TITLE OF THE PAGE */
+    body ciao{
     display: flex;
-    text-align: center;
-    align-items: center;
     justify-content: center;
   }
 
   ciao icon{
-    bottom:40px;
-    position: relative;
+    top:120px;
+    /* bottom:-400px;  */
+    position: absolute;
     color: rgb(236, 236, 236);
     font-size: 60px;
     font-family: 'bangers';
@@ -55,30 +91,61 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
     text-shadow: 0 0 15px #E1306C;
   }
 
+/* all icon of the space company */
+   .icon_electron{
 
-
-@media screen and (max-width: 600px) {
-  ciao icon {
-color: #e23670;
-  /*   box-shadow: 0 0 15px #E1306C; */
-    text-shadow: 0 0 15px #E1306C;
-  }
+    position:relative;
+    height:5rem;
+    margin: 10px 10px;
+    border-radius: 50%;
+    font-family: 'bangers';
+    
 }
 
 
+.virgingalactic{
+
+  position:relative;
+  height:5rem;
+  margin: 10px 10px;
+  /* border-radius: %; */
+  font-family: 'bangers';
+  
+}
+
+/* .icon_electron div{
+   position: relative;
+  left:100px;
+} */
 
 
-   body {
-     min-height: 100vh;
-     height:230rem;
-     background-color: #fafafa;
-     background-image: url(../images/starships.jpg);
-     position:relative;
+/* MOBILE VERSION */
 
-     max-width:100%;
- /*    left:-10px;
-     top:-10px; */
-   }
+@media screen and (max-width: 600px) {
+  ciao icon {
+    top:3.5rem;
+    /* margin-top: -6rem; */
+color: #e23670;
+text-shadow: 0 0 15px #E1306C;
+  }
+ 
+}
+/* space traffic logo */
+@media screen and (min-width: 601px){
+#top1{
+  display:none;
+}
+}
+
+@media screen and (max-width: 600px){
+  #top1{
+    color:white;
+    position:absolute;
+    font-size: 20px;
+    top:-10px;
+  }
+}
+
 
 
 @media screen and (max-width: 600px) {
@@ -89,15 +156,53 @@ color: #e23670;
   }
 }
 
+@media screen and (max-width: 600px) {
+  div.gallery-item {
+    /* Minimum width of 24rem and grow to fit available space */
+    
+    flex: 1 0 24rem;
+    background-color:rgb(255, 255, 255);
+    /* Margin value should be half of grid-gap value as margins on flex items don't collapse */
+    margin:-9rem 0.5rem 14rem 0.5rem;
+    box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+    border-style: groove;
+    border-color:#e428fc;
+    font-family: 'bangers';
+/*     overflow: hidden; */
+    /* object-fit: cover; */
+    /* border-radius: 10%;  */
+
+  }
+}
 
 
 
-   .container {
-     max-width: 200vw;
-     margin: 0 auto;
-     /*padding: 0rem 2rem 2rem;*/
- /*     overflow:hidden; */
+
+
+
+   body {
+  
+     
+  
+     overflow-x:hidden ;
+     min-height: 100vh;
+     height:290rem;
+     background-color: #000;
+     background-image: url(../images/background.jpeg);
+     position:relative;
+     background-size: 180rem;
+     
+ /*    left:-10px;
+     top:-10px; */
    }
+
+
+
+
+
+
+
+
 
    /* .{
      font-family: "Bangers", Arial, sans-serif;
@@ -144,6 +249,8 @@ color: #e23670;
    height:120vh;
    margin:0 auto;
    text-align:center;
+   max-width: 90%;
+   
  }
 
  /* Picture descritption  */
@@ -206,25 +313,47 @@ color: #e23670;
 
    }
 
-#watchlive_falcon{
-  font-size: 33px;
-  text-align: center;
-}
+
 
    .gallery-item {
      /* Minimum width of 24rem and grow to fit available space */
      flex: 1 0 24rem;
      background-color:rgb(255, 255, 255);
      /* Margin value should be half of grid-gap value as margins on flex items don't collapse */
-     /*margin:0 -1rem 0 -1rem;*/
+     margin:-14rem 0.5rem 14rem 0.5rem;
      box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
      border-style: groove;
      border-color:#e428fc;
+     font-family: 'bangers';
  /*     overflow: hidden; */
      /* object-fit: cover; */
      /* border-radius: 10%;  */
 
    }
+/* watch button */
+h3{
+  position:relative;
+  margin:0 auto;
+  left:7rem;
+  font-size:30px;
+  font-family: 'bangers';
+  background-color:grey ;
+  /* border-radius: 10%; */
+  max-width: 5rem;
+  /* padding:4px; */
+  text-align: center;
+  
+  /* color:white; */
+
+}
+
+   h3:hover {
+  background-color: #e23670;
+  color: black;
+  }
+
+
+
 
    .gallery-image {
      margin:10px;
@@ -270,7 +399,9 @@ color: #e23670;
   color:white;
   text-align: center;
   font-size: 20px;
-  margin-top: 0px;
+  /* margin-top: 0px; */
+  margin:0 auto;
+  max-width:4rem;
   background:black;
 }
 

@@ -13,65 +13,94 @@
 
 
 body {
-  position:relative;
+ 
   /* display: block; */
   background-image: url(../images/contact.jpg);
-  background-size: 97rem;
+  background-size: 94rem;
   background-repeat: no-repeat;
-  max-height:50rem;
+  height:40rem;
   background-color: #000;
+  background-position: 50% 50%;
+  overflow-x: hidden;
 }
 
 
-email h1{
+#contacts{
+  position: relative;
+  top:10rem;
+}
 
-    color:white;
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    font-size: 20px;
-    position: relative;
-    max-width: 16em;
-    /* padding-bottom: 2.2em; */
-    /* display: block; */
-    /* height: 5rem; */
-    /*   background: #171515; */
-    /* line-height: 60px; */
-  /*   border-radius: 100%; */
-    margin: 0 auto;
-    cursor: pointer;
-    transition: .5s;
+email a{
+
+  color:white;
+  font-family: 'bangers';
+  font-size: 40px;
+  position: relative;
+  max-width: 16em;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: .5s;
+}
+
+twitter a{
+    
+  color:white;
+  font-family: 'bangers';
+  font-size: 40px;
+  position: relative;
+  /* left:10rem; */
+  max-width: 16em;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: .5s;
+
+}
+
+
+/* MOBILE PHONE */
+@media screen and (max-width: 600px) {
+  body {
+    position:relative;
+    background-position: 50% 50%;
+    background-size: 100rem;
+    background-repeat: no-repeat;
+    height:50rem;
   }
+}
 
 
 
-email h1:nth-child(1):hover{
+
+
+  @media screen and (max-width: 600px) {
+    email a{
+      font-size: 30px;
+      top:10rem;
+    }
+  }
+  
+
+
+
+/* email h1:nth-child(1):hover{
     color: #e23670;
-  /*   box-shadow: 0 0 15px #E1306C; */
     text-shadow: 0 0 15px #E1306C;
-  }
+  } */
   
   
-  email h1{
-  
-      color:white;
-      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-      font-size: 20px;
-      position: relative;
-      max-width: 16em;
-      /* padding-bottom: 2.2em; */
-      /* display: block; */
-      /* height: 5rem; */
-      /*   background: #171515; */
-      /* line-height: 60px; */
-    /*   border-radius: 100%; */
-    margin: 0 auto;
-    cursor: pointer;
-    transition: .5s;
+
+
+
+
+  @media screen and (max-width: 600px) {
+    twitter a{
+      font-size: 30px;
+      top:10rem;
+    }
   }
 
 
-
-twitter h1:nth-child(1):hover{
+/* twitter h1:nth-child(1):hover{
   color: #456cba;
-  /* box-shadow: 0 0 15px #4267B2; */
-  text-shadow: 0 0 15px #4267B2;
-  }
+ text-shadow: 0 0 15px #4267B2;
+  } */

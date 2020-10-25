@@ -3,6 +3,8 @@
 
 {% load static %}
 {%include "Base.html"%}
+
+
 <!-- cache eraser -->
 <header>
   <meta http-equiv="cache-control" content="max-age=0" />
@@ -19,13 +21,23 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bangers">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+    </style>
 
 </html>
 
 </head>
 
-  <div class="container">
 
+
+<div id='top'>
+<ul>SpaceTraffic</ul>
+<h1></h1>  
+</div>  
+
+
+  
 
 
     <body>
@@ -47,6 +59,18 @@
 
 
       <div class="gallery-item">
+        <!-- icona -->
+        <a href="{% static "images/Rocketlab.jpg" %}" target="_blank">
+          
+          <img class="icon_electron"
+            src="{% static "images/Rocketlab.jpg" %}" alt="Rocketlab electron">
+            Rocket lab
+        </a>
+           <!-- link to watch live -->
+        <a  href="https://www.rocketlabusa.com/live-stream/" class='test' target="_blank">
+          <h3>Watch</h3>
+          </a>
+
         <!-- <img src="images/picture.jpg"> -->
         <a href="{% static "images/electron.jpeg" %}" target="_blank">
           <img class="gallery-image"
@@ -67,19 +91,29 @@
           <p>
             Key person : PETER BECK
           </p>
-
-          <div id=utc>UTC</div>
+          
+           
+          
+          <!-- <div id=utc>UTC</div> -->
           <div id="electron">please wait...</div>
-
+          
+        
 
         </div>
       </div>
 
       <div class="gallery-item">
-        <!-- link to watch live -->
-        <a href="https://www.spacex.com/launches/" target="_blank">
-        <div id=watchlive_falcon>watch</div>
-
+       <!-- icona -->
+       <a href="{% static "images/Spacex.png" %}" target="_blank">
+          
+        <img class="icon_electron"
+          src="{% static "images/Spacex.png" %}" alt="Rocketlab electron">
+          Spacex
+      </a>
+         <!-- link to watch live -->
+      <a  href="https://www.spacex.com/launches/" class='test' target="_blank">
+        <h3>Watch</h3>
+        </a>
         <a href="{% static "images/Falcon9.jpg" %}"
           target="_blank">
           <img class="gallery-image"
@@ -94,20 +128,34 @@
             Height = 70 meters
           </p>
           <p>
-            Thrust first stage = 7607 kN
+            Thrust first stage = 8851 kN
           </p>
           <p>
             Key person : ELON MUSK
           </p>
-          <div id=utc>UTC</div>
+          <!-- <div id=utc>UTC</div> -->
           <div id="falcon">please wait...</div>
 
         </div>
       </div>
 
       <div class="gallery-item">
-        <a href="https://www.youtube.com/watch?v=O97dPDkUGg4&feature=emb_title" target="_blank">
-          <div id=watchlive_falcon>watch</div>
+<!-- icona -->
+<a href="{% static "images/BlueOrigin.jpg" %}" target="_blank">
+          
+  <img class="icon_electron"
+    src="{% static "images/BlueOrigin.jpg" %}" alt="Rocketlab electron">
+    Blue Origin
+</a>
+   <!-- link to watch live -->
+      <!-- link to watch live -->
+      <a  href="https://www.youtube.com/watch?v=O97dPDkUGg4&feature=emb_title" class='test' target="_blank">
+        <h3>Watch</h3>
+        </a>
+
+
+
+        
         <a href="{% static "images/newshepard.jpg" %}" target="_blank">
           <img class="gallery-image" src="{% static "images/newshepard.jpg" %}" alt="New Shepard">
         </a>
@@ -124,13 +172,28 @@
           <p>
             Key person : JEFF BEZOS
           </p>
-          <div id=utc>UTC</div>
+          <!-- <div id=utc>UTC</div> -->
           <div id="newshepard">please wait...</div>
 
         </div>
       </div>
 
       <div class="gallery-item">
+<!-- icona -->
+<a href="{% static "images/virgin galactic.jpg" %}" target="_blank">
+          
+  <img class="virgingalactic"
+    src="{% static "images/virgin galactic.jpg" %}" alt="Rocketlab electron">
+   
+</a>
+   <!-- link to watch live -->
+      <!-- link to watch live -->
+      <a  href="https://www.youtube.com/c/VirginGalactic/videos" class='test' target="_blank">
+        <h3>Watch</h3>
+        </a>
+
+
+
         <a href="{% static "images/spaceshiptwo.jpg" %}" target="_blank">
           <img class="gallery-image" src="{% static "images/spaceshiptwo.jpg" %}"
             alt="Virgin Galactic Space Ship Two">
@@ -141,15 +204,15 @@
             SpaceShipTwo
           </p>
           <p>
-            Lenght = 18.3 meters
+            Length = 18.3 meters
           </p>
           <p>
-            Thrust first stage = 270 kN
+            Thrust = 270 kN
           </p>
           <p>
             Key person : RICHARD BRANSON
           </p>
-          <div id=utc>UTC</div>
+          <!-- <div id=utc>UTC</div> -->
           <div id="spaceshiptwo">please wait...</div>
 
         </div>
@@ -169,10 +232,10 @@
     </div>
 
     <div class="top_text">
-      <h1><a href="/relativity" target="_blank">Relativity space brings the rocket competition to the next level</a></h1>
+      <h1><a href="/relativity" target="_blank">"Relativity Space" brings the rocket competition to the next level</a></h1>
 
       <div class="bottom_text">
-        <h2><a href="/relativity" target="_blank">In the competition to reach the orbit and beyond they are the most innovative ones</a></h2>
+        <h2><a href="/relativity" target="_blank">In the competition to reach the orbit and beyond, they are the most innovative ones</a></h2>
 
         <a href="https://cdn.dogtownmedia.com/wp-content/uploads/2019/10/16161931/aispace2.jpg" loading="lazy" target="_blank">
 
@@ -187,7 +250,7 @@
         </description>
       </div>
     </div>
-  </div>
+  
 
 <script type="text/javascript" src="{% static 'js/script.js' %}"> </script>
 
