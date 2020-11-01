@@ -25,7 +25,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
     </style>
 
-</html>
+
 
 </head>
 
@@ -40,13 +40,13 @@
   
 
 
-    <body>
+    
       <ciao>
       <icon>
         <i> Upcoming launches</i>
       </icon>
     </ciao>
-    </body>
+    
 
 
 
@@ -59,22 +59,30 @@
 
 
       <div class="gallery-item">
+       
         <!-- icona -->
-        <a href="{% static "images/Rocketlab.jpg" %}" target="_blank">
+        <a href="{% static 'images/Rocketlab.jpg' %}" target="_blank">
           
           <img class="icon_electron"
-            src="{% static "images/Rocketlab.jpg" %}" alt="Rocketlab electron">
+            src="{% static 'images/Rocketlab.jpg' %}" alt="Rocketlab electron">
             Rocket lab
         </a>
+        
            <!-- link to watch live -->
-        <a  href="https://www.rocketlabusa.com/live-stream/" class='test' target="_blank">
-          <h3>Watch</h3>
-          </a>
+      
+           <div class="videoWrapper">
+            <iframe width="443" height="250" src="https://www.youtube.com/embed/axXm-z2NzW8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          <div class='livenote'>
+          <h3>Live about 15/30 min before the end of countdown</h3>
+        </div>
 
         <!-- <img src="images/picture.jpg"> -->
-        <a href="{% static "images/electron.jpeg" %}" target="_blank">
+        
+        <a href="{% static 'images/electron.jpeg' %}" target="_blank">
           <img class="gallery-image"
-            src="{% static "images/electron.jpeg" %}" alt="Rocketlab electron">
+          
+            src="{% static 'images/electron.jpeg' %}" alt="Rocketlab electron">
         </a>
 
 
@@ -86,7 +94,7 @@
             Height = 17 meters
           </p>
           <p>
-            Thrust first stage = 192 kN
+            Thrust first stage = 225 kN
           </p>
           <p>
             Key person : PETER BECK
@@ -104,20 +112,25 @@
 
       <div class="gallery-item">
        <!-- icona -->
-       <a href="{% static "images/Spacex.png" %}" target="_blank">
+       <a href="{% static 'images/Spacex.png' %}" target="_blank">
           
         <img class="icon_electron"
-          src="{% static "images/Spacex.png" %}" alt="Rocketlab electron">
+          src="{% static 'images/Spacex.png' %}" alt="Rocketlab electron">
           Spacex
       </a>
          <!-- link to watch live -->
-      <a  href="https://www.spacex.com/launches/" class='test' target="_blank">
-        <h3>Watch</h3>
-        </a>
-        <a href="{% static "images/Falcon9.jpg" %}"
+         <div class="videoWrapper">
+          <iframe width="971" height="546" src="https://www.youtube.com/embed/2gbVgTxLgN0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+           </div>
+           <div class='livenote'>
+         <h3>Live about 15/30 min before the end of countdown</h3>
+        </div>
+
+
+        <a href="{% static 'images/Falcon9.jpg' %}"
           target="_blank">
           <img class="gallery-image"
-            src="{% static "images/Falcon9.jpg" %}"
+            src="{% static 'images/Falcon9.jpg' %}"
             alt="Spacex Falcon 9">
         </a>
         <div class="css-typing-falcon">
@@ -141,23 +154,27 @@
 
       <div class="gallery-item">
 <!-- icona -->
-<a href="{% static "images/BlueOrigin.jpg" %}" target="_blank">
+<a href="{% static 'images/BlueOrigin.jpg' %}" target="_blank">
           
   <img class="icon_electron"
-    src="{% static "images/BlueOrigin.jpg" %}" alt="Rocketlab electron">
+    src="{% static 'images/BlueOrigin.jpg' %}" alt="Rocketlab electron">
     Blue Origin
 </a>
    <!-- link to watch live -->
       <!-- link to watch live -->
-      <a  href="https://www.youtube.com/watch?v=O97dPDkUGg4&feature=emb_title" class='test' target="_blank">
-        <h3>Watch</h3>
-        </a>
+      <div class="videoWrapper">
+        <iframe width="971" height="546" src="https://www.youtube.com/embed/O97dPDkUGg4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class='livenote'>  
+    <h3>Live about 15/30 min before the end of countdown</h3>
+  </div>
+        
 
 
 
         
-        <a href="{% static "images/newshepard.jpg" %}" target="_blank">
-          <img class="gallery-image" src="{% static "images/newshepard.jpg" %}" alt="New Shepard">
+        <a href="{% static 'images/newshepard.jpg' %}" target="_blank">
+          <img class="gallery-image" src="{% static 'images/newshepard.jpg' %}" alt="New Shepard">
         </a>
         <div class="css-typing-newshepard">
           <p>
@@ -180,22 +197,23 @@
 
       <div class="gallery-item">
 <!-- icona -->
-<a href="{% static "images/virgin galactic.jpg" %}" target="_blank">
+<a href="{% static 'images/virgin galactic.jpg' %}" target="_blank">
           
   <img class="virgingalactic"
-    src="{% static "images/virgin galactic.jpg" %}" alt="Rocketlab electron">
+    src="{% static 'images/virgin galactic.jpg' %}" alt="Rocketlab electron">
    
 </a>
    <!-- link to watch live -->
       <!-- link to watch live -->
-      <a  href="https://www.youtube.com/c/VirginGalactic/videos" class='test' target="_blank">
-        <h3>Watch</h3>
-        </a>
+      <div class="videoWrapper">
+        <iframe width="971" height="546" src="https://www.youtube.com/embed/h8T9mVkGh3s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </div>    
+   <div class='livenote'>  
+      <h3>Live about 15/30 min before the end of countdown</h3>
+    </div>
 
-
-
-        <a href="{% static "images/spaceshiptwo.jpg" %}" target="_blank">
-          <img class="gallery-image" src="{% static "images/spaceshiptwo.jpg" %}"
+        <a href="{% static 'images/spaceshiptwo.jpg' %}" target="_blank">
+          <img class="gallery-image" src="{% static 'images/spaceshiptwo.jpg' %}"
             alt="Virgin Galactic Space Ship Two">
         </a>
         <div class="css-typing-spaceshiptwo">
@@ -229,13 +247,14 @@
 			<img class="gallery-image" src="https://images.unsplash.com/photo-1486334803289-1623f249dd1e?w=500&h=500&fit=crop" alt="man wearing a black jacket, white shirt, blue jeans, and brown boots, playing a white electric guitar while sitting on an amp">
 		</div> -->
 
-    </div>
 
+<!-- NEWS PAGE FROM HOME PAGE -->
+    </div>
     <div class="top_text">
-      <h1><a href="/relativity" target="_blank">"Relativity Space" brings the rocket competition to the next level</a></h1>
+      <h1><a href="/News" target="_blank">"Relativity Space" brings the rocket competition to the next level</a></h1>
 
       <div class="bottom_text">
-        <h2><a href="/relativity" target="_blank">In the competition to reach the orbit and beyond, they are the most innovative ones</a></h2>
+        <h2><a href="/News" target="_blank">In the competition to reach the orbit and beyond, they are the most innovative ones</a></h2>
 
         <a href="https://cdn.dogtownmedia.com/wp-content/uploads/2019/10/16161931/aispace2.jpg" loading="lazy" target="_blank">
 

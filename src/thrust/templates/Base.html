@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+  <title>SpaceTraffic.net</title>
 {% load static %}
 
 
@@ -59,21 +59,20 @@
 
      <footer>
             <ul>
-          <li>
- <a href="https://twitter.com/SpacetrafficN">
-            <i class="fab fa-twitter">  </i>
-</a>
-          </li>
-
-          <l>&copy; 2020 SpaceTraffic</l>
+          <l>&copy;2020 SpaceTraffic</l>
           <div class=credits>
     <a href=https://albertourra.com>
           <c>Photo credit</c>
         </a>
+        
         </div>
+        <twitter>
+          <a href="https://twitter.com/SpacetrafficN">
+                     <i class="fab fa-twitter">  </i>
+                    </twitter>
         </ul>
-
-
+       
+                    </a>
     </footer>
 
 
@@ -94,7 +93,7 @@
 body {
   margin:0;
   font-family: 'Syne Mono', monospace, Arial, sans-serif;
- 
+ min-height: 59rem;
    /* background-image: url("https://cdn.squaremile.com/uploads/5b8321a6c7200.jpeg"); */
   /* position:relative; */
 /*     width:100vw; */
@@ -146,7 +145,7 @@ font-size: 19px;
 
 .topnav a.active {
   position: relative;
-  background-color: #ad0ec2;
+  background-color: rgb(15, 15, 15);
   color: white;
   height:1.2rem;
 }
@@ -164,6 +163,16 @@ font-size: 19px;
   .topnav a.icon {
     float: right;
     display: block;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: absolute;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 }
 
@@ -210,9 +219,15 @@ height:32px;
     overflow: hidden;
     top:-22rem;
     position: absolute;
-    width:102%;
-   
+   width:100%;
+   left:1rem;
   }
+
+  body .topnav{
+display:block;
+width:100%;
+  } 
+
   .topnav.responsive .icon {
     position: absolute;
     right: 0;
@@ -274,8 +289,10 @@ color: white;
   left:0px;
   bottom:0px;
   width: 100%;
+  /* height:3rem; */
   text-align:left;
   color: white;
+  margin:30px 0 0 0; 
   /* padding: 0.5em; */
 
   }
@@ -285,16 +302,19 @@ color: white;
     text-align: center;
   align-items: center;
   justify-content: center;
-    color:white;
+    color:rgb(161, 161, 161);
     position:absolute;
-    right:0.5rem;
+    top:1.9rem;
+    right:1rem;
 }
 
-
+/* 2020 copyright spacetraffic */
   footer l{
     font-family: 'Courier New', Courier, monospace;
-left:0.5rem;
+left:1rem;
 position:absolute;
+top:2rem;
+color:rgb(161, 161, 161);
 }
 
 /* twitter body */
@@ -307,11 +327,16 @@ body ul{
   /* background: #262626; */
 }
 /* twitter positioning */
-ul{
-  display: flex;
+twitter{
+  position: relative;
+  top: 0.5rem;
+  margin:2rem 0rem 1rem 0rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 /* bird color */
-ul li{
+twitter{
   position: relative;
   display: block;
   color: #666;
@@ -327,7 +352,7 @@ ul li{
 }
 
 /* twitter bird animation */
-ul li:before{
+twitter:before{
   position: absolute;
   content: '';
   bottom: 0;
@@ -340,62 +365,62 @@ ul li:before{
   z-index: -1;
   transition: .5s;
 }
-ul li:nth-child(1):before{
+twitter:nth-child(1):before{
   background: #4267B2;
 }
-ul li:nth-child(2):before{
+twitter:nth-child(2):before{
   background: #1DA1F2;
 }
-ul li:nth-child(3):before{
+twitter:nth-child(3):before{
   background: #E1306C;
 }
-ul li:nth-child(4):before{
+twitter:nth-child(4):before{
   background: #2867B2;
 }
-ul li:nth-child(5):before{
+twitter:nth-child(5):before{
   background: #ff0000;
 }
-ul li:hover:before{
+twitter:hover:before{
   filter: blur(3px);
   transform: scale(1.2);
 
 }
-ul li:nth-child(1):hover:before{
+twitter:nth-child(1):hover:before{
   box-shadow: 0 0 15px #4267B2;
 }
-ul li:nth-child(2):hover:before{
+twitter:nth-child(2):hover:before{
   box-shadow: 0 0 15px #1DA1F2;
 }
-ul li:nth-child(3):hover:before{
+twitter:nth-child(3):hover:before{
   box-shadow: 0 0 15px #E1306C;
 }
-ul li:nth-child(4):hover:before{
+twitter:nth-child(4):hover:before{
   box-shadow: 0 0 15px #2867B2;
 }
-ul li:nth-child(5):hover:before{
+twitter:nth-child(5):hover:before{
   box-shadow: 0 0 15px #ff0000;
 }
-ul li:nth-child(1):hover{
+twitter:nth-child(1):hover{
   color: #456cba;
   box-shadow: 0 0 15px #4267B2;
   text-shadow: 0 0 15px #4267B2;
 }
-ul li:nth-child(2):hover{
+twitter:nth-child(2):hover{
   color: #26a4f2;
   box-shadow: 0 0 15px #1DA1F2;
   text-shadow: 0 0 15px #1DA1F2;
 }
-ul li:nth-child(3):hover{
+twitter:nth-child(3):hover{
   color: #e23670;
   box-shadow: 0 0 15px #E1306C;
   text-shadow: 0 0 15px #E1306C;
 }
-ul li:nth-child(4):hover{
+twitter:nth-child(4):hover{
   color: #2a6cbb;
   box-shadow: 0 0 15px #2867B2;
   text-shadow: 0 0 15px #2867B2;
 }
-ul li:nth-child(5):hover{
+twitter:nth-child(5):hover{
   color: #ff1a1a;
   box-shadow: 0 0 15px #ff0000;
   text-shadow: 0 0 15px #ff0000;

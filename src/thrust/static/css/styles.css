@@ -29,6 +29,19 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
      box-sizing: inherit;
    } */
   
+   body {
+  
+     
+  
+    overflow-x:hidden ;
+    min-height: 300rem;
+    /* height:290rem; */
+    background-color: #000;
+    background-image: url(../images/background.jpeg);
+    position:relative;
+    background-size: 230vw;
+
+  }
 
 
 /* top image of the home page */
@@ -85,7 +98,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
     transition: .5s;
   }
 
-  ciao icon:nth-child(1):hover{
+  ciao icon:nth-child(1){
     color: #e23670;
   /*   box-shadow: 0 0 15px #E1306C; */
     text-shadow: 0 0 15px #E1306C;
@@ -149,9 +162,12 @@ text-shadow: 0 0 15px #E1306C;
 
 
 @media screen and (max-width: 600px) {
-  body {
+  body html{
     background-position: 50% 50%;
-    background-size: 60rem;
+    background-size: 100vw;
+    overflow-x: hidden;
+    background-repeat: no-repeat;
+    margin:0 auto;
 
   }
 }
@@ -176,26 +192,16 @@ text-shadow: 0 0 15px #E1306C;
 }
 
 
+@media screen and (max-width: 450px) {
+  ciao icon{
+    font-size: 40px;
+  }
+}
 
 
 
 
-   body {
   
-     
-  
-     overflow-x:hidden ;
-     min-height: 100vh;
-     height:290rem;
-     background-color: #000;
-     background-image: url(../images/background.jpeg);
-     position:relative;
-     background-size: 180rem;
-     
- /*    left:-10px;
-     top:-10px; */
-   }
-
 
 
 
@@ -242,11 +248,11 @@ text-shadow: 0 0 15px #E1306C;
  /* div of the news */
 
  .top_text{
-   position:relative;
-   top:10rem;
+   position:static;
+   top:5rem;
    font-family: 'Haettenschweiler';
    background-color:white;
-   height:120vh;
+   height:12rem;
    margin:0 auto;
    text-align:center;
    max-width: 90%;
@@ -304,16 +310,27 @@ text-shadow: 0 0 15px #E1306C;
 
      display: flex;
      flex-wrap: wrap;
-
-
-
-
      /* Compensate for excess margin on outer gallery flex items */
      margin: -1rem -1rem;
 
+
+     /* youtube video launch */
    }
-
-
+   .videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    /* margin:0 a; */
+  }
+  .videoWrapper iframe {
+    
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    width: 90%;
+    height: 90%;
+  }
+  
 
    .gallery-item {
      /* Minimum width of 24rem and grow to fit available space */
@@ -331,15 +348,15 @@ text-shadow: 0 0 15px #E1306C;
 
    }
 /* watch button */
-h3{
-  position:relative;
+.livenote h3{
+  position:inherit;
   margin:0 auto;
-  left:7rem;
-  font-size:30px;
+  /* left:0.2rem; */
+  font-size:20px;
   font-family: 'bangers';
-  background-color:grey ;
+  /* background-color:grey ; */
   /* border-radius: 10%; */
-  max-width: 5rem;
+  /* width: 45rem; */
   /* padding:4px; */
   text-align: center;
   
@@ -347,17 +364,17 @@ h3{
 
 }
 
-   h3:hover {
+   /* h3:hover {
   background-color: #e23670;
   color: black;
-  }
+  } */
 
 
 
 
    .gallery-image {
-     margin:10px;
-     margin-left: 1.3rem;
+     margin:10px auto;
+     /* margin-left: 1.9rem; */
      display: block;
      max-width: 90%;
      max-height: auto;
@@ -394,35 +411,26 @@ h3{
      }
    }
 
-#utc{
 
-  color:white;
-  text-align: center;
-  font-size: 20px;
-  /* margin-top: 0px; */
-  margin:0 auto;
-  max-width:4rem;
-  background:black;
-}
 
      /* COUNTDOWN */
    #electron {
     text-align: center;
-    font-size: 60px;
+    font-size: 50px;
     margin-top: 0px;
     color:red;
   }
 
   #falcon {
     text-align: center;
-    font-size: 60px;
+    font-size: 50px;
     margin-top: 0px;
     color:red;
   }
 
   #newshepard {
     text-align: center;
-    font-size: 60px;
+    font-size: 50px;
     margin-top: 0px;
     color:red;
   }

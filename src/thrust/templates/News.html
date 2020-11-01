@@ -1,4 +1,6 @@
+{% load static %}
 {%include "Navbar.html"%}
+
 <!doctype html>
 <html>
     <head>
@@ -10,10 +12,12 @@
 <div id="top_article">
 
   <h2>"Relativity Space" is an alternative to a "traditional" space rocket company</h2>
-  <a href="https://lh3.googleusercontent.com/DffZuoIEbHolB_KQ7ARH9lDCwimmzCv1eXqtKBRhPT45Njxnssh5aih0YTKw-ZNzc1obyj5ptEelzJ31VnkvrRkf2FfgII2tCNQzXtz88h8mP5tICHpudMNJGE7bRnQGztmFXZB_oj2nlx7kI0tqppZQbi5aqgqaDTagoMWyM7_ri4HBr5QemzHUc1gIIVqNmcQL_QV-xG7RimoIJVLm5IrNiDVpqEONbmOS5muw84DSXzItAYvHH9OtqxfNiKMNi2gaL7SCJK_sEk0bVJDabpbAvu5ciAZgqkw3fNfv65YKrFCU1pt5itorLyjxKgxFeQCaewdaRw_9CO9cXAaX3PBKyCLH0dCXWNi80tqlGZ4k-JsbcBiVJwlxQX_75qABDVI6lz5x5DNp3yOID5yx9NGmr9Xep9cAsTc5d9_QeYBA9c4eX0Tkkbzs-QR6VtykZngfB1AmfkxsG_slEFutTM-FVlBjgE3TXeorbRdY8deXDgV6H9kSt1s3VOO0hnAJpqu_vvtDRDJh95u3L8efD3pSQI0IOOwvAPzn6kbaPJQjhziIOC3QgqpmFamDNNtmvhpFdRjO98VfTY_H4ff4ukB9s_hAH6EIbYSSzyv0Lrp_tvUhrgvgDjcnaXdB3DxzVlw77kIyXjIpbMqU2cX37zjNTp5o3-9R5EStKbNrx22gFe8q2ZmZeIV3BQVD=w993-h663-no?authuser=0" target="_blank">
-    <img class="gallery-image" src="https://lh3.googleusercontent.com/DffZuoIEbHolB_KQ7ARH9lDCwimmzCv1eXqtKBRhPT45Njxnssh5aih0YTKw-ZNzc1obyj5ptEelzJ31VnkvrRkf2FfgII2tCNQzXtz88h8mP5tICHpudMNJGE7bRnQGztmFXZB_oj2nlx7kI0tqppZQbi5aqgqaDTagoMWyM7_ri4HBr5QemzHUc1gIIVqNmcQL_QV-xG7RimoIJVLm5IrNiDVpqEONbmOS5muw84DSXzItAYvHH9OtqxfNiKMNi2gaL7SCJK_sEk0bVJDabpbAvu5ciAZgqkw3fNfv65YKrFCU1pt5itorLyjxKgxFeQCaewdaRw_9CO9cXAaX3PBKyCLH0dCXWNi80tqlGZ4k-JsbcBiVJwlxQX_75qABDVI6lz5x5DNp3yOID5yx9NGmr9Xep9cAsTc5d9_QeYBA9c4eX0Tkkbzs-QR6VtykZngfB1AmfkxsG_slEFutTM-FVlBjgE3TXeorbRdY8deXDgV6H9kSt1s3VOO0hnAJpqu_vvtDRDJh95u3L8efD3pSQI0IOOwvAPzn6kbaPJQjhziIOC3QgqpmFamDNNtmvhpFdRjO98VfTY_H4ff4ukB9s_hAH6EIbYSSzyv0Lrp_tvUhrgvgDjcnaXdB3DxzVlw77kIyXjIpbMqU2cX37zjNTp5o3-9R5EStKbNrx22gFe8q2ZmZeIV3BQVD=w993-h663-no?authuser=0"
-    alt="relativity space">
-</a>
+  <a href="{% static "images/relativity.jpg" %}"
+          target="_blank">
+          <img class="gallery-image"
+            src="{% static "images/relativity.jpg" %}"
+            alt="Spacex Falcon 9">
+        </a>
 </div>
 <article_description>
     <p>Stargate 3D printer at work</p>
@@ -58,9 +62,10 @@
 
 
 body {
+  overflow-x: hidden;
     position:relative;
     /*background-image: url(../images/about.jpg);*/
-    height:200rem;
+    min-height:100rem;
     background-color: #fafafa;
     /*background-size: 122rem;*/
 }

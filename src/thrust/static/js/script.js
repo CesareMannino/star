@@ -1,8 +1,10 @@
+
+
 // Set the date we're counting down to
 // all times need to be insert in UTC
 
 // electron
-var countDownDate = new Date("Oct 20, 2020 21:14:00").getTime();
+var countDownDate = new Date("Oct 28, 2020 21:14:00").getTime();
 // falcon
 var countDownDate1 = new Date("Oct 21, 2020 16:36:00").getTime();
 // newshepard
@@ -122,8 +124,7 @@ var days3 = Math.floor(distance3 / (1000 * 60 * 60 * 24));
 var objToday = new Date(),
 	weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'),
 	dayOfWeek = weekday[objToday.getDay()],
-	domEnder = function() { var a = objToday; if (/1/.test(parseInt((a + "").charAt(0)))) return "th"; a = parseInt((a + "").charAt(1)); return 1 == a ? "st" : 2 == a ? "nd" : 3 == a ? "rd" : "th" }(),
-	dayOfMonth = today + ( objToday.getDate() < 10) ? '' + objToday.getDate() + domEnder : objToday.getDate() + domEnder,
+	dayOfMonth = today + ( objToday.getDate() < 10) ? '' + objToday.getDate():
 	months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'),
 	curMonth = months[objToday.getMonth()],
 	curYear = objToday.getFullYear(),
