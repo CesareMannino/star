@@ -44,7 +44,7 @@
         </a>
       </div>
       
-
+<!-- burger menu click -->
     <script>
       function myFunction() {
         var x = document.getElementById("myTopnav");
@@ -105,7 +105,7 @@ body {
 .topnav {
 overflow: hidden;
 background-color: rgb(15, 15, 15);
-position: sticky;
+position: relative;
 /* height:3rem; */
 
 margin:19rem -0.6rem 6rem;
@@ -166,13 +166,13 @@ font-size: 19px;
   }
 }
 
-
+/* burger menu icon drop down menu */
 @media screen and (max-width: 600px) {
   .topnav.responsive {position: absolute;}
   .topnav.responsive a.icon {
     position: absolute;
     right: 0;
-    top: 0;
+   
   }
 }
 
@@ -201,7 +201,7 @@ font-size: 19px;
   display:flex;
   position:absolute;
   margin:0 auto;
-  top:-70px;
+  top:0px;
   left:-30px;
   z-index: 100;
   background-color: black;
@@ -217,10 +217,10 @@ height:32px;
 @media screen and (max-width: 600px) {
   .topnav {
     overflow: hidden;
-    top:-22rem;
+    /* top:17rem; */
     position: absolute;
    width:100%;
-   left:1rem;
+   margin:1.7rem 0 0 0 ;
   }
 
   body .topnav{

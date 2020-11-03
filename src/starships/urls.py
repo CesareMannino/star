@@ -14,13 +14,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.urls import path, include
+from thrust.sitemaps import StaticViewSitemap
+from django.contrib.sitemaps.views import sitemap
 from thrust.views import home_view, Falcon9_view, Electron_view, New_Shepard_view, News_view, Relativity_view, About_view, Contact_view
 
+sitemaps = {
+    'static': StaticViewSitemap
+}
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
+    path('',include('thrust.urls')),
+    path('sitemap.xml', sitemap, {'sitemaps':sitemaps}),
     path('', home_view, name='home_view'),
     path('home/',home_view),
     #path is a django method,as argument got the url address as a 
