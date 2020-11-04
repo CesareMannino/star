@@ -369,17 +369,17 @@ text-shadow: 0 0 15px #E1306C;
     font-family: 'Orbitron','Haettenschweiler' ;
     /* font-weight: bolder; */
    text-align: center;
-   font-size: 40px;
+   font-size: 35px;
    margin-top: 0px;
    color:red;
  }
 
  
- @media screen and (max-width: 900px) {
+ /* @media screen and (min-width: 600px) {
   .countdown {
     font-size: 30px;
   }
-}
+} */
 
 /* 
   #newshepard {
