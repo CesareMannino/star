@@ -356,35 +356,51 @@ text-shadow: 0 0 15px #E1306C;
 
 
      /* COUNTDOWN */
-   #electron {
+   /* #electron {
+     font-family: 'Orbitron','Haettenschweiler' ;
+     font-weight: bolder;
     text-align: center;
-    font-size: 50px;
+    font-size: 38px;
     margin-top: 0px;
     color:red;
-  }
+  } */
 
-  #falcon {
-    text-align: center;
-    font-size: 50px;
-    margin-top: 0px;
-    color:red;
-  }
+  .countdown {
+    font-family: 'Orbitron','Haettenschweiler' ;
+    /* font-weight: bolder; */
+   text-align: center;
+   font-size: 40px;
+   margin-top: 0px;
+   color:red;
+ }
 
+ 
+ @media screen and (max-width: 900px) {
+  .countdown {
+    font-size: 30px;
+  }
+}
+
+/* 
   #newshepard {
-    text-align: center;
-    font-size: 50px;
-    margin-top: 0px;
-    color:red;
-  }
+    font-family: 'Orbitron','Haettenschweiler' ;
+    font-weight: bolder;
+   text-align: center;
+   font-size: 38px;
+   margin-top: 0px;
+   color:red;
+ }
 
 
   #spaceshiptwo {
-    text-align: center;
-    font-size: 50px;
-    margin-top: 0px;
-    color:red;
-  }
-
+    font-family: 'Orbitron','Haettenschweiler' ;
+    font-weight: bolder;
+   text-align: center;
+   font-size: 38px;
+   margin-top: 0px;
+   color:red;
+ }
+ */
 
 
     .css-typing-electron  p {

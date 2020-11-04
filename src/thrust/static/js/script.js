@@ -4,9 +4,9 @@
 // all times need to be insert in UTC
 
 // electron
-var countDownDate = new Date("Oct 28, 2020 21:14:00").getTime();
+var countDownDate = new Date("Nov 15, 2020 12:00:00").getTime();
 // falcon
-var countDownDate1 = new Date("Oct 21, 2020 16:36:00").getTime();
+var countDownDate1 = new Date("Nov 5, 2020 23:24:00").getTime();
 // newshepard
 var countDownDate2 = new Date("Oct 13, 2020 08:00:00").getTime();
 // spaceshiptwo
@@ -87,11 +87,11 @@ var days3 = Math.floor(distance3 / (1000 * 60 * 60 * 24));
 
     if (distance2 < 0) {
       clearInterval(x);
-    document.getElementById("newshepard").innerHTML = "EXPIRED";}
+    document.getElementById("newshepard").innerHTML = "UNSCHEDULED";}
 
     if (distance3 < 0) {
       clearInterval(x);
-    document.getElementById("spaceshiptwo").innerHTML = "EXPIRED";}
+    document.getElementById("spaceshiptwo").innerHTML = "UNSCHEDULED";}
 
 
   //   document.getElementById("spaceshiptwo").innerHTML = "EXPIRED";
