@@ -65,6 +65,7 @@ background-size: 290rem;
 
 
 .container > sopra {
+  margin-left:5px;
   position:relative;
    color: #e23670;
     text-shadow: 0 0 15px #E1306C;
@@ -80,6 +81,7 @@ background-size: 290rem;
 
 
 .container > sotto {
+  margin-right: 5px;
     position:relative;
     color:white;
     top:10rem;

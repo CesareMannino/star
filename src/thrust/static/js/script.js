@@ -6,11 +6,11 @@
 // electron
 var countDownDate = new Date("Nov 16, 2020 12:00:00").getTime();
 // falcon
-var countDownDate1 = new Date("Nov 5, 2020 23:24:00").getTime();
+var countDownDate1 = new Date("Nov 15, 2020 00:49:00").getTime();
 // newshepard
 var countDownDate2 = new Date("Oct 13, 2020 08:00:00").getTime();
 // spaceshiptwo
-var countDownDate3 = new Date("Oct 22, 2020 08:00:00").getTime();
+var countDownDate3 = new Date("Nov 19, 2020 12:00:00").getTime();
 
 
 
