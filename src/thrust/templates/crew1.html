@@ -1,0 +1,145 @@
+{% load static %}
+{%include "Navbar.html"%}
+
+<!doctype html>
+<html>
+    <head>
+      <script data-ad-client="ca-pub-1878005074366771" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<title>crew1</title>
+</head>
+
+
+<div id='news'>
+<div id="top_article">
+
+  <h2>Historical first operative mission for the Space CREW DRAGON capsule</h2>
+  <p>Nov 14th 2020</p>
+  <a href="{% static 'images/dragon_ramp.jpg' %}"
+          target="_blank">
+          <img class="gallery-image"
+            src="{% static 'images/dragon_ramp.jpg' %}"
+            alt="Spacex Falcon 9">
+        </a>
+</div>
+<article_description>
+    <p>Crew Dragon capsule on top of Falcon9. Credit:SpaceX</p>
+</article_description>
+
+<div id="bottom_article">
+
+  <p>Following the launch readiness review Friday, NASA and SpaceX teams continue to target a launch Sunday, Nov. 15 at 7:27 p.m. EST of NASA astronauts Michael Hopkins, Victor Glover, and Shannon Walker, and astronaut Soichi Noguchi of the Japan Aerospace Exploration Agency (JAXA) on the Crew-1 mission to the International Space Station.
+    A lift off Sunday would set the Crew Dragon on track to arrive to the orbiting laboratory on Monday, Nov. 16 at 11 p.m. NASA TV will provide more than 30 hours of continuous coverage beginning at 3:15 p.m. Sunday through the hatch opening and welcoming ceremony in the early hours of Tuesday, Nov. 17.
+    The U.S. Air Force 45th Weather Squadron predicts a 50% chance of favorable weather conditions at the launch pad for lift off of NASA’s SpaceX Crew-1 mission based on Falcon 9 Crew Dragon launch weather criteria. Teams will monitor weather conditions both for the launch area and downrange. The primary weather concerns for launch will be cumulus clouds and associated precipitation, along with electric fields from any more robust showers.
+  SOURCE: NASA
+  </p>
+
+
+  <a href="{% static 'images/astronauts.jpg' %}"
+  target="_blank">
+  <img class="gallery-image"
+    src="{% static 'images/astronauts.jpg' %}"
+    alt="Spacex Falcon 9">
+</a>
+</div>
+<div id="bottom_article">
+
+    <p>As part of the Commercial Crew Program, NASA astronauts Mike Hopkins, Victor Glover, Shannon Walker, and JAXA astronaut Soichi Noguchi will fly aboard Dragon on its first six-month operational mission to the ISS.
+      Following Dragon’s second demonstration mission (Demo-2), NASA certified SpaceX for operational crew missions to and from the space station. Crew-1 is the first of three scheduled Dragon flights over the course of 2020 and 2021.
+      The return of human spaceflight to the United States with one of the safest, most advanced systems ever built is a turning point for America’s future space exploration, and it lays the groundwork for missions to the Moon, Mars, and beyond.
+      SOURCE:SpaceX
+    </p>
+
+  </div>
+</html>
+
+<style>
+/* youtube */
+@media screen and (max-width: 700px) {
+  iframe {
+    width:340px; 
+    height:215px;
+  }
+}
+
+/* * {*/
+/*   border: 1px solid red !important;*/
+/*}*/
+
+ /* * {
+   border: 1px solid red !important;
+} */
+
+
+body {
+  overflow-x: hidden;
+    position:relative;
+    /*background-image: url(../images/about.jpg);*/
+    min-height:200rem;
+    background-color: #fafafa;
+    /*background-size: 122rem;*/
+}
+
+
+
+
+#top_article {
+  
+    margin:0 auto;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
+    color:red;
+    font-size: 1rem;
+    max-width: 40rem;
+    text-align: center;
+
+}
+
+h2{
+  background-color: black;
+}
+
+article_description {
+    position:relative;
+  font-family: 'Haettenschweiler';
+  font-weight: 1000;
+  top:-1rem;
+  text-align: center;
+
+}
+.gallery-image{
+  margin: 0 auto;
+  position: relative;
+    display: block;
+    max-width: 90%;
+    max-height: auto;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: transform 400ms ease-out;
+}
+
+#bottom_article{
+
+    margin:0 auto;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
+    font-size: 1rem;
+    max-width: 35rem;
+    text-align: center;
+}
+
+
+
+
+/* MOBILE PHONE VERSION  */
+
+
+@media screen and (max-width: 600px) { 
+ #news{
+    position: relative;
+    top:10rem;
+
+  }
+}
+
+
+</style>

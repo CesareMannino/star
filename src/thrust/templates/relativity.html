@@ -1,18 +1,25 @@
+{% load static %}
+{%include "Navbar.html"%}
+
 <!doctype html>
 <html>
     <head>
+      <script data-ad-client="ca-pub-1878005074366771" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <title>relativity</title>
 </head>
 
-{%include "Base.html"%}
 
+<div id='news'>
 <div id="top_article">
-    
-  <h2>"Relativity Space" an alternative to a "traditional" space rockets company</h2>
-  <a href="https://lh3.googleusercontent.com/DffZuoIEbHolB_KQ7ARH9lDCwimmzCv1eXqtKBRhPT45Njxnssh5aih0YTKw-ZNzc1obyj5ptEelzJ31VnkvrRkf2FfgII2tCNQzXtz88h8mP5tICHpudMNJGE7bRnQGztmFXZB_oj2nlx7kI0tqppZQbi5aqgqaDTagoMWyM7_ri4HBr5QemzHUc1gIIVqNmcQL_QV-xG7RimoIJVLm5IrNiDVpqEONbmOS5muw84DSXzItAYvHH9OtqxfNiKMNi2gaL7SCJK_sEk0bVJDabpbAvu5ciAZgqkw3fNfv65YKrFCU1pt5itorLyjxKgxFeQCaewdaRw_9CO9cXAaX3PBKyCLH0dCXWNi80tqlGZ4k-JsbcBiVJwlxQX_75qABDVI6lz5x5DNp3yOID5yx9NGmr9Xep9cAsTc5d9_QeYBA9c4eX0Tkkbzs-QR6VtykZngfB1AmfkxsG_slEFutTM-FVlBjgE3TXeorbRdY8deXDgV6H9kSt1s3VOO0hnAJpqu_vvtDRDJh95u3L8efD3pSQI0IOOwvAPzn6kbaPJQjhziIOC3QgqpmFamDNNtmvhpFdRjO98VfTY_H4ff4ukB9s_hAH6EIbYSSzyv0Lrp_tvUhrgvgDjcnaXdB3DxzVlw77kIyXjIpbMqU2cX37zjNTp5o3-9R5EStKbNrx22gFe8q2ZmZeIV3BQVD=w993-h663-no?authuser=0" target="_blank">   
-    <img class="gallery-image" src="https://lh3.googleusercontent.com/DffZuoIEbHolB_KQ7ARH9lDCwimmzCv1eXqtKBRhPT45Njxnssh5aih0YTKw-ZNzc1obyj5ptEelzJ31VnkvrRkf2FfgII2tCNQzXtz88h8mP5tICHpudMNJGE7bRnQGztmFXZB_oj2nlx7kI0tqppZQbi5aqgqaDTagoMWyM7_ri4HBr5QemzHUc1gIIVqNmcQL_QV-xG7RimoIJVLm5IrNiDVpqEONbmOS5muw84DSXzItAYvHH9OtqxfNiKMNi2gaL7SCJK_sEk0bVJDabpbAvu5ciAZgqkw3fNfv65YKrFCU1pt5itorLyjxKgxFeQCaewdaRw_9CO9cXAaX3PBKyCLH0dCXWNi80tqlGZ4k-JsbcBiVJwlxQX_75qABDVI6lz5x5DNp3yOID5yx9NGmr9Xep9cAsTc5d9_QeYBA9c4eX0Tkkbzs-QR6VtykZngfB1AmfkxsG_slEFutTM-FVlBjgE3TXeorbRdY8deXDgV6H9kSt1s3VOO0hnAJpqu_vvtDRDJh95u3L8efD3pSQI0IOOwvAPzn6kbaPJQjhziIOC3QgqpmFamDNNtmvhpFdRjO98VfTY_H4ff4ukB9s_hAH6EIbYSSzyv0Lrp_tvUhrgvgDjcnaXdB3DxzVlw77kIyXjIpbMqU2cX37zjNTp5o3-9R5EStKbNrx22gFe8q2ZmZeIV3BQVD=w993-h663-no?authuser=0"
-    alt="relativity space">
-</a>
+
+  <h2>"Relativity Space" is an alternative to a "traditional" space rocket company</h2>
+  <a href="{% static 'images/relativity.jpg' %}"
+          target="_blank">
+          <img class="gallery-image"
+            src="{% static 'images/relativity.jpg' %}"
+            alt="Spacex Falcon 9">
+        </a>
 </div>
 <article_description>
     <p>Stargate 3D printer at work</p>
@@ -20,31 +27,56 @@
 
 <div id="bottom_article">
 
-  <p>Relativity Space is a private American aerospace manufacturer company headquartered in Los Angeles, California.
-     It was founded in 2015 by Tim Ellis and Jordan Noone. Relativity is developing manufacturing technologies, 
-     launch vehicles and rocket engines for commercial orbital launch services. 
+  <p>Relativity Space is a private American aerospace manufacturing company which has its headquarters in Los Angeles, California.
+     It was founded in 2015 by Tim Ellis and Jordan Noone. Relativity Space is developing manufacturing technologies,
+     launch vehicles and rocket engines for commercial orbital launch services.
   </p>
 
-  
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/2Fp_aMCR468" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 <div id="bottom_article">
 
-    <p>Things are getting more realistic when in June 2020, Relativity announced that they signed a new launch contract waith Iridium. 
-        This contract included up to six dedicated launches to deploy ground spare satellites to LEO(Low Earth Orbit) for Iridium NEXT’s constellation on Relativity’s Terran 1 vehicle.
-         According to Suzi McBride, Iridium's COO, the satellite communication provider chose to partner with Relativity because of their flexible launch capability and the company's ability to launch one satellite at a time.[17] According to the deal these launches will not begin earlier than 2023.[17]
+    <p>Things became more realistic in June 2020, when Relativity Space announced that they signed a new launch contract with Iridium.
+        This contract included up to six dedicated launches to deploy spare satellites to LEO(Low Earth Orbit) for Iridium NEXT’s constellation on Relativity Space' Terran 1 vehicle.
+         According to Suzi McBride, Iridium's COO, the satellite communication provider chose to partner with Relativity Space because of their flexible launch capability and the company's ability to launch one satellite at a time. According to the deal these launches will not begin earlier than 2023.
     </p>
+
+  </div>
 </html>
 
 <style>
+/* youtube */
+@media screen and (max-width: 700px) {
+  iframe {
+    width:340px; 
+    height:215px;
+  }
+}
 
-/* * {
+/* * {*/
+/*   border: 1px solid red !important;*/
+/*}*/
+
+ /* * {
    border: 1px solid red !important;
 } */
-    
+
+
+body {
+  overflow-x: hidden;
+    position:relative;
+    /*background-image: url(../images/about.jpg);*/
+    min-height:100rem;
+    background-color: #fafafa;
+    /*background-size: 122rem;*/
+}
+
+
 
 
 #top_article {
+  
     margin:0 auto;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
     color:red;
@@ -54,28 +86,30 @@
 
 }
 
-article_description{
+article_description {
     position:relative;
-  font-family: 'Haettenschweiler'; 
+  font-family: 'Haettenschweiler';
   font-weight: 1000;
   top:-1rem;
   text-align: center;
 
 }
 .gallery-image{
+  margin: 0 auto;
+  position: relative;
     display: block;
-    max-width: 100%;
+    max-width: 90%;
     max-height: auto;
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    background-size: cover; 
+    background-size: cover;
     transition: transform 400ms ease-out;
 }
 
 #bottom_article{
 
     margin:0 auto;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif'; 
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
     font-size: 1rem;
     max-width: 35rem;
     text-align: center;
@@ -83,6 +117,17 @@ article_description{
 
 
 
+
+/* MOBILE PHONE VERSION  */
+
+
+@media screen and (max-width: 600px) { 
+ #news{
+    position: relative;
+    top:10rem;
+
+  }
+}
+
+
 </style>
-
-

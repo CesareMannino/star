@@ -30,3 +30,7 @@ def About_view(request,*args,**kwargs):
 def Contact_view(request,*args,**kwargs):
     return render(request,"contact.html",{})
 
+def crew1_view(request,*args,**kwargs):
+    return render(request,"crew1.html",{})
+
+

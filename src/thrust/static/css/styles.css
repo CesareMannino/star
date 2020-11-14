@@ -12,6 +12,13 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
  } */
 
 
+ /* ALL ANCHOR TAG COLOR WHITE */
+a{
+  color:white;
+  font-family: 'Orbitron','Haettenschweiler';
+  font-size: 25px;
+}
+
    @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 
  @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
@@ -30,18 +37,22 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
    } */
   
    body {
-  
-     
-  
-    overflow-x:hidden ;
+
     min-height: 390rem;
     background-color: #000;
-    background-image: url(../images/background.jpeg);
     position:relative;
     background-size: 300vw;
-
+overflow-x: hidden;
   }
 
+
+  @media screen and (min-width: 900px) {
+    body {
+     background-image: url(../images/background.jpeg);
+    }
+  }
+  
+   
 
 /* top image of the home page */
     #top {
@@ -60,7 +71,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
     /* z-index:100; */
    }
 
-   
+   /* top date */
    #top ul{
      position:relative;
      margin-left:-45px;
@@ -80,7 +91,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
      font-size: 20px;
 
    }
-/* TITLE OF THE PAGE */
+/* TITLE OF THE PAGE UPCOMING LAUNCHES */
     body ciao{
     display: flex;
     justify-content: center;
@@ -106,7 +117,146 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
     text-shadow: 0 0 15px #E1306C;
   }
 
-/* all icon of the space company */
+/* rocket windows flex */
+.gallery {
+
+  display: flex;
+  flex-wrap: wrap;
+  /* Compensate for excess margin on outer gallery flex items */
+  margin: -1rem -1rem;
+
+}
+
+/*   to adjust the resize of the image play with the minmax value */
+/* grid of the rocket */
+@supports (display: grid) {
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    grid-gap: 1rem;
+    /* padding:0 0 9vh 0; */
+    margin:0 auto;
+
+
+  }
+}
+
+
+.gallery-item {
+  /* Minimum width of 24rem and grow to fit available space */
+  flex: 1 0 24rem;
+  background-color:rgb(255, 255, 255);
+  /* Margin value should be half of grid-gap value as margins on flex items don't collapse */
+  margin:-14rem 0.5rem 14rem 0.9rem;
+  box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+  border-style: groove;
+  border-color:#e428fc;
+  font-family: 'bangers';
+/*     overflow: hidden; */
+  /* object-fit: cover; */
+  /* border-radius: 10%;  */
+
+}
+/* live note */
+.livenote h3{
+position:inherit;
+margin:0 auto;
+/* left:0.2rem; */
+font-size:20px;
+font-family: 'bangers';
+/* background-color:grey ; */
+/* border-radius: 10%; */
+/* width: 45rem; */
+/* padding:4px; */
+text-align: center;
+
+/* color:white; */
+
+}
+
+
+
+
+
+
+.gallery-image {
+  margin:10px auto;
+  /* margin-left: 1.9rem; */
+  display: block;
+  max-width: 90%;
+  max-height: auto;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: transform 400ms ease-out;
+  border-radius: 4%;
+}
+
+
+
+.gallery-image:hover {
+  transform: scale(1.03);
+}
+
+/*
+
+The following rule will only run if your browser supports CSS grid.
+
+Remove or comment-out the code block below to see how the browser will fall-back to flexbox styling.
+
+*/
+
+
+
+  /* COUNTDOWN */
+/* #electron {
+  font-family: 'Orbitron','Haettenschweiler' ;
+  font-weight: bolder;
+ text-align: center;
+ font-size: 38px;
+ margin-top: 0px;
+ color:red;
+} */
+
+.countdown {
+ font-family: 'Orbitron','Haettenschweiler' ;
+ /* font-weight: bolder; */
+text-align: center;
+font-size: 35px;
+margin-top: 0px;
+color:red;
+}
+
+
+/* @media screen and (min-width: 600px) {
+.countdown {
+ font-size: 30px;
+}
+} */
+
+/* 
+#newshepard {
+ font-family: 'Orbitron','Haettenschweiler' ;
+ font-weight: bolder;
+text-align: center;
+font-size: 38px;
+margin-top: 0px;
+color:red;
+}
+
+
+#spaceshiptwo {
+ font-family: 'Orbitron','Haettenschweiler' ;
+ font-weight: bolder;
+text-align: center;
+font-size: 38px;
+margin-top: 0px;
+color:red;
+}
+*/
+
+
+/* NAMES OF SPACE COMPANIES */
 #companyname{
 
     position:relative;
@@ -118,289 +268,381 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
     
 }
 
+   /* youtube video launch */
+  
+  .videoWrapper {
+   position: relative;
+   padding-bottom: 56.25%; /* 16:9 */
+   height: 0;
+   /* margin:0 a; */
+ }
+ .videoWrapper iframe {
+   
+   position: absolute;
+   top: 0;
+   left: 1rem;
+   width: 90%;
+   height: 90%;
+ }
 
-.virgingalactic{
 
-  position:relative;
-  height:5rem;
-  margin: 10px 10px;
-  /* border-radius: %; */
-  font-family: 'bangers';
+ /* news windows flex fallback */
+/* .news {
+
+  display: flex;
+  flex-wrap: wrap;
+} */
+
+ 
+/* the whole news block */
+ .grid_news{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(0px, auto);
+  margin: 0 20px 0 30px;
+  text-align: center;
+  /* gap: 1em 20px; */
+}
+
+@media screen and (max-width: 600px) {
+  .grid_news{
+    grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
+    grid-gap: 1rem;
+
+  }
+}
+
+ 
+/* grid and div of the news */
+ /* @supports (display: grid) {
+  .news {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    grid-gap: 0rem;
+  }
+} */
+
+.gallery-image-news1{
+  max-width: 100%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+    
   
 }
 
-/* .icon_electron div{
-   position: relative;
-  left:100px;
-} */
 
 
-/* MOBILE VERSION */
 
-@media screen and (max-width: 600px) {
-  #top {
-    display:none;
-  }
-}
-
-
-@media screen and (max-width: 600px) {
-  ciao icon {
-    top:5.9rem;
-    /* margin-top: -6rem; */
-color: #e23670;
-text-shadow: 0 0 15px #E1306C;
-  }
+.gallery-item-news1 {
+  
+  /* flex: 1 0 24rem;
+  background-color:black;
+  
+  margin:0rem 0rem 0rem 0rem;
+  
+  border-style:solid;
+  border-color:#e428fc;
+  font-family: 'bangers'; */
+  grid-column: 1;
+  grid-row: 2 / 3;
+  border:2px solid;
+    border-color:#e428fc;
+    background-color: #000;
+    max-height: 35rem;
+    
  
 }
 
-
-
-/* @media screen and (max-width: 600px) {
-  body html{
-    background-position: 50% 50%;
-    background-size: 200rem;
-    overflow-x: hidden;
-    background-repeat: no-repeat;
-    margin:0 auto;
-
+@media screen and (max-width: 600px) {
+  .grid_news,
+  .gallery-item-news1 ,.gallery-item-news2,.gallery-item-news3,.gallery-item-news4 {
+    border:2px solid;
+    border-color:#e428fc;
+    background-color: #000;
   }
+  }
+
+
+
+
+.gallery-image-news2{
+ 
+  
+  max-width: 100%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+    
+    
+  }
+
+  .gallery-item-news2 {
+   
+    /* flex: 1 0 24rem;
+    background-color:black;
+    
+    margin:0rem 0rem 0rem 0rem;
+    
+    border-style:solid;
+    border-color:#e428fc;
+    font-family: 'bangers'; */
+    /* grid-column: 3 ;
+   grid-row: 1 / 8; */
+   border:2px solid;
+    border-color:#e428fc;
+    background-color: black;
+   
+  }
+
+
+
+  
+  .gallery-image-news3{
+   
+    
+    max-width: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+      
+      
+    }
+
+    
+    .gallery-item-news3 {
+   
+      /* flex: 1 0 24rem;
+      background-color:black;
+      
+      margin:0rem 0rem 0rem 0rem;
+      
+      border-style:solid;
+      border-color:#e428fc;
+      font-family: 'bangers'; */
+      /* grid-column: 2 ;
+   grid-row: 1 / 8 ; */
+   border:2px solid;
+    border-color:#e428fc;
+    background-color: black;
+     
+    }
+  
+
+    
+    .gallery-image-news4{
+     
+      
+      max-width: 100%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+        
+        
+      }
+
+      .gallery-item-news4 {
+   
+        /* flex: 1 0 24rem;
+        background-color:black;
+        
+        margin:0rem 0rem 0rem 0rem;
+        
+        border-style:solid;
+        border-color:#e428fc;
+        font-family: 'bangers'; */
+        /* grid-column: 2 / 4; */
+        border:2px solid;
+    border-color:#e428fc;
+    background-color: black;
+        
+      }
+  
+
+      .gallery-image-news5{
+     
+      
+        max-width: 100%;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+          
+          
+        }
+  
+        .gallery-item-news5 {
+     
+          /* flex: 1 0 24rem;
+          background-color:black;
+          
+          margin:0rem 0rem 0rem 0rem;
+          
+          border-style:solid;
+          border-color:#e428fc;
+          font-family: 'bangers'; */
+          /* grid-column: 2 / 4; */
+          border:2px solid;
+      border-color:#e428fc;
+      background-color: black;
+          
+        }
+
+
+
+        .gallery-image-news6{
+     
+      
+          max-width: 100%;
+          background-position: 50% 50%;
+          background-repeat: no-repeat;
+          background-size: cover;
+            
+            
+          }
+    
+          .gallery-item-news6 {
+       
+            /* flex: 1 0 24rem;
+            background-color:black;
+            
+            margin:0rem 0rem 0rem 0rem;
+            
+            border-style:solid;
+            border-color:#e428fc;
+            font-family: 'bangers'; */
+            /* grid-column: 2 / 4; */
+            border:2px solid;
+        border-color:#e428fc;
+        background-color: black;
+            
+          }
+  
+
+/* bottom part of the new */
+
+
+
+.top_text1 {
+  margin:5rem auto 5rem auto;
+  position: relative;
+  text-align: center;
+  background-color: black;
+  
+  
+  
+}
+
+
+.top_text2{
+  margin:5rem auto 5rem auto;
+  position: relative;
+  text-align: center;
+  background-color: black;
+  font-family: 'Orbitron','Haettenschweiler';
+  
+}
+
+.top_text3{
+  margin:5rem auto 5rem auto;
+  position: relative;
+  text-align: center;
+  background-color: black;
+  
+}
+
+.top_text4{
+  margin:5rem auto 5rem auto;
+  position: relative;
+  text-align: center;
+  background-color: black;
+  
+} 
+
+.top_text5{
+  margin:5rem auto 5rem auto;
+  position: relative;
+  text-align: center;
+  background-color: black;
+  
+} 
+
+
+
+
+/* .bottom_text{
+  position:inherit;
+  font-family: 'Haettenschweiler';
+  margin:1rem auto -1.1rem auto;
+  text-align:center;
 } */
 
-@media screen and (max-width: 600px) {
-  div.gallery-item {
-    /* Minimum width of 24rem and grow to fit available space */
-    
-    flex: 1 0 24rem;
-    background-color:rgb(255, 255, 255);
-    /* Margin value should be half of grid-gap value as margins on flex items don't collapse */
-    margin:14rem 0.5rem 1rem 0.5rem;
-    box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
-    border-style: groove;
-    border-color:#e428fc;
-    font-family: 'bangers';
 
 
-  }
-}
 
 
-@media screen and (max-width: 450px) {
-  ciao icon{
-    font-size: 40px;
-  }
-}
-
-
- /* div of the news */
-
- .top_text{
-   position:static;
-   /* top:5rem; */
-   font-family: 'Haettenschweiler';
-   background-color:white;
-   height:12rem;
-   margin:12rem 1rem 0 1rem;
-   text-align:center;
-   max-width: 100%;
-   
- }
-
- /* Picture descritption  */
- description {
+/* Picture descritption  */
+ /* description {
    position:relative;
    font-family: 'Haettenschweiler';
    font-weight: 1000;
    top:2rem;
    font-size: 19px;
- }
 
- /* bottom part of the new */
+ } */
 
- .bottom_text{
-   position:inherit;
-   font-family: 'Haettenschweiler';
-   margin:1rem auto -1.1rem auto;
-   padding:1rem;
-   text-align:center;
-   background:white;
- }
-
+ 
   /* .news h1 {
    position: inherit;
    background:white;
    text-align:center;
  } */
 
- /* unvisited link */
+ /* unvisited link
  .top_text:link {
    color:red;
  }
 
  /* visited link */
- .top_text:visited {
+ /* .top_text:visited {
    color: green;
- }
+ } */
 
  /* mouse over link */
- .top_text:hover {
+ /* .top_text:hover {
    color: black;
- }
+ } */
 
  /* selected link */
- .top_text:active {
+ /* .top_text:active {
    color: blue;
- }
+ }  */
 
 
 
-   .gallery {
-
-     display: flex;
-     flex-wrap: wrap;
-     /* Compensate for excess margin on outer gallery flex items */
-     margin: -1rem -1rem;
-
-
-     /* youtube video launch */
-   }
-   .videoWrapper {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
-    height: 0;
-    /* margin:0 a; */
-  }
-  .videoWrapper iframe {
-    
-    position: absolute;
-    top: 0;
-    left: 1rem;
-    width: 90%;
-    height: 90%;
-  }
-  
-
-   .gallery-item {
-     /* Minimum width of 24rem and grow to fit available space */
-     flex: 1 0 24rem;
-     background-color:rgb(255, 255, 255);
-     /* Margin value should be half of grid-gap value as margins on flex items don't collapse */
-     margin:-14rem 0.5rem 14rem 0.5rem;
-     box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
-     border-style: groove;
-     border-color:#e428fc;
-     font-family: 'bangers';
- /*     overflow: hidden; */
-     /* object-fit: cover; */
-     /* border-radius: 10%;  */
-
-   }
-/* live note */
-.livenote h3{
-  position:inherit;
-  margin:0 auto;
-  /* left:0.2rem; */
-  font-size:20px;
-  font-family: 'bangers';
-  /* background-color:grey ; */
-  /* border-radius: 10%; */
-  /* width: 45rem; */
-  /* padding:4px; */
-  text-align: center;
-  
-  /* color:white; */
-
-}
-
-
-
-   .gallery-image {
-     margin:10px auto;
-     /* margin-left: 1.9rem; */
-     display: block;
-     max-width: 90%;
-     max-height: auto;
-     background-position: 50% 50%;
-     background-repeat: no-repeat;
-     background-size: cover;
-     transition: transform 400ms ease-out;
-     border-radius: 4%;
-   }
-
-
-
-   .gallery-image:hover {
-     transform: scale(1.03);
-   }
-
-   /*
-
-   The following rule will only run if your browser supports CSS grid.
-
-   Remove or comment-out the code block below to see how the browser will fall-back to flexbox styling.
-
-   */
- /*   to adjust the resize of the image play with the minmax value */
-   @supports (display: grid) {
-     .gallery {
-       display: grid;
-       grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
-       grid-gap: 6rem;
-       /* padding:0 0 9vh 0; */
-       margin:0 auto;
-       /* overflow:hidden; */
-
-     }
-   }
-
-
-
-     /* COUNTDOWN */
-   /* #electron {
-     font-family: 'Orbitron','Haettenschweiler' ;
-     font-weight: bolder;
-    text-align: center;
-    font-size: 38px;
-    margin-top: 0px;
-    color:red;
-  } */
-
-  .countdown {
-    font-family: 'Orbitron','Haettenschweiler' ;
-    /* font-weight: bolder; */
-   text-align: center;
-   font-size: 35px;
-   margin-top: 0px;
-   color:red;
- }
 
  
- /* @media screen and (min-width: 600px) {
-  .countdown {
-    font-size: 30px;
-  }
+
+/* Picture descritption  */
+/* description {
+  position:relative;
+  font-family: 'Haettenschweiler';
+  font-weight: 1000;
+  top:2rem;
+  font-size: 19px;
 } */
 
+/* bottom part of the new */
 /* 
-  #newshepard {
-    font-family: 'Orbitron','Haettenschweiler' ;
-    font-weight: bolder;
-   text-align: center;
-   font-size: 38px;
-   margin-top: 0px;
-   color:red;
- }
+.bottom{
+  position:inherit;
+  font-family: 'Haettenschweiler';
+  margin:1rem auto -1.1rem auto;
+  padding:1rem;
+  text-align:center;
+  background:white;
+}
+  */
 
-
-  #spaceshiptwo {
-    font-family: 'Orbitron','Haettenschweiler' ;
-    font-weight: bolder;
-   text-align: center;
-   font-size: 38px;
-   margin-top: 0px;
-   color:red;
- }
- */
 
 
     .css-typing-electron  p {
@@ -998,28 +1240,64 @@ text-shadow: 0 0 15px #E1306C;
      }
    }
 
-   /* h1 {
-     font-family: 'Gotham', sans-serif;
-     font-size: 26px;
-     color: black;
-     line-height: 1.1em;
-     margin-bottom: 0px;
-   } */
+  
 
-   /* see all */
-   /* .cta {
-     display: block;
-     margin-left: 10px;
-   }
 
-   a # {
-     font-family: "Gotham", sans-serif;
-     font-size: 14px;
-     font-weight: bold;
-     color: #3cb3e3;
-     line-height: 1.1em;
-     margin-bottom: 20px;
-     text-decoration: none;
-     border-bottom: 1px solid #3cb3e3;
-   } */
+
+
+/* MOBILE VERSION */
+
+@media screen and (max-width: 600px) {
+  #top {
+    display:none;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  ciao icon {
+    top:5.9rem;
+    /* margin-top: -6rem; */
+color: #e23670;
+text-shadow: 0 0 15px #E1306C;
+  }
+ 
+}
+
+
+
+/* @media screen and (max-width: 600px) {
+  body html{
+    background-position: 50% 50%;
+    background-size: 200rem;
+    overflow-x: hidden;
+    background-repeat: no-repeat;
+    margin:0 auto;
+
+  }
+} */
+
+@media screen and (max-width: 600px) {
+  div.gallery-item {
+    /* Minimum width of 24rem and grow to fit available space */
+    
+    flex: 1 0 24rem;
+    background-color:rgb(255, 255, 255);
+    /* Margin value should be half of grid-gap value as margins on flex items don't collapse */
+    margin:14rem 0.5rem 1rem 0.5rem;
+    box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+    border-style: groove;
+    border-color:#e428fc;
+    font-family: 'bangers';
+
+
+  }
+}
+
+
+@media screen and (max-width: 450px) {
+  ciao icon{
+    font-size: 40px;
+  }
+}
 
