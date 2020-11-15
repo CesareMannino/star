@@ -4,7 +4,7 @@
 // all times need to be insert in UTC
 
 // electron
-var countDownDate = new Date("Nov 16, 2020 01:34:00").getTime();
+var countDownDate = new Date("Nov 19, 2020 01:44:00").getTime();
 // falcon
 var countDownDate1 = new Date("Nov 16, 2020 00:27:00").getTime();
 // newshepard

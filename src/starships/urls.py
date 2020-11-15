@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from thrust.sitemaps import StaticViewSitemap
 from django.contrib.sitemaps.views import sitemap
-from thrust.views import home_view, Falcon9_view, Electron_view, New_Shepard_view, News_view, Relativity_view, About_view, Contact_view,crew1_view
+from thrust.views import home_view, Falcon9_view, Electron_view, New_Shepard_view, News_view, Relativity_view, About_view, Contact_view,crew1_view, starship_view
 
 sitemaps = {
     'static': StaticViewSitemap
@@ -40,5 +40,6 @@ urlpatterns = [
     path('about/',About_view),
     path('contact/',Contact_view),
     path('crew1/', crew1_view),
+    path('starship/', starship_view)
 
 ]

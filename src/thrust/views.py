@@ -33,4 +33,6 @@ def Contact_view(request,*args,**kwargs):
 def crew1_view(request,*args,**kwargs):
     return render(request,"crew1.html",{})
 
+def starship_view(request,*args,**kwargs):
+    return render(request,"starship.html",{})
 
