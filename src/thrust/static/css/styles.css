@@ -38,7 +38,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
   
    body {
 
-    min-height: 390rem;
+    min-height: 470rem;
     background-color: #000;
     position:relative;
     background-size: 300vw;
@@ -456,6 +456,7 @@ color:red;
         border:2px solid;
     border-color:#e428fc;
     background-color: black;
+    max-height: 26rem;
         
       }
   
@@ -523,17 +524,18 @@ color:red;
 
 
 
-.top_text1 {
+.bottom_text {
   margin:5rem auto 5rem auto;
   position: relative;
   text-align: center;
   background-color: black;
+  font-family: 'Orbitron','Haettenschweiler';
   
   
   
 }
 
-
+/* 
 .top_text2{
   margin:5rem auto 5rem auto;
   position: relative;
@@ -565,7 +567,7 @@ color:red;
   text-align: center;
   background-color: black;
   
-} 
+}  */
 
 
 

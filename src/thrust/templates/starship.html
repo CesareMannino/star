@@ -13,54 +13,90 @@
 <div id='news'>
 <div id="top_article">
 
-  <h2>Spacex starship</h2>
-  <p>Nov 14th 2020</p>
-  <a href="{% static 'images/dragon_ramp.jpg' %}"
+  <h2>Spacex STARSHIP update</h2>
+  <p>Nov 17th 2020</p>
+  <a href="{% static 'images/starship.jpg' %}"
           target="_blank">
           <img class="gallery-image"
-            src="{% static 'images/dragon_ramp.jpg' %}"
+            src="{% static 'images/starship.jpg' %}"
             alt="Spacex Falcon 9">
         </a>
 </div>
-<article_description>
-    <p>Crew Dragon capsule on top of Falcon9. Credit:SpaceX</p>
-</article_description>
+<pics_description>
+    <p>Starship SN8 credit:@austinbarnard45</p>
+  </pics_description>
+
+    
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr"></p>&mdash; <a href="https://twitter.com/elonmusk/status/1327090548478414850?ref_src=twsrc%5Etfw"></a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <div id="bottom_article">
 
-  <p>Following the launch readiness review Friday, NASA and SpaceX teams continue to target a launch Sunday, Nov. 15 at 7:27 p.m. EST of NASA astronauts Michael Hopkins, Victor Glover, and Shannon Walker, and astronaut Soichi Noguchi of the Japan Aerospace Exploration Agency (JAXA) on the Crew-1 mission to the International Space Station.
-    A lift off Sunday would set the Crew Dragon on track to arrive to the orbiting laboratory on Monday, Nov. 16 at 11 p.m. NASA TV will provide more than 30 hours of continuous coverage beginning at 3:15 p.m. Sunday through the hatch opening and welcoming ceremony in the early hours of Tuesday, Nov. 17.
-    The U.S. Air Force 45th Weather Squadron predicts a 50% chance of favorable weather conditions at the launch pad for lift off of NASA’s SpaceX Crew-1 mission based on Falcon 9 Crew Dragon launch weather criteria. Teams will monitor weather conditions both for the launch area and downrange. The primary weather concerns for launch will be cumulus clouds and associated precipitation, along with electric fields from any more robust showers.
-  SOURCE: NASA
+  <p>
+    A few days ago, SpaceX carried out its third static fire test on its Starship SN8 prototype. 
+    The test saw the rocket as if it were about to launch, so the engines were turned on for a few seconds while the spacecraft remained attached to the ground. Unfortunately, unlike the other two static fire tests, this time there were problems.
+  </p>
+
+  <blockquote class="twitter-tweet"><p lang="en" dir="ltr">About 2 secs after starting engines, martyte covering concrete below shattered, sending blades of hardened rock into engine bay. One rock blade severed avionics cable, causing bad shutdown of Raptor.</p>&mdash; Elon Musk (@elonmusk) <a href="https://twitter.com/elonmusk/status/1328742122107904000?ref_src=twsrc%5Etfw">November 17, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+  <p>
+    As per Elon Musk: "About 2 secs after starting engines, martyte covering concrete below shattered, 
+    sending blades of hardened rock into engine bay. One rock blade severed avionics cable, causing bad shutdown of Raptor."
   </p>
 
 
-  <a href="{% static 'images/astronauts.jpg' %}"
+  <a href="{% static 'images/3raptor.jpeg' %}"
   target="_blank">
   <img class="gallery-image"
-    src="{% static 'images/astronauts.jpg' %}"
+    src="{% static 'images/3raptor.jpeg' %}"
     alt="Spacex Falcon 9">
 </a>
 </div>
 <div id="bottom_article">
-
-    <p>As part of the Commercial Crew Program, NASA astronauts Mike Hopkins, Victor Glover, Shannon Walker, and JAXA astronaut Soichi Noguchi will fly aboard Dragon on its first six-month operational mission to the ISS.
-      Following Dragon’s second demonstration mission (Demo-2), NASA certified SpaceX for operational crew missions to and from the space station. Crew-1 is the first of three scheduled Dragon flights over the course of 2020 and 2021.
-      The return of human spaceflight to the United States with one of the safest, most advanced systems ever built is a turning point for America’s future space exploration, and it lays the groundwork for missions to the Moon, Mars, and beyond.
-      SOURCE:SpaceX
+<pics_description>
+  <p>Starship SN8 3 raptor engines credit:Elon Musk</p>
+</pics_description>
+    <p>
+      Starship SN8 prototype is powered by 3 raptor engines. 
+      During the last test one of these thrusters was damaged.
+        
     </p>
+
+    <div id="bottom">
+        <a href="{% static 'images/sn32.jpg' %}"
+        target="_blank">
+        <img class="gallery-image"
+          src="{% static 'images/sn32.jpg' %}"
+          alt="Spacex Falcon 9">
+      </a>
+    
+      <pics_description>
+        <p>Damaged raptor engine. Credit:@austinbarnard45</p>
+      </pics_description>
+          <p>
+    </div>
+<p>As per last <a href= https://youtu.be/O5mdkLAj8EQ?t=149>video</a> update a new Raptor engine SN42 as been installed to replace the damaged one.
+</p>
+
 
   </div>
 </html>
 
 <style>
 /* youtube */
-@media screen and (max-width: 700px) {
+/* @media screen and (max-width: 700px) {
   iframe {
     width:340px; 
     height:215px;
   }
+} */
+
+/* tiwtter */
+.twitter-tweet{
+    margin:0 auto;
+
 }
+
 
 /* * {*/
 /*   border: 1px solid red !important;*/
@@ -75,7 +111,7 @@ body {
   overflow-x: hidden;
     position:relative;
     /*background-image: url(../images/about.jpg);*/
-    min-height:200rem;
+    min-height:400rem;
     background-color: #fafafa;
     /*background-size: 122rem;*/
 }
@@ -98,7 +134,7 @@ h2{
   background-color: black;
 }
 
-article_description {
+pics_description {
     position:relative;
   font-family: 'Haettenschweiler';
   font-weight: 1000;

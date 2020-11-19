@@ -36,3 +36,7 @@ def crew1_view(request,*args,**kwargs):
 def starship_view(request,*args,**kwargs):
     return render(request,"starship.html",{})
 
+
+def rocketlab_view(request,*args,**kwargs):
+    return render(request,"rocketlab.html",{})
+
