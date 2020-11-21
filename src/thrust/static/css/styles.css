@@ -46,6 +46,8 @@ overflow-x: hidden;
   }
 
 
+
+
   @media screen and (min-width: 900px) {
     body {
      background-image: url(../images/background.jpeg);
@@ -157,6 +159,10 @@ overflow-x: hidden;
   /* border-radius: 10%;  */
 
 }
+
+/* .twitter{
+  max-height: 1rem;
+} */
 /* live note */
 .livenote h3{
 position:inherit;
