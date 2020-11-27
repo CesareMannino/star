@@ -35,6 +35,67 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
    *, *:before, *:after {
      box-sizing: inherit;
    } */
+
+/* MOBILE VERSION */
+
+@media screen and (max-width: 600px) {
+  #top {
+    display:none;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  ciao icon {
+    top:5.9rem;
+    /* margin-top: -6rem; */
+color: #e23670;
+text-shadow: 0 0 15px #E1306C;
+  }
+ 
+}
+
+
+
+/* @media screen and (max-width: 600px) {
+  body html{
+    background-position: 50% 50%;
+    background-size: 200rem;
+    overflow-x: hidden;
+    background-repeat: no-repeat;
+    margin:0 auto;
+
+  }
+} */
+
+@media screen and (max-width: 600px) {
+  div.gallery-item {
+    /* Minimum width of 24rem and grow to fit available space */
+    
+    flex: 1 0 24rem;
+    background-color:rgb(255, 255, 255);
+    /* Margin value should be half of grid-gap value as margins on flex items don't collapse */
+    margin:14rem 2.3rem 1.2rem 2.3rem;
+    box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+    border-style: groove;
+    border-color:#e428fc;
+    font-family: 'bangers';
+
+
+  }
+}
+
+
+
+@media screen and (max-width: 450px) {
+  ciao icon{
+    font-size: 40px;
+  }
+}
+
+
+
+
   
    body {
 
@@ -42,7 +103,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
     background-color: #000;
     position:relative;
     background-size: 300vw;
-overflow-x: hidden;
+/* overflow-x: hidden; */
   }
 
 
@@ -307,6 +368,7 @@ color:red;
   grid-auto-rows: minmax(0px, auto);
   margin: 0 20px 0 30px;
   text-align: center;
+  grid-gap: 1rem;
   /* gap: 1em 20px; */
 }
 
@@ -328,64 +390,35 @@ color:red;
   }
 } */
 
-.gallery-image-news1{
-  max-width: 100%;
+.gallery-image-news{
+  margin: 1rem  1rem 0rem;
+  max-width: 70%;
+  /* max-height: min-content; */
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
     
-  
 }
 
 
 
 
-.gallery-item-news1 {
-  
-  /* flex: 1 0 24rem;
-  background-color:black;
-  
-  margin:0rem 0rem 0rem 0rem;
-  
-  border-style:solid;
-  border-color:#e428fc;
-  font-family: 'bangers'; */
-  grid-column: 1;
-  grid-row: 2 / 3;
-  border:2px solid;
-    border-color:#e428fc;
-    background-color: #000;
-    max-height: 35rem;
-    
- 
-}
 
-@media screen and (max-width: 600px) {
+
+/* @media screen and (max-width: 600px) {
   
-  .gallery-item-news1 ,.gallery-item-news2,.gallery-item-news3,.gallery-item-news4 {
+  .gallery-item-news1 {
     border:2px solid;
     border-color:#e428fc;
     background-color: #000;
     margin:2rem 2rem 0 1rem;
   }
-  }
+  } */
 
 
 
-
-.gallery-image-news2{
- 
+  .gallery-item-news1 {
   
-  max-width: 100%;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
-    
-    
-  }
-
-  .gallery-item-news2 {
-   
     /* flex: 1 0 24rem;
     background-color:black;
     
@@ -394,8 +427,32 @@ color:red;
     border-style:solid;
     border-color:#e428fc;
     font-family: 'bangers'; */
+    grid-column: 1;
+    grid-row: 2 / 3;
+    border:2px solid;
+      border-color:#e428fc;
+      background-color: #000;
+      max-height: 35rem;
+      
+   
+  }
+
+
+  .gallery-item-news2 {
+   
+    /* flex: 1 0 24rem;
+    background-color:black;
+    
+    
+    
+    border-style:solid;
+    border-color:#e428fc;
+    font-family: 'bangers'; */
     /* grid-column: 3 ;
    grid-row: 1 / 8; */
+   
+   max-width: 100%;
+   /* height: 70%; */
    border:2px solid;
     border-color:#e428fc;
     background-color: black;
@@ -405,16 +462,7 @@ color:red;
 
 
   
-  .gallery-image-news3{
-   
-    
-    max-width: 100%;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-      
-      
-    }
+
 
     
     .gallery-item-news3 {
@@ -429,6 +477,7 @@ color:red;
       font-family: 'bangers'; */
       /* grid-column: 2 ;
    grid-row: 1 / 8 ; */
+   max-width:100%;
    border:2px solid;
     border-color:#e428fc;
     background-color: black;
@@ -437,16 +486,7 @@ color:red;
   
 
     
-    .gallery-image-news4{
-     
-      
-      max-width: 100%;
-      background-position: 50% 50%;
-      background-repeat: no-repeat;
-      background-size: cover;
-        
-        
-      }
+   
 
       .gallery-item-news4 {
    
@@ -467,16 +507,7 @@ color:red;
       }
   
 
-      .gallery-image-news5{
-     
       
-        max-width: 100%;
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-        background-size: cover;
-          
-          
-        }
   
         .gallery-item-news5 {
      
@@ -489,6 +520,7 @@ color:red;
           border-color:#e428fc;
           font-family: 'bangers'; */
           /* grid-column: 2 / 4; */
+          max-width:100%;
           border:2px solid;
       border-color:#e428fc;
       background-color: black;
@@ -496,17 +528,6 @@ color:red;
         }
 
 
-
-        .gallery-image-news6{
-     
-      
-          max-width: 100%;
-          background-position: 50% 50%;
-          background-repeat: no-repeat;
-          background-size: cover;
-            
-            
-          }
     
           .gallery-item-news6 {
        
@@ -531,7 +552,7 @@ color:red;
 
 
 .bottom_text {
-  margin:5rem auto 5rem auto;
+  margin:5rem 0 5rem 0;
   position: relative;
   text-align: center;
   background-color: black;
@@ -1253,61 +1274,4 @@ color:red;
 
 
 
-
-/* MOBILE VERSION */
-
-@media screen and (max-width: 600px) {
-  #top {
-    display:none;
-  }
-}
-
-
-@media screen and (max-width: 600px) {
-  ciao icon {
-    top:5.9rem;
-    /* margin-top: -6rem; */
-color: #e23670;
-text-shadow: 0 0 15px #E1306C;
-  }
- 
-}
-
-
-
-/* @media screen and (max-width: 600px) {
-  body html{
-    background-position: 50% 50%;
-    background-size: 200rem;
-    overflow-x: hidden;
-    background-repeat: no-repeat;
-    margin:0 auto;
-
-  }
-} */
-
-@media screen and (max-width: 600px) {
-  div.gallery-item {
-    /* Minimum width of 24rem and grow to fit available space */
-    
-    flex: 1 0 24rem;
-    background-color:rgb(255, 255, 255);
-    /* Margin value should be half of grid-gap value as margins on flex items don't collapse */
-    margin:14rem 2.3rem 1.2rem 1rem;
-    box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
-    border-style: groove;
-    border-color:#e428fc;
-    font-family: 'bangers';
-
-
-  }
-}
-
-
-
-@media screen and (max-width: 450px) {
-  ciao icon{
-    font-size: 40px;
-  }
-}
 
