@@ -1,9 +1,161 @@
-{{ "i'm using django"|slugify }}
+<!DOCTYPE html>
+<html lang="en">
 
-{%block content%}
+<head>
 
-<title>New_Shepard</title>
+    <link rel="stylesheet"
+        href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+        integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
 
-<h1>New Shepard</h1>
-<p>This is a template</p>
-{%endblock content%}
+    <script type="text/javascript" src="/static/js/base.js"></script>
+
+    <script src="/static/js/moment-with-locales.js"></script>
+
+</head>
+
+<body>
+
+    <div class="row d-flex justify-content-center" style="margin-top:1.25rem;">
+        <div style="text-align:center;margin: 1%;">
+            <h2 id="launchtime-3f8dd709-4231-49ca-aa9f-694a2c0c107f">T?</h2>
+        </div>
+        <div style="text-align:center;margin: 1%;">
+            <h2 id="days-3f8dd709-4231-49ca-aa9f-694a2c0c107f">--</h2>
+            <p>Days</p>
+        </div>
+        <div style="text-align:center;margin: 1%;">
+            <h2>:</h2>
+        </div>
+        <div style="text-align:center;margin: 1%;">
+            <h2 id="hours-3f8dd709-4231-49ca-aa9f-694a2c0c107f">--</h2>
+            <p>Hours</p>
+        </div>
+        <div style="text-align:center;margin: 1%;">
+            <h2>:</h2>
+        </div>
+        <div style="text-align:center;margin: 1%;">
+            <h2 id="mins-3f8dd709-4231-49ca-aa9f-694a2c0c107f">--</h2>
+            <p>Mins</p>
+        </div>
+        <div style="text-align:center;margin: 1%;">
+            <h2>:</h2>
+        </div>
+        <div style="text-align:center;margin: 1%;">
+            <h2 id="secs-3f8dd709-4231-49ca-aa9f-694a2c0c107f">--</h2>
+            <p>Secs</p>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center" style="text-align:center;margin-bottom:1em;;">
+        <h5 id="date-3f8dd709-4231-49ca-aa9f-694a2c0c107f">Date Loading...</h5>
+    </div>
+
+    <script>
+        setLaunchCountdown("3f8dd709-4231-49ca-aa9f-694a2c0c107f", "launchtime-", "days-", "hours-", "mins-", "secs-", "date-", '2020-11-29T07:25:00+0000', 1);
+    </script>
+
+<!-- FALCON9 -->
+<div class='test'>
+    <div class="row d-flex justify-content-center" style="margin-top:1.25rem;">
+        <div style="text-align:center;margin: 1%;">
+            <h2 id="launchtime-06dfcb34-0b76-4fbc-9046-09ab66db7b83">T?</h2>
+        </div>
+        <div style="text-align:center;margin: 1%;">
+            <h2 id="days-06dfcb34-0b76-4fbc-9046-09ab66db7b83">--</h2>
+            <p>Days</p>
+        </div>
+        <div style="text-align:center;margin: 1%;">
+            <h2>:</h2>
+        </div>
+        <div style="text-align:center;margin: 1%;">
+            <h2 id="hours-06dfcb34-0b76-4fbc-9046-09ab66db7b83">--</h2>
+            <p>Hours</p>
+        </div>
+        <div style="text-align:center;margin: 1%;">
+            <h2>:</h2>
+        </div>
+        <div style="text-align:center;margin: 1%;">
+            <h2 id="mins-06dfcb34-0b76-4fbc-9046-09ab66db7b83">--</h2>
+            <p>Mins</p>
+        </div>
+        <div style="text-align:center;margin: 1%;">
+            <h2>:</h2>
+        </div>
+        <div style="text-align:center;margin: 1%;">
+            <h2 id="secs-06dfcb34-0b76-4fbc-9046-09ab66db7b83">--</h2>
+            <p>Secs</p>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center" style="text-align:center;margin-bottom:1em;;">
+        <h5 id="date-06dfcb34-0b76-4fbc-9046-09ab66db7b83">Date Loading...</h5>
+    </div>
+    <div class="row cardButtonsSmallMargin spaceEvenly" style="padding-right:5px;">
+    
+
+    
+
+    
+
+    <script>
+        setLaunchCountdown("06dfcb34-0b76-4fbc-9046-09ab66db7b83", "launchtime-", "days-", "hours-", "mins-", "secs-", "date-", '2020-12-05T16:39:00+0000', 1);
+    </script>
+
+
+</div>
+
+
+<style>
+.test{
+    
+    font-family: 'Orbitron','Haettenschweiler';
+    font-size: 2px;
+}
+
+</style>
+
+    <div class="row d-flex justify-content-center" style="margin-top:1.25rem;">
+        <div style="text-align:center;margin: 1%;">
+            <h2 id="launchtime-ffaceda9-2d21-4c79-b854-3414b774d8af">T?</h2>
+        </div>
+        <div style="text-align:center;margin: 1%;">
+            <h2 id="days-ffaceda9-2d21-4c79-b854-3414b774d8af">--</h2>
+            <p>Days</p>
+        </div>
+        <div style="text-align:center;margin: 1%;">
+            <h2>:</h2>
+        </div>
+        <div style="text-align:center;margin: 1%;">
+            <h2 id="hours-ffaceda9-2d21-4c79-b854-3414b774d8af">--</h2>
+            <p>Hours</p>
+        </div>
+        <div style="text-align:center;margin: 1%;">
+            <h2>:</h2>
+        </div>
+        <div style="text-align:center;margin: 1%;">
+            <h2 id="mins-ffaceda9-2d21-4c79-b854-3414b774d8af">--</h2>
+            <p>Mins</p>
+        </div>
+        <div style="text-align:center;margin: 1%;">
+            <h2>:</h2>
+        </div>
+        <div style="text-align:center;margin: 1%;">
+            <h2 id="secs-ffaceda9-2d21-4c79-b854-3414b774d8af">--</h2>
+            <p>Secs</p>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center" style="text-align:center;margin-bottom:1em;;">
+        <h5 id="date-ffaceda9-2d21-4c79-b854-3414b774d8af">Date Loading...</h5>
+    </div>
+    <div class="row cardButtonsSmallMargin spaceEvenly" style="padding-right:5px;">
+   
+   
+
+        </div>
+
+    </div>
+    <script>
+        setLaunchCountdown("ffaceda9-2d21-4c79-b854-3414b774d8af", "launchtime-", "days-", "hours-", "mins-", "secs-", "date-", '2020-12-07T19:00:00+0000', 1);
+    </script>
+</html>

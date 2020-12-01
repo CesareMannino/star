@@ -11,6 +11,10 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
     border: 1px solid red !important;
  } */
 
+ .test{
+   z-index: 100;
+   color: white;
+ }
 
  /* ALL ANCHOR TAG COLOR WHITE */
 #description a{
@@ -29,12 +33,12 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
    font-size: 5vw;
    } */
 
-   /* html {
+   html {
      box-sizing: border-box;
    }
    *, *:before, *:after {
      box-sizing: inherit;
-   } */
+   } 
 
 /* MOBILE VERSION */
 
@@ -97,10 +101,10 @@ text-shadow: 0 0 15px #E1306C;
 
 
   
-   body {
+   body  {
 
     min-height: 470rem;
-    background-color: #000;
+    /* background-color: #000; */
     position:relative;
     background-size: 300vw;
 /* overflow-x: hidden; */
@@ -109,11 +113,11 @@ text-shadow: 0 0 15px #E1306C;
 
 
 
-  @media screen and (min-width: 900px) {
+   /* @media screen and (min-width: 900px) {
     body {
-     background-image: url(../images/background.jpeg);
+     background-image: url('../images/background.jpeg');
     }
-  }
+  } */
   
    
 
@@ -125,7 +129,7 @@ text-shadow: 0 0 15px #E1306C;
     color:white;
     margin-left:-5px;
     margin-right: -5px;
-    background-image: url(../images/purple.jpg);
+    background-image: url('../images/purple.jpg');
     /* width:100%; */
     height: 21rem;
     /* background-position: 50% 50%; */
@@ -294,6 +298,14 @@ margin-top: 0px;
 color:red;
 }
 
+
+#rockets {
+  position: relative;
+  top:100rem;
+  color:white;
+  font-size: 30px;
+  z-index:2000;
+}
 
 /* @media screen and (min-width: 600px) {
 .countdown {

@@ -5,6 +5,7 @@
 {%include "Base.html"%}
 
 
+
 <!-- cache eraser -->
 <header>
   <meta http-equiv='cache-control' content='no-cache'> 
@@ -13,12 +14,12 @@
 </header>
 <!-- fonts link and css/html link -->
 <head>
-  <script type="text/javascript" language="javascript">  
+  <!-- <script type="text/javascript" language="javascript">  
     var versionUpdate = (new Date()).getTime();  
     var script = document.createElement("script");  
     script.type = "text/javascript";  
     script.src = "../static/js/script.js?v=" + versionUpdate;  
-    document.body.appendChild(script);  
+    document.body.appendChild(script);   -->
 </script>  
 
   <script data-ad-client="ca-pub-1878005074366771" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -32,7 +33,105 @@
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
     </style>
 
+	<!-- For google calendar integration -->
+	<script src="https://cdn.jsdelivr.net/npm/moment@2/moment.min.js"></script>
+	<script src="https://apis.google.com/js/api.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>	
+	<script>
+		function printCalendar() {
+			var calendarId = 'msacpn523mpjgq0jlooh41eme4@group.calendar.google.com';
+			var apiKey = 'AIzaSyCy1chATNeTPNd3pUbzF84UAibd4In2JQw';
+			var userTimeZone = "UTC";
+			gapi.client.init({
+				'apiKey': apiKey,
+				'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
+			}).then(function () {
+				return gapi.client.calendar.events.list({
+					'calendarId': calendarId,
+					'timeZone': userTimeZone,
+					'singleEvents': true,
+					'timeMin': (new Date()).toISOString(), //gathers only events not happened yet
+					'maxResults': 20,
+					'orderBy': 'startTime'
+				});
+			}).then(function (response) {
+				if (response.result.items) {
+					var calendarRows = ['<table class="wellness-calendar"><tbody>'];
+					var events = [];
+					response.result.items.forEach(function(entry) {
+						var startsAt = moment(entry.start.date).format("L") + ' ' + moment(entry.start.date).format("LT");
+						var endsAt = moment(entry.end.date).format("L")+ '' + moment(entry.end.date).format("LT");;
+						calendarRows.push(`<tr><td>${startsAt} - ${endsAt}</td><td>${entry.summary}</td></tr>`);						
+						event = {};
+						if(entry.summary.search("(NET)") == -1){
+							event["name"] = entry.summary;
+							event["eventdate"] = startsAt;
+							events.push(event);
+						}						
+					});
+					console.log(events);
+					setAllEvenDates(events);
+					console.log(arrElements);
+					setAllInterval();
+					calendarRows.push('</tbody></table>');
+					$('#wellness-calendar').html(calendarRows.join(""));
+				}
+			}, function (reason) {
+				console.log('Error: ' + reason.result.error.message);
+			});
+		};
 
+		// Loads the JavaScript client library and invokes `start` afterwards.
+		gapi.load('client', printCalendar);
+	</script>
+	
+	<script>
+	
+		var arrElements = [
+			{"name": "Electron", "eventdate": ""},
+			{"name": "Falcon", "eventdate": ""},
+			{"name": "newshepard","eventdate": ""},
+			{"name": "SpaceShipTwo","eventdate": ""},
+			{"name": "LongMar","eventdate": ""}
+		];
+	  
+		function setAllEvenDates(arrEvents){
+			for (var i=0; i < arrEvents.length; i++){ 
+					setEventDate(arrEvents[i].name,arrEvents[i].eventdate);
+				}
+			}
+
+		function setEventDate(eventname,eventdate){	
+			for (var i=0; i < arrElements.length; i++){ 
+				if(eventname.search(arrElements[i].name) != -1){			
+					arrElements[i].eventdate = eventdate;
+				}
+			}
+		}
+		
+		function setAllInterval(){
+		    //return;
+			// Update the count down every 1 second
+			var x = setInterval(function(){	
+				for (var i=0; i < arrElements.length; i++){
+					if(arrElements[i].eventdate != ""){
+						var now = new Date().getTime();
+						var countDownDate = new Date(arrElements[i].eventdate).getTime();
+						var distance = countDownDate - (now - 7200000);
+						var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+						var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+						var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+						var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+						document.getElementById(arrElements[i].name).innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+						if (distance < 0) {		
+							document.getElementById(arrElements[i].name).innerHTML = "EXPIRED";
+						}
+					}
+				}		
+			}, 1000);
+		}
+		
+	</script>
 
 </head>
 
@@ -250,12 +349,7 @@
 
 
 
-      <!-- 		<div class="gallery-item">
-			<img class="gallery-image" src="https://images.unsplash.com/photo-1445810694374-0a94739e4a03?w=500&h=500&fit=crop" alt="back view of woman wearing a backpack and beanie waiting to cross the road on a busy street at night in New York City, USA">
-		</div>
-		<div class="gallery-item">
-			<img class="gallery-image" src="https://images.unsplash.com/photo-1486334803289-1623f249dd1e?w=500&h=500&fit=crop" alt="man wearing a black jacket, white shirt, blue jeans, and brown boots, playing a white electric guitar while sitting on an amp">
-		</div> -->
+  
 
 </div>
 <!-- NEWS PAGE FROM HOME PAGE -->
@@ -375,4 +469,12 @@
 
 <script type="text/javascript" src="{% static 'js/script.js' %}"> </script>
 
+<body>
+	<div id="wellness-calendar"></div><br>	
+	Electron<p id="Electron"></p>
+	Falcon<p id="Falcon"></p>
+	newshepard<p id="NewShepard"></p>
+	SpaceShipTwo<p id="SpaceShipTwo"></p>
+	LongMarch<p id="Long"></p>
+</body>
 </html>

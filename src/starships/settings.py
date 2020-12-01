@@ -31,7 +31,7 @@ SECRET_KEY = 'd!png5+4iu3jy!hxpoceg&pfr3v!tu$w9m7c4(6#g&qz!!0ert'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.spacetraffic.net','devmanny81.pythonanywhere.com','127.0.0.1']
+ALLOWED_HOSTS = ['www.spacetraffic.net','devmanny81.pythonanywhere.com','127.0.0.1','localhost:8000']
 
 
 # Application definition
