@@ -8,11 +8,12 @@
 
 <!-- cache eraser -->
 <header>
-  <meta http-equiv='cache-control' content='no-cache'> 
-  <meta http-equiv='expires' content='0'> 
-  <meta http-equiv='pragma' content='no-cache'>   
+  <meta http-equiv='cache-control' content='no-cache'>
+  <meta http-equiv='expires' content='0'>
+  <meta http-equiv='pragma' content='no-cache'>
 </header>
 <!-- fonts link and css/html link -->
+
 <head>
   <!-- <script type="text/javascript" language="javascript">  
     var versionUpdate = (new Date()).getTime();  
@@ -20,9 +21,10 @@
     script.type = "text/javascript";  
     script.src = "../static/js/script.js?v=" + versionUpdate;  
     document.body.appendChild(script);   -->
-</script>  
+  </script>
 
-  <script data-ad-client="ca-pub-1878005074366771" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script data-ad-client="ca-pub-1878005074366771" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -31,107 +33,125 @@
   <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
-    </style>
+  </style>
 
-	<!-- For google calendar integration -->
-	<script src="https://cdn.jsdelivr.net/npm/moment@2/moment.min.js"></script>
-	<script src="https://apis.google.com/js/api.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>	
-	<script>
-		function printCalendar() {
-			var calendarId = 'msacpn523mpjgq0jlooh41eme4@group.calendar.google.com';
-			var apiKey = 'AIzaSyCy1chATNeTPNd3pUbzF84UAibd4In2JQw';
-			var userTimeZone = "UTC";
-			gapi.client.init({
-				'apiKey': apiKey,
-				'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
-			}).then(function () {
-				return gapi.client.calendar.events.list({
-					'calendarId': calendarId,
-					'timeZone': userTimeZone,
-					'singleEvents': true,
-					'timeMin': (new Date()).toISOString(), //gathers only events not happened yet
-					'maxResults': 20,
-					'orderBy': 'startTime'
-				});
-			}).then(function (response) {
-				if (response.result.items) {
-					var calendarRows = ['<table class="wellness-calendar"><tbody>'];
-					var events = [];
-					response.result.items.forEach(function(entry) {
-						var startsAt = moment(entry.start.date).format("L") + ' ' + moment(entry.start.date).format("LT");
-						var endsAt = moment(entry.end.date).format("L")+ '' + moment(entry.end.date).format("LT");;
-						calendarRows.push(`<tr><td>${startsAt} - ${endsAt}</td><td>${entry.summary}</td></tr>`);						
-						event = {};
-						if(entry.summary.search("(NET)") == -1){
-							event["name"] = entry.summary;
-							event["eventdate"] = startsAt;
-							events.push(event);
-						}						
-					});
-					console.log(events);
-					setAllEvenDates(events);
-					console.log(arrElements);
-					setAllInterval();
-					calendarRows.push('</tbody></table>');
-					$('#wellness-calendar').html(calendarRows.join(""));
-				}
-			}, function (reason) {
-				console.log('Error: ' + reason.result.error.message);
-			});
-		};
+  <!-- For google calendar integration -->
+  <script src="https://cdn.jsdelivr.net/npm/moment@2/moment.min.js"></script>
+  <script src="https://apis.google.com/js/api.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    function printCalendar() {
+      var calendarId = 'msacpn523mpjgq0jlooh41eme4@group.calendar.google.com';
+      var apiKey = 'AIzaSyCy1chATNeTPNd3pUbzF84UAibd4In2JQw';
+      // var userTimeZone = "UTC";
+      gapi.client.init({
+        'apiKey': apiKey,
+        'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
+      }).then(function () {
+        return gapi.client.calendar.events.list({
+          'calendarId': calendarId,
+          // 'timeZone': userTimeZone,
+          'singleEvents': true,
+          'timeMin': (new Date()).toISOString(), //gathers only events not happened yet
+          'maxResults': 20,
+          'orderBy': 'startTime'
+        });
+      }).then(function (response) {
+        if (response.result.items) {
+          var calendarRows = ['<table class="wellness-calendar"><tbody>'];
+          var events = [];
+          var startsAt;
+          var endsAt;
+          response.result.items.forEach(function (entry) {
+            if (entry.start.dateTime != undefined) {
+              startsAt = moment.utc(entry.start.dateTime).format("L") + ' ' + moment.utc(entry.start.dateTime).format("LT");
+            }
+            if (entry.start.date != undefined) {
+              startsAt = moment.utc(entry.start.date).format("L") + ' ' + moment.utc(entry.start.date).format("LT");
+            }
+            if (entry.start.dateTime != undefined) {
+              endsAt = moment.utc(entry.end.dateTime).format("L") + ' ' + moment.utc(entry.end.dateTime).format("LT");
+            }
+            if (entry.start.date != undefined) {
+              endsAt = moment.utc(entry.end.date).format("L") + ' ' + moment.utc(entry.end.date).format("LT");
+            }
+            calendarRows.push(`<tr><td>${startsAt} - ${endsAt}</td><td>${entry.summary}</td></tr>`);
+            event = {};
+            if (entry.summary.search("(NET)") == -1) {
+              event["name"] = entry.summary;
+              event["eventdate"] = startsAt;
+              events.push(event);
+            }
+          });
+          console.log(events);
+          setAllEvenDates(events);
+          console.log(arrElements);
+          setAllInterval();
+          calendarRows.push('</tbody></table>');
+          $('#wellness-calendar').html(calendarRows.join(""));
+        }
+      }, function (reason) {
+        console.log('Error: ' + reason.result.error.message);
+      });
+    };
 
-		// Loads the JavaScript client library and invokes `start` afterwards.
-		gapi.load('client', printCalendar);
-	</script>
-	
-	<script>
-	
-		var arrElements = [
-			{"name": "Electron", "eventdate": ""},
-			{"name": "Falcon", "eventdate": ""},
-			{"name": "newshepard","eventdate": ""},
-			{"name": "SpaceShipTwo","eventdate": ""},
-			{"name": "LongMar","eventdate": ""}
-		];
-	  
-		function setAllEvenDates(arrEvents){
-			for (var i=0; i < arrEvents.length; i++){ 
-					setEventDate(arrEvents[i].name,arrEvents[i].eventdate);
-				}
-			}
+    // Loads the JavaScript client library and invokes `start` afterwards.
+    gapi.load('client', printCalendar);
+  </script>
 
-		function setEventDate(eventname,eventdate){	
-			for (var i=0; i < arrElements.length; i++){ 
-				if(eventname.search(arrElements[i].name) != -1){			
-					arrElements[i].eventdate = eventdate;
-				}
-			}
-		}
-		
-		function setAllInterval(){
-		    //return;
-			// Update the count down every 1 second
-			var x = setInterval(function(){	
-				for (var i=0; i < arrElements.length; i++){
-					if(arrElements[i].eventdate != ""){
-						var now = new Date().getTime();
-						var countDownDate = new Date(arrElements[i].eventdate).getTime();
-						var distance = countDownDate - (now - 7200000);
-						var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-						var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-						var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-						var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-						document.getElementById(arrElements[i].name).innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-						if (distance < 0) {		
-							document.getElementById(arrElements[i].name).innerHTML = "EXPIRED";
-						}
-					}
-				}		
-			}, 1000);
-		}
-		
-	</script>
+  <script>
+
+    var arrElements = [
+      { "name": "Electron", "eventdate": "" },
+      { "name": "Falcon", "eventdate": "" },
+      { "name": "NewShepard", "eventdate": "" },
+      { "name": "SpaceShipTwo", "eventdate": "" },
+      { "name": "Gaofen 14", "eventdate": "" }
+    ];
+
+    function setAllEvenDates(arrEvents) {
+      for (var i = 0; i < arrEvents.length; i++) {
+        setEventDate(arrEvents[i].name, arrEvents[i].eventdate);
+      }
+    }
+
+
+    function setEventDate(eventname, eventdate) {
+      for (var i = 0; i < arrElements.length; i++) {
+        if (eventname.search(arrElements[i].name) != -1) {
+          arrElements[i].eventdate = eventdate;
+        }
+      }
+    }
+
+    function setAllInterval() {
+      //return;
+      // Update the count down every 1 second
+      var x = setInterval(function () {
+        for (var i = 0; i < arrElements.length; i++) {
+          if (arrElements[i].eventdate != "") {
+            var now = new Date().getTime();
+            var countDownDate = new Date(arrElements[i].eventdate).getTime();
+            var distance = countDownDate - (now - 3600000);
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById(arrElements[i].name).innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+            if (distance < 0) {
+              document.getElementById(arrElements[i].name).innerHTML = "EXPIRED";
+
+            }
+
+          }
+          if (arrElements[i].eventdate == "") {
+            document.getElementById(arrElements[i].name).innerHTML = "UNSCHEDULED";
+          }
+        }
+      }, 1000);
+    }
+
+  </script>
 
 </head>
 
@@ -139,221 +159,233 @@
 
 
 <div id='top'>
-<ul>SpaceTraffic</ul>
-<h1></h1>  
-</div>  
-
-
-  
-
-
-    
-      <ciao>
-      <icon>
-        <i> Upcoming launches</i>
-      </icon>
-    </ciao>
-    
+  <ul>SpaceTraffic</ul>
+  <h1></h1>
+</div>
 
 
 
 
-    <div class="gallery">
+
+
+<ciao>
+  <icon>
+    <i> Upcoming launches</i>
+  </icon>
+</ciao>
 
 
 
-      <div class="gallery-item">
-            <!-- <div class= "twitter"> -->
-              <a class="twitter-timeline" data-height="700" href="https://twitter.com/SpacetrafficN?ref_src=twsrc%5Etfw">Tweets by SpacetrafficN</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-      <!-- </div> -->
-      </div>
-
-      <div class="gallery-item">
-       
-        <!-- icona -->
-        
-          
-          <!-- <img class="icon_electron"
-             alt="Rocketlab electron"> -->
-            <div id='companyname'> 
-             Rocket lab
-            </div>
-        
-        
-           <!-- link to watch live -->
-      
-           <div class="videoWrapper">
-            <iframe width="971" height="546" src="https://www.rocketlabusa.com/live-stream" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-          <div class='livenote'>
-          <h3>Live about 15/30 min before the end of countdown</h3>
-        </div>
-
-        <!-- <img src="images/picture.jpg"> -->
-        
-        <a href="{% static 'images/electron.jpeg' %}" target="_blank">
-          <img class="gallery-image"
-          
-            src="{% static 'images/electron.jpeg' %}" alt="Rocketlab electron">
-        </a>
 
 
-        <div class="css-typing-electron">
-          <p>
-            Electron
-          </p>
-          <p>
-            Height = 17 meters
-          </p>
-          <p>
-            Thrust first stage = 225 kN
-          </p>
-          <p>
-            Key person : PETER BECK
-          </p>
-          
-           
-          
-          <!-- <div id=utc>UTC</div> -->
-          <div class='countdown'>
-          <div id="electron">please wait...</div>
-        </div>
-        
-
-        </div>
-      </div>
-
-      <div class="gallery-item">
-       <!-- icona -->
-       <div id='companyname'> 
-        SpaceX
-       </div>
-         <!-- link to watch live -->
-         <div class="videoWrapper">
-          <iframe width="971" height="546" src="https://www.spacex.com/launches/" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-           </div>
-           <div class='livenote'>
-         <h3>Live about 15/30 min before the end of countdown</h3>
-        </div>
+<div class="gallery">
 
 
-        <a href="{% static 'images/Falcon9.jpg' %}"
-          target="_blank">
-          <img class="gallery-image"
-            src="{% static 'images/Falcon9.jpg' %}"
-            alt="Spacex Falcon 9">
-        </a>
-        <div class="css-typing-falcon">
-          <p>
-            Falcon 9
-          </p>
-          <p>
-            Height = 70 meters
-          </p>
-          <p>
-            Thrust first stage = 8851 kN
-          </p>
-          <p>
-            Key person : ELON MUSK
-          </p>
-          <!-- <div id=utc>UTC</div> -->
-          <div class=countdown>
-          <div id="falcon">please wait...</div>
-        </div>
-        </div>
-      </div>
 
-      <div class="gallery-item">
-<!-- icona -->
-<div id='companyname'> 
-  Blue Origin
- </div>
-  
-</a>
-   <!-- link to watch live -->
-      <!-- link to watch live -->
-      <div class="videoWrapper">
-        <iframe width="971" height="546" src="https://www.youtube.com/embed/O97dPDkUGg4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <div class='livenote'>  
-    <h3>Live about 15/30 min before the end of countdown</h3>
+  <div class="gallery-item">
+    <!-- <div class= "twitter"> -->
+    <a class="twitter-timeline" data-height="700" href="https://twitter.com/SpacetrafficN?ref_src=twsrc%5Etfw">Tweets by
+      SpacetrafficN</a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <!-- </div> -->
   </div>
-        
+
+  <div class="gallery-item">
+
+    <!-- icona -->
 
 
+    <!-- <img class="icon_electron"
+             alt="Rocketlab electron"> -->
+    <div id='companyname'>
+      Rocket lab
+    </div>
 
-        
-        <a href="{% static 'images/newshepard.jpg' %}" target="_blank">
-          <img class="gallery-image" src="{% static 'images/newshepard.jpg' %}" alt="New Shepard">
-        </a>
-        <div class="css-typing-newshepard">
-          <p>
-            New Shepard
-          </p>
-          <p>
-            Height = 18 meters
-          </p>
-          <p>
-            Thrust first stage = 490 kN
-          </p>
-          <p>
-            Key person : JEFF BEZOS
-          </p>
-          <!-- <div id=utc>UTC</div> -->
-          <div class='countdown'>
-          <div id="newshepard">please wait...</div>
-        </div>
-        </div>
-      </div>
 
-      <div class="gallery-item">
-<!-- icona -->
+    <!-- link to watch live -->
 
-  <div id='companyname'> 
-    Virgin Galactic
-   </div>
-   <!-- link to watch live -->
-      <!-- link to watch live -->
-      <div class="videoWrapper">
-        <iframe width="971" height="546" src="https://www.youtube.com/embed/h8T9mVkGh3s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-   </div>    
-   <div class='livenote'>  
+    <div class="videoWrapper">
+      <iframe width="971" height="546" src="https://www.rocketlabusa.com/live-stream" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+    <div class='livenote'>
       <h3>Live about 15/30 min before the end of countdown</h3>
     </div>
 
-        <a href="{% static 'images/spaceshiptwo.jpg' %}" target="_blank">
-          <img class="gallery-image" src="{% static 'images/spaceshiptwo.jpg' %}"
-            alt="Virgin Galactic Space Ship Two">
-        </a>
-        <div class="css-typing-spaceshiptwo">
+    <!-- <img src="images/picture.jpg"> -->
 
-          <p>
-            SpaceShipTwo
-          </p>
-          <p>
-            Length = 18.3 meters
-          </p>
-          <p>
-            Thrust = 270 kN
-          </p>
-          <p>
-            Key person : RICHARD BRANSON
-          </p>
-          <!-- <div id=utc>UTC</div> -->
-        <div class='countdown'>
-          <div id="spaceshiptwo">please wait...</div>
-        </div>
-        </div>
+    <a href="{% static 'images/electron.jpeg' %}" target="_blank">
+      <img class="gallery-image" src="{% static 'images/electron.jpeg' %}" alt="Rocketlab electron">
+    </a>
+
+
+    <div class="css-typing-electron">
+      <p>
+        Electron
+      </p>
+      <p>
+        Height = 17 meters
+      </p>
+      <p>
+        Thrust first stage = 225 kN
+      </p>
+      <p>
+        Key person : PETER BECK
+      </p>
+
+
+
+      <!-- <div id=utc>UTC</div> -->
+      <div class='countdown'>
+        <div id="Electron">please wait...</div>
       </div>
 
 
+    </div>
+  </div>
+
+  <div class="gallery-item">
+    <!-- icona -->
+    <div id='companyname'>
+      SpaceX
+    </div>
+    <!-- link to watch live -->
+    <div class="videoWrapper">
+      <iframe width="971" height="546" src="https://www.spacex.com/launches/" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+    <div class='livenote'>
+      <h3>Live about 15/30 min before the end of countdown</h3>
+    </div>
 
 
-  
+    <a href="{% static 'images/Falcon9.jpg' %}" target="_blank">
+      <img class="gallery-image" src="{% static 'images/Falcon9.jpg' %}" alt="Spacex Falcon 9">
+    </a>
+    <div class="css-typing-falcon">
+      <p>
+        Falcon 9
+      </p>
+      <p>
+        Height = 70 meters
+      </p>
+      <p>
+        Thrust first stage = 8851 kN
+      </p>
+      <p>
+        Key person : ELON MUSK
+      </p>
+      <!-- <div id=utc>UTC</div> -->
+      <div class=countdown>
+        <div id="Falcon">please wait...</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item">
+    <!-- icona -->
+    <div id='companyname'>
+      Blue Origin
+    </div>
+    <!-- link to watch live -->
+    <!-- link to watch live -->
+    <div class="videoWrapper">
+      <iframe width="971" height="546" src="https://www.youtube.com/embed/O97dPDkUGg4" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+    <div class='livenote'>
+      <h3>Live about 15/30 min before the end of countdown</h3>
+    </div>
+
+
+
+
+
+    <a href="{% static 'images/newshepard.jpg' %}" target="_blank">
+      <img class="gallery-image" src="{% static 'images/newshepard.jpg' %}" alt="New Shepard">
+    </a>
+    <div class="css-typing-newshepard">
+      <p>
+        New Shepard
+      </p>
+      <p>
+        Height = 18 meters
+      </p>
+      <p>
+        Thrust first stage = 490 kN
+      </p>
+      <p>
+        Key person : JEFF BEZOS
+      </p>
+      <!-- <div id=utc>UTC</div> -->
+      <div class='countdown'>
+        <div id="NewShepard">please wait...</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-item">
+    <!-- icona -->
+
+    <div id='companyname'>
+      Virgin Galactic
+    </div>
+    <!-- link to watch live -->
+    <!-- link to watch live -->
+    <div class="videoWrapper">
+      <iframe width="971" height="546" src="https://www.youtube.com/embed/h8T9mVkGh3s" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+    <div class='livenote'>
+      <h3>Live about 15/30 min before the end of countdown</h3>
+    </div>
+
+    <a href="{% static 'images/spaceshiptwo.jpg' %}" target="_blank">
+      <img class="gallery-image" src="{% static 'images/spaceshiptwo.jpg' %}" alt="Virgin Galactic Space Ship Two">
+    </a>
+    <div class="css-typing-spaceshiptwo">
+
+      <p>
+        SpaceShipTwo
+      </p>
+      <p>
+        Length = 18.3 meters
+      </p>
+      <p>
+        Thrust = 270 kN
+      </p>
+      <p>
+        Key person : RICHARD BRANSON
+      </p>
+      <!-- <div id=utc>UTC</div> -->
+      <div class='countdown'>
+        <div id="SpaceShipTwo">please wait...</div>
+      </div>
+    </div>
+  </div>
+
+
+
+
 
 </div>
+
+
+<body>
+  <div id="wellness-calendar"></div><br>
+  <!-- Electron<p id="Electron"></p>
+  Falcon<p id="Falcon"></p>
+  newshepard<p id="NewShepard"></p>
+  SpaceShipTwo<p id="SpaceShipTwo"></p>
+  LongMarch<p id="Long March CZ-3B/E • Gaofen 14"></p> -->
+</body>
+
 <!-- NEWS PAGE FROM HOME PAGE -->
-    <!-- NEWS PAGE FROM HOME PAGE -->
+<!-- NEWS PAGE FROM HOME PAGE -->
 
 <!-- first news -->
 
@@ -362,30 +394,32 @@
 
 
   <div class=gallery-item-news1>
- 
+
     <a href="/relativity" target="_blank" loading="lazy" target="_blank"></a>
 
-      <img class="gallery-image-news" src="{% static 'images/3dprint.jpg' %}"
-        alt="relativity space 3d printer stargate in action">
+    <img class="gallery-image-news" src="{% static 'images/3dprint.jpg' %}"
+      alt="relativity space 3d printer stargate in action">
     </a>
 
     <div class="bottom_text">
-      <h1 id='description'><a href="/relativity" target="_blank">"Relativity Space" brings the rocket competition to the next level</a></h1>
+      <h1 id='description'><a href="/relativity" target="_blank">"Relativity Space" brings the rocket competition to the
+          next level</a></h1>
 
-    
+
     </div>
   </div>
 
   <!-- second news -->
-  
+
 
   <div class=gallery-item-news2>
-    
+
     <a href="/crew1" target="_blank" loading="lazy" target="_blank">
       <img class="gallery-image-news" src="{% static 'images/dragon_ramp.jpg' %}" alt="relativity space">
     </a>
     <div class="bottom_text">
-      <h1 id='description'><a href="/crew1" target="_blank">Spacex crew-1 with 6 astronaut on board ready to go to SPACE on Sunday 15th 2020</a>
+      <h1 id='description'><a href="/crew1" target="_blank">Spacex crew-1 with 6 astronaut on board ready to go to SPACE
+          on Sunday 15th 2020</a>
       </h1>
       </a>
     </div>
@@ -394,12 +428,13 @@
   <!-- third news -->
 
   <div class=gallery-item-news3>
-    
+
     <a href="/starship" target="_blank" loading="lazy" target="_blank">
       <img class="gallery-image-news" src="{% static 'images/starship.jpg' %}" alt="Spacex starship on launch pad">
     </a>
     <div class="bottom_text">
-      <h1 id='description'><a href="/starship" target="_blank">The most exciting starship is going to fly pretty soon!</a>
+      <h1 id='description'><a href="/starship" target="_blank">The most exciting starship is going to fly pretty
+          soon!</a>
       </h1>
       </a>
     </div>
@@ -408,21 +443,21 @@
   <!-- fourth news -->
 
   <div class=gallery-item-news4>
-    
+
     <a href="/rocketlab" target="_blank" loading="lazy" target="_blank">
       <img class="gallery-image-news" src="{% static 'images/reentry.png' %}" alt="relativity space reentry attempt">
     </a>
     <div class="bottom_text">
       <h1 id='description'><a href="/rocketlab" target="_blank">
-        The next rocket lab launch will attempt the recovery of the first stage!
-       </a>
+          The next rocket lab launch will attempt the recovery of the first stage!
+        </a>
       </h1>
       </a>
 
-     
+
     </div>
   </div>
-<!-- 
+  <!-- 
   <div class=gallery-item-news5>
     
     <a href="/News" target="_blank" loading="lazy" target="_blank">
@@ -469,12 +504,5 @@
 
 <script type="text/javascript" src="{% static 'js/script.js' %}"> </script>
 
-<body>
-	<div id="wellness-calendar"></div><br>	
-	Electron<p id="Electron"></p>
-	Falcon<p id="Falcon"></p>
-	newshepard<p id="NewShepard"></p>
-	SpaceShipTwo<p id="SpaceShipTwo"></p>
-	LongMarch<p id="Long"></p>
-</body>
+
 </html>
