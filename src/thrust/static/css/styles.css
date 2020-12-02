@@ -11,10 +11,9 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
     border: 1px solid red !important;
  } */
 
- .test{
-   z-index: 100;
-   color: white;
- }
+
+ 
+
 
  /* ALL ANCHOR TAG COLOR WHITE */
 #description a{
@@ -50,13 +49,13 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
 
 
 @media screen and (max-width: 600px) {
-  ciao icon {
+ body ciao icon {
+    font-size: 40px;
     top:5.9rem;
     /* margin-top: -6rem; */
 color: #e23670;
 text-shadow: 0 0 15px #E1306C;
   }
- 
 }
 
 
@@ -90,21 +89,21 @@ text-shadow: 0 0 15px #E1306C;
 }
 
 
-
+/* 
 @media screen and (max-width: 450px) {
   ciao icon{
-    font-size: 40px;
+    font-size: 10px;
   }
 }
-
+ */
 
 
 
   
    body  {
 
-    min-height: 470rem;
-    /* background-color: #000; */
+    min-height: 300rem;
+    background-color: #000;
     position:relative;
     background-size: 300vw;
 /* overflow-x: hidden; */
@@ -113,13 +112,22 @@ text-shadow: 0 0 15px #E1306C;
 
 
 
-   /* @media screen and (min-width: 900px) {
+   @media screen and (min-width: 900px) {
     body {
      background-image: url('../images/background.jpeg');
+     
     }
-  } */
-  
-   
+  }
+
+
+  @media screen and (max-width: 900px) {
+    body {
+  min-height:500rem;
+   }
+}
+
+
+
 
 /* top image of the home page */
     #top {
@@ -307,11 +315,11 @@ color:red;
   z-index:2000;
 }
 
-/* @media screen and (min-width: 600px) {
+@media screen and (max-width: 600px) {
 .countdown {
- font-size: 30px;
+ font-size: 28px;
 }
-} */
+}
 
 /* 
 #newshepard {
@@ -372,13 +380,41 @@ color:red;
   flex-wrap: wrap;
 } */
 
+#title-calendar{
+  color:white;
+font-size:25px;
+margin:0 0 1rem 0rem;
+background-color: black;
+}
+
+#note{
+  font-size:22px;
+  color:white;
+  background-color:black;
+}
+
+@media screen and (max-width: 900px) {
+  #wellness-calendar,#title-calendar,#note{
+    display:none;
+  }
+}
+
+#wellness-calendar{
+  font-size:14px;
+  position:relative;
+  margin:0 auto;
+  background:black;
+  color:green;
+  font-family:"Press Start 2P";
+  }
+
  
 /* the whole news block */
  .grid_news{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(0px, auto);
-  margin: 0 20px 0 30px;
+  margin: 20rem 20px 0 30px;
   text-align: center;
   grid-gap: 1rem;
   /* gap: 1em 20px; */
@@ -386,6 +422,7 @@ color:red;
 
 @media screen and (max-width: 600px) {
   .grid_news{
+    margin:0 auto;
     grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
     grid-gap: 1rem;
 
