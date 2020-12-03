@@ -16,7 +16,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
 
 
  /* ALL ANCHOR TAG COLOR WHITE */
-#description a{
+ #description a{
   color:white;
   font-family: 'Orbitron','Haettenschweiler';
   font-size: 25px;
@@ -112,13 +112,12 @@ text-shadow: 0 0 15px #E1306C;
 
 
 
-   @media screen and (min-width: 900px) {
+   /* @media screen and (min-width: 900px) {
     body {
-      background-color:black;
-     /* background-image: url('../images/background.jpeg');
-      */
+     background-image: url('../images/background.jpeg');
+     
     }
-  }
+  } */
 
 
   @media screen and (max-width: 900px) {
@@ -381,25 +380,19 @@ color:red;
   flex-wrap: wrap;
 } */
 
-
-
-
-body #title-calendar{
-  position: relative;
-  margin:2rem 2rem;
+#title-calendar{
   color:white;
 font-size:25px;
-
+margin:0 2rem;
 background-color: black;
 }
 
 #note{
-  position: relative;
   margin:0 2rem;
   font-size:22px;
   color:white;
   background-color:black;
-} 
+}
 
 @media screen and (max-width: 900px) {
   #wellness-calendar,#title-calendar,#note{
@@ -408,11 +401,11 @@ background-color: black;
 }
 
 #wellness-calendar{
-  border:5px solid;
-    border-color:green;
+  border:4px solid;
+  border-color:green;
   font-size:14px;
   position:relative;
-  margin:2rem 2rem 0 2rem;
+  margin:1rem 2rem 0 2rem;
   background:black;
   color:green;
   font-family:"Press Start 2P";
@@ -432,7 +425,7 @@ background-color: black;
 
 @media screen and (max-width: 600px) {
   .grid_news{
-    margin:0 1rem;
+    margin:0 2 rem;
     grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
     grid-gap: 1rem;
 
