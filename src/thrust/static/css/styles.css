@@ -114,8 +114,9 @@ text-shadow: 0 0 15px #E1306C;
 
    @media screen and (min-width: 900px) {
     body {
-     background-image: url('../images/background.jpeg');
-     
+      background-color:black;
+     /* background-image: url('../images/background.jpeg');
+      */
     }
   }
 
@@ -380,18 +381,25 @@ color:red;
   flex-wrap: wrap;
 } */
 
-#title-calendar{
+
+
+
+body #title-calendar{
+  position: relative;
+  margin:2rem 2rem;
   color:white;
 font-size:25px;
-margin:0 0 1rem 0rem;
+
 background-color: black;
 }
 
 #note{
+  position: relative;
+  margin:0 2rem;
   font-size:22px;
   color:white;
   background-color:black;
-}
+} 
 
 @media screen and (max-width: 900px) {
   #wellness-calendar,#title-calendar,#note{
@@ -400,9 +408,11 @@ background-color: black;
 }
 
 #wellness-calendar{
+  border:5px solid;
+    border-color:green;
   font-size:14px;
   position:relative;
-  margin:0 auto;
+  margin:2rem 2rem 0 2rem;
   background:black;
   color:green;
   font-family:"Press Start 2P";
@@ -422,7 +432,7 @@ background-color: black;
 
 @media screen and (max-width: 600px) {
   .grid_news{
-    margin:0 auto;
+    margin:0 1rem;
     grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
     grid-gap: 1rem;
 
