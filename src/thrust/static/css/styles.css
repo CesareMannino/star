@@ -414,6 +414,7 @@ background-color: black;
  
 /* the whole news block */
  .grid_news{
+   background-color: black;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(0px, auto);
@@ -425,7 +426,7 @@ background-color: black;
 
 @media screen and (max-width: 600px) {
   .grid_news{
-    margin:0 2 rem;
+    margin:10rem 10px 0 10px;
     grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
     grid-gap: 1rem;
 
@@ -483,7 +484,7 @@ background-color: black;
     grid-row: 2 / 3;
     border:2px solid;
       border-color:#e428fc;
-      background-color: #000;
+      background-color:white;
       max-height: 35rem;
       
    
@@ -507,7 +508,7 @@ background-color: black;
    /* height: 70%; */
    border:2px solid;
     border-color:#e428fc;
-    background-color: black;
+    background-color:white;
    
   }
 
@@ -532,7 +533,7 @@ background-color: black;
    max-width:100%;
    border:2px solid;
     border-color:#e428fc;
-    background-color: black;
+    background-color: white;
      
     }
   
@@ -553,7 +554,7 @@ background-color: black;
         /* grid-column: 2 / 4; */
         border:2px solid;
     border-color:#e428fc;
-    background-color: black;
+    background-color: white;
     max-height: 26rem;
         
       }
