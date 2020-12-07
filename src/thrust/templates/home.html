@@ -15,12 +15,12 @@
 <!-- fonts link and css/html link -->
 
 <head>
-  <!-- <script type="text/javascript" language="javascript">  
+  <script type="text/javascript" language="javascript">  
     var versionUpdate = (new Date()).getTime();  
     var script = document.createElement("script");  
     script.type = "text/javascript";  
     script.src = "../static/js/script.js?v=" + versionUpdate;  
-    document.body.appendChild(script);   -->
+    document.body.appendChild(script);  
   </script>
 
   <script data-ad-client="ca-pub-1878005074366771" async
@@ -53,7 +53,7 @@
           // 'timeZone': userTimeZone,
           'singleEvents': true,
           'timeMin': (new Date()).toISOString(), //gathers only events not happened yet
-          'maxResults': 20,
+          'maxResults': 10,
           'orderBy': 'startTime'
         });
       }).then(function (response) {
@@ -76,12 +76,15 @@
               endsAt = moment.utc(entry.end.date).format("L") + ' ' + moment.utc(entry.end.date).format("LT");
             }
             calendarRows.push(`<tr><td>${startsAt} - ${endsAt}</td><td>${entry.summary}</td></tr>`);
+            console.log(entry.summary);
             event = {};
             if (entry.summary.search("(NET)") == -1) {
               event["name"] = entry.summary;
               event["eventdate"] = startsAt;
               events.push(event);
-            }
+            }        
+            /string1|string2|string3/
+        
           });
           console.log(events);
           setAllEvenDates(events);
@@ -102,8 +105,8 @@
   <script>
 
     var arrElements = [
-      { "name": "Electron", "eventdate": "" },
-      { "name": "Falcon 9 B5 • SpX-21 Dragon 2 CRS2", "eventdate": "" },
+      { "name": "Electron • StriX-α", "eventdate": "" },
+      { "name": "Falcon 9 B5 • SXM 7", "eventdate": "" },
       { "name": "NewShepard", "eventdate": "" },
       { "name": "SpaceShipTwo", "eventdate": "" },
       { "name": "Gaofen 14", "eventdate": "" }
@@ -132,7 +135,7 @@
           if (arrElements[i].eventdate != "") {
             var now = new Date().getTime();
             var countDownDate = new Date(arrElements[i].eventdate).getTime();
-            var distance = countDownDate - (now - 3600000);
+            var distance = countDownDate - (now - 7200000);
             var days = Math.floor(distance / (1000 * 60 * 60 * 24));
             var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
@@ -238,7 +241,7 @@
 
       <!-- <div id=utc>UTC</div> -->
       <div class='countdown'>
-        <div id="Electron">please wait...</div>
+        <div id="Electron • StriX-α">please wait...</div>
       </div>
 
 
@@ -279,7 +282,7 @@
       </p>
       <!-- <div id=utc>UTC</div> -->
       <div class=countdown>
-        <div id="Falcon 9 B5 • SpX-21 Dragon 2 CRS2">please wait...</div>
+        <div id="Falcon 9 B5 • SXM 7">please wait...</div>
       </div>
     </div>
   </div>
@@ -376,7 +379,7 @@
 
 
 <body>
-  <div id='title-calendar'><u>Listed below the next worldwide spacecraft leaving for orbital or suborbital flight:</u></div>
+  <div id='title-calendar'><u>Listed below the next worldwide spacecraft leaving for orbital or suborbital flight in UTC:</u></div>
   
   <div id="wellness-calendar"></div><br>
   <!-- Electron<p id="Electron"></p>
@@ -385,7 +388,20 @@
   SpaceShipTwo<p id="SpaceShipTwo"></p>
   LongMarch<p id="Long March CZ-3B/E • Gaofen 14"></p> -->
   <div id='note'>legend: NET (not earlier than)</div>
+
+
+
+  
+  </div>
+
+
 </body>
+
+
+
+
+
+
 
 <!-- NEWS PAGE FROM HOME PAGE -->
 <!-- NEWS PAGE FROM HOME PAGE -->
