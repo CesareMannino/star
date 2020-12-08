@@ -40,3 +40,7 @@ def starship_view(request,*args,**kwargs):
 def rocketlab_view(request,*args,**kwargs):
     return render(request,"rocketlab.html",{})
 
+def rocket_compare_view(request,*args,**kwargs):
+    return render(request,"rocket_compare.html",{})
+
+

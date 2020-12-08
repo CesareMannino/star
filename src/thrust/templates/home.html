@@ -23,8 +23,7 @@
     document.body.appendChild(script);  
   </script>
 
-  <script data-ad-client="ca-pub-1878005074366771" async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+ 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -78,12 +77,12 @@
             calendarRows.push(`<tr><td>${startsAt} - ${endsAt}</td><td>${entry.summary}</td></tr>`);
             console.log(entry.summary);
             event = {};
-            if (entry.summary.search("(NET)") == -1) {
+            if (entry.summary.search(["(NET)"]) == -1) {
               event["name"] = entry.summary;
               event["eventdate"] = startsAt;
               events.push(event);
             }        
-            /string1|string2|string3/
+           
         
           });
           console.log(events);
@@ -404,7 +403,7 @@
 
 
 <!-- NEWS PAGE FROM HOME PAGE -->
-<!-- NEWS PAGE FROM HOME PAGE -->
+
 
 <!-- first news -->
 
@@ -438,7 +437,7 @@
     </a>
     <div class="bottom_text">
       <h1 id='description'><a href="/crew1" target="_blank">Spacex crew-1 with 6 astronaut on board ready to go to SPACE
-          on Sunday 15th 2020</a>
+          on Sunday 15th of November 2020</a>
       </h1>
       </a>
     </div>
@@ -476,25 +475,26 @@
 
     </div>
   </div>
-  <!-- 
+   
+  
   <div class=gallery-item-news5>
-    
-    <a href="/News" target="_blank" loading="lazy" target="_blank">
-      <img class="gallery-image-news" src="{% static 'images/dragon_ramp.jpg' %}" alt="relativity space">
+
+    <a href="/rocket_compare" target="_blank" loading="lazy" target="_blank">
+      <img class="gallery-image-news" src="{% static 'images/soyuz_1.jpg' %}" alt="Souyuz spaceship rendering">
     </a>
     <div class="bottom_text">
-      <h1><a href="/News" target="_blank">"Crew dragon with 6 astronaut on board</a>
+      <h1 id='description'><a href="/rocket_compare" target="_blank">
+        Crewed spaceworthy spaceship 08 December 2020
+        </a>
       </h1>
-
-      
-
-      <a href="https://cdn.dogtownmedia.com/wp-content/uploads/2019/10/16161931/aispace2.jpg" loading="lazy"
-        target="_blank">
       </a>
 
-     
+
     </div>
-  </div> -->
+  </div>
+   
+
+
 
   <!-- <div class=gallery-item-news6>
     
