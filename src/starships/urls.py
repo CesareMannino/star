@@ -26,7 +26,8 @@ sitemaps = {
 urlpatterns = [
     # path('admin/', admin.site.urls),
     path('',include('thrust.urls')),
-    path('sitemap.xml', sitemap, {'sitemaps':sitemaps}),
+    path('sitemap.xml', sitemap, {'sitemaps':sitemaps},
+    name='django.contrib.sitemaps.views.sitemap'),
     path('', home_view, name='home_view'),
     path('home/',home_view),
     #path is a django method,as argument got the url address as a 

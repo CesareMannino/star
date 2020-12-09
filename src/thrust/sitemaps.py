@@ -2,7 +2,7 @@ from django.contrib.sitemaps import Sitemap
 from django.shortcuts import reverse
 
 class StaticViewSitemap(Sitemap):
-    changefreq = 'always'
+    changefreq = 'daily'
     
     def items(self):
         return['home_view', 'crew1_view', 'starship_view', 'rocketlab_view', 'rocket_compare_view' ]
