@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.views.generic import TemplateView
 from django.urls import path, include
 from thrust.sitemaps import StaticViewSitemap
 from django.contrib.sitemaps.views import sitemap
@@ -29,6 +30,7 @@ urlpatterns = [
     path('sitemap.xml', sitemap, {'sitemaps':sitemaps},
     name='django.contrib.sitemaps.views.sitemap'),
     path('', home_view, name='home_view'),
+    path('robots.txt', TemplateView.as_view(template_name="robots.txt", content_type='text/plain')),
     path('home/',home_view),
     #path is a django method,as argument got the url address as a 
     #string and as second argument the function from view
