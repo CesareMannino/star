@@ -8,7 +8,7 @@
 
 <!-- cache eraser -->
 <header>
-    <meta name="propeller" content="12bebe3bdb5972b07a2a0340874adcdb">
+  <meta name="propeller" content="12bebe3bdb5972b07a2a0340874adcdb">
   <meta http-equiv='cache-control' content='no-cache'>
   <meta http-equiv='expires' content='0'>
   <meta http-equiv='pragma' content='no-cache'>
@@ -44,14 +44,14 @@
     function printCalendar() {
       var calendarId = 'msacpn523mpjgq0jlooh41eme4@group.calendar.google.com';
       var apiKey = 'AIzaSyCy1chATNeTPNd3pUbzF84UAibd4In2JQw';
-       var userTimeZone = "UTC";
+      var userTimeZone = "UTC";
       gapi.client.init({
         'apiKey': apiKey,
         'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
       }).then(function () {
         return gapi.client.calendar.events.list({
           'calendarId': calendarId,
-           'timeZone': userTimeZone,
+          'timeZone': userTimeZone,
           'singleEvents': true,
           'timeMin': (new Date()).toISOString(), //gathers only events not happened yet
           'maxResults': 20,
@@ -187,10 +187,12 @@
 
 
   <div class="gallery-item">
-    <!-- <div class= "twitter"> -->
-    <a class="twitter-timeline" data-height="700" href="https://twitter.com/SpacetrafficN?ref_src=twsrc%5Etfw">Tweets by
-      SpacetrafficN</a>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <!-- <div class="twitter"> -->
+      <a class="twitter-timeline" data-height="700" href="https://twitter.com/SpacetrafficN?ref_src=twsrc%5Etfw">Tweets
+        by
+        SpacetrafficN
+      </a>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <!-- </div> -->
   </div>
 
@@ -380,7 +382,8 @@
 
 
 <body>
-  <div id='title-calendar'><u>Listed below the next worldwide spacecraft leaving for orbital or suborbital flight in UTC:</u></div>
+  <div id='title-calendar'><u>Listed below the next worldwide spacecraft leaving for orbital or suborbital flight in
+      UTC:</u></div>
 
   <div id="wellness-calendar"></div><br>
   <!-- Electron<p id="Electron"></p>
@@ -486,7 +489,7 @@
     </a>
     <div class="bottom_text">
       <h1 id='description'><a href="/rocket_compare" target="_blank">
-        Crewed spaceworthy spaceship 08 December 2020
+          Crewed spaceworthy spaceship 08 December 2020
         </a>
       </h1>
       </a>
