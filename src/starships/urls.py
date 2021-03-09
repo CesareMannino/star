@@ -18,7 +18,7 @@ from django.views.generic import TemplateView
 from django.urls import path, include
 from thrust.sitemaps import StaticViewSitemap
 from django.contrib.sitemaps.views import sitemap
-from thrust.views import index_view, Falcon9_view, Electron_view, New_Shepard_view, News_view,Relativity_view, About_view, Contact_view,crew1_view, starship_view, rocketlab_view, rocket_compare_view
+from thrust.views import home_view, Falcon9_view, Electron_view, New_Shepard_view, News_view,Relativity_view, About_view, Contact_view,crew1_view, starship_view, rocketlab_view, rocket_compare_view
 
 sitemaps = {
     'static': StaticViewSitemap
@@ -29,9 +29,9 @@ urlpatterns = [
     path('',include('thrust.urls')),
     path('sitemap.xml', sitemap, {'sitemaps':sitemaps},
     name='django.contrib.sitemaps.views.sitemap'),
-    path('', index_view, name='index_view'),
+    path('', home_view, name='home_view'),
     path('robots.txt', TemplateView.as_view(template_name="robots.txt", content_type='text/plain')),
-    path('index/',index_view),
+    path('home/',home_view),
     #path is a django method,as argument got the url address as a 
     #string and as second argument the function from view
     path("New_Shepard/", New_Shepard_view), 
