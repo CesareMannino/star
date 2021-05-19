@@ -1,0 +1,114 @@
+<title>Articles</title>
+
+{%load static%}
+{%include "Navbar.html"%}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+
+    
+
+
+
+
+<!-- NEWS PAGE FROM HOME PAGE -->
+
+
+<!-- first news -->
+<body>
+<div class=grid_news>
+    <!-- news grid under this div -->
+  
+  
+    <div class=gallery-item-news1>
+  
+      <a href="/relativity" target="_blank" loading="lazy" target="_blank"></a>
+  
+      <img class="gallery-image-news" src="{% static 'images/3dprint.jpg' %}"
+        alt="relativity space 3d printer stargate in action">
+      </a>
+  
+      <div class="bottom_text">
+        <h1 id='description'><a href="/relativity" target="_blank">"Relativity Space" brings the rocket competition to the
+            next level</a></h1>
+  
+  
+      </div>
+    </div>
+  
+    <!-- second news -->
+  
+  
+    <div class=gallery-item-news2>
+  
+      <a href="/crew1" target="_blank" loading="lazy" target="_blank">
+        <img class="gallery-image-news" src="{% static 'images/dragon_ramp.jpg' %}" alt="relativity space">
+      </a>
+      <div class="bottom_text">
+        <h1 id='description'><a href="/crew1" target="_blank">Spacex crew-1 with 6 astronaut on board ready to go to SPACE
+            on Sunday 15th of November 2020</a>
+        </h1>
+        </a>
+      </div>
+    </div>
+  
+    <!-- third news -->
+  
+    <div class=gallery-item-news3>
+  
+      <a href="/starship" target="_blank" loading="lazy" target="_blank">
+        <img class="gallery-image-news" src="{% static 'images/starship.jpg' %}" alt="Spacex starship on launch pad">
+      </a>
+      <div class="bottom_text">
+        <h1 id='description'><a href="/starship" target="_blank">The most exciting starship is going to fly pretty
+            soon!</a>
+        </h1>
+        </a>
+      </div>
+    </div>
+  
+    <!-- fourth news -->
+  
+    <div class=gallery-item-news4>
+  
+      <a href="/rocketlab" target="_blank" loading="lazy" target="_blank">
+        <img class="gallery-image-news" src="{% static 'images/reentry.png' %}" alt="relativity space reentry attempt">
+      </a>
+      <div class="bottom_text">
+        <h1 id='description'><a href="/rocketlab" target="_blank">
+            The next rocket lab launch will attempt the recovery of the first stage!
+          </a>
+        </h1>
+        </a>
+  
+  
+      </div>
+    </div>
+  
+  
+    <div class=gallery-item-news5>
+  
+      <a href="/rocket_compare" target="_blank" loading="lazy" target="_blank">
+        <img class="gallery-image-news" src="{% static 'images/soyuz_1.jpg' %}" alt="Souyuz spaceship rendering">
+      </a>
+      <div class="bottom_text">
+        <h1 id='description'><a href="/rocket_compare" target="_blank">
+            Crewed spaceworthy spaceship 08 December 2020
+          </a>
+        </h1>
+        </a>
+  
+  
+      </div>
+    </div>
+
+</body>
+</html>

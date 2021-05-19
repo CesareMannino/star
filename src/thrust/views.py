@@ -12,8 +12,8 @@ def Falcon9_view(request,*args, **kwargs):
     #return HttpResponse("<h1>Falcon9 description</h1>") #string of HTML code
     return render(request,"Falcon9.html",{})
 
-def Electron_view(request,*args, **kwargs):
-    return render(request,"Electron.html",{})
+def Articles_view(request,*args, **kwargs):
+    return render(request,"Articles.html",{})
 
 def New_Shepard_view(request,*args, **kwargs):
     return render(request,"New_Shepard.html",{})
