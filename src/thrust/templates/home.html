@@ -58,7 +58,7 @@
           'timeZone': userTimeZone,
           'singleEvents': true,
           'timeMin': (new Date()).toISOString(), //gathers only events not happened yet
-          'maxResults': 25,
+          'maxResults': 10,
           'orderBy': 'startTime'
         });
       }).then(function (response) {
