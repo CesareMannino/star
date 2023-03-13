@@ -906,7 +906,7 @@ background-color: black;
      animation: type2 0.6s steps(60, end);
      -webkit-animation-fill-mode: forwards;
      animation-fill-mode: forwards;
-     animation-delay: 7s;
+   
    }
 
    .css-typing-falcon p:nth-child(2) {
@@ -915,7 +915,7 @@ background-color: black;
      /*   -webkit-animation: type 1s steps(40, end); */
      opacity: 0;
      animation: type2 1s steps(40, end);
-     animation-delay: 8s;
+     animation-delay: 0.9s;
      -webkit-animation-fill-mode: forwards;
      animation-fill-mode: forwards;
    }
@@ -926,7 +926,7 @@ background-color: black;
      /*   -webkit-animation: type3 2s steps(20, end), blink .5s step-end infinite alternate; */
      animation: type2 1.6s steps(40, end);
      -webkit-animation-delay: 4s;
-     animation-delay: 9.8s;
+     animation-delay: 2.5s;
      -webkit-animation-fill-mode: forwards;
      animation-fill-mode: forwards;
    }
@@ -937,7 +937,7 @@ background-color: black;
      /*   -webkit-animation: type3 2s steps(20, end), blink .5s step-end infinite alternate; */
      animation: type3 1.6s steps(40, end), blink 0.5s step-end;
      -webkit-animation-delay: 4s;
-     animation-delay: 11.6s;
+     animation-delay: 4.5s;
      -webkit-animation-fill-mode: forwards;
      animation-fill-mode: forwards;
    }
@@ -1055,7 +1055,7 @@ background-color: black;
      animation: type2 0.6s steps(60, end);
      -webkit-animation-fill-mode: forwards;
      animation-fill-mode: forwards;
-     animation-delay: 13.7s;
+     
    }
 
    .css-typing-newshepard p:nth-child(2) {
@@ -1064,7 +1064,7 @@ background-color: black;
      /*   -webkit-animation: type 1s steps(40, end); */
      opacity: 0;
      animation: type2 1s steps(40, end);
-     animation-delay: 14.3s;
+     animation-delay: 0.9s;
      -webkit-animation-fill-mode: forwards;
      animation-fill-mode: forwards;
    }
@@ -1075,7 +1075,7 @@ background-color: black;
      /*   -webkit-animation: type3 2s steps(20, end), blink .5s step-end infinite alternate; */
      animation: type2 1.6s steps(40, end);
      -webkit-animation-delay: 4s;
-     animation-delay: 16.1s;
+     animation-delay: 2.5s;
      -webkit-animation-fill-mode: forwards;
      animation-fill-mode: forwards;
    }
@@ -1086,7 +1086,7 @@ background-color: black;
      /*   -webkit-animation: type3 2s steps(20, end), blink .5s step-end infinite alternate; */
      animation: type3 1.6s steps(40, end), blink 0.5s step-end;
      -webkit-animation-delay: 4s;
-     animation-delay: 18.1s;
+     animation-delay: 4.5s;
      -webkit-animation-fill-mode: forwards;
      animation-fill-mode: forwards;
    }
@@ -1200,7 +1200,7 @@ background-color: black;
      animation: type2 0.6s steps(60, end);
      -webkit-animation-fill-mode: forwards;
      animation-fill-mode: forwards;
-     animation-delay: 20.2s;
+  
    }
 
    .css-typing-spaceshiptwo p:nth-child(2) {
@@ -1209,7 +1209,7 @@ background-color: black;
      /*   -webkit-animation: type 1s steps(40, end); */
      opacity: 0;
      animation: type2 1s steps(40, end);
-     animation-delay: 21.2s;
+     animation-delay: 0.9s;
      -webkit-animation-fill-mode: forwards;
      animation-fill-mode: forwards;
    }
@@ -1220,7 +1220,7 @@ background-color: black;
      /*   -webkit-animation: type3 2s steps(20, end), blink .5s step-end infinite alternate; */
      animation: type2 1.6s steps(40, end);
      -webkit-animation-delay: 4s;
-     animation-delay: 23s;
+     animation-delay: 2.5s;
      -webkit-animation-fill-mode: forwards;
      animation-fill-mode: forwards;
    }
@@ -1231,7 +1231,7 @@ background-color: black;
      /*   -webkit-animation: type3 2s steps(20, end), blink .5s step-end infinite alternate; */
      animation: type3 1.6s steps(40, end), blink 0.5s step-end;
      -webkit-animation-delay: 4s;
-     animation-delay: 25.4s;
+     animation-delay: 4.5s;
      -webkit-animation-fill-mode: forwards;
      animation-fill-mode: forwards;
    }
@@ -1326,6 +1326,160 @@ background-color: black;
        border-color: tranparent;
      }
    }
+
+
+
+   .css-typing-terran p {
+    border-right: 1em solid green;
+    font-family: "Press Start 2P";
+    color: green;
+    font-size: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    position:inherit;
+    left: 0px;
+    top: 0px;
+    width: 0px;
+    margin:15px;
+    background-color:white;
+
+  }
+
+  .css-typing-terran p:nth-child(1) {
+    width: 8.8em;
+    -webkit-animation: type3 2s steps(60, end);
+    animation: type 0.6s steps(60, end);
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+
+  }
+
+  .css-typing-terran p:nth-child(2) {
+    width: 19em;
+    -webkit-animation: type3 2s steps(40, end);
+    /*   -webkit-animation: type 1s steps(40, end); */
+    opacity: 0;
+    animation: type2 1s steps(40, end);
+    animation-delay: 0.9s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+
+  }
+
+  .css-typing-terran p:nth-child(3) {
+    width: 27.1em;
+    opacity: 0;
+    /*   -webkit-animation: type3 2s steps(20, end), blink .5s step-end infinite alternate; */
+    animation: type2 1.6s steps(40, end);
+    -webkit-animation-delay: 4s;
+    animation-delay: 2.5s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+
+  }
+
+  .css-typing-terran p:nth-child(4) {
+    width: 24.1em;
+    opacity: 0;
+    /*   -webkit-animation: type3 2s steps(20, end), blink .5s step-end infinite alternate; */
+    animation: type3 1.6s steps(40, end), blink 0.5s step-end;
+    -webkit-animation-delay: 3s;
+    animation-delay: 4.5s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+
+  }
+
+  @keyframes type {
+    0% {
+      width: 0;
+    }
+    99.9% {
+      border-right: 0.15em solid #e600a4;
+    }
+    100% {
+      border: none;
+    }
+  }
+
+  @-webkit-keyframes type {
+    0% {
+      width: 0;
+    }
+    99.9% {
+      border-right: 0.15em solid #e600a4;
+    }
+    100% {
+      border: none;
+    }
+  }
+
+  @keyframes type2 {
+    0% {
+      width: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    99.9% {
+      border-right: 0.15em solid #e600a4;
+    }
+    100% {
+      opacity: 1;
+      border: none;
+    }
+  }
+
+  @-webkit-keyframes type2 {
+    0% {
+      width: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    99.9% {
+      border-right: 0.15em solid #e600a4;
+    }
+    100% {
+      opacity: 1;
+      border: none;
+    }
+  }
+
+  @keyframes type3 {
+    0% {
+      width: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @-webkit-keyframes type3 {
+    0% {
+      width: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  @-webkit-keyframes blink {
+    50% {
+      border-color: tranparent;
+    }
+  }
 
 
 
