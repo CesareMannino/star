@@ -17,16 +17,17 @@
 
 <head>
   <link rel="canonical" href="https://www.spacetraffic.net/" />
-  <script type="text/jquery" language="jquery">
-  $(document).ready(function() { 
-    $("body").addClass("animated hinge");
-   });
+  <script type="text/javascript" language="jquery">
+    $(document).ready(function () {
+      $("body").addClass("animated hinge");
+    });
     var versionUpdate = (new Date()).getTime();
     var script = document.createElement("script");
     script.type = "text/javascript";
     script.src = "../static/js/script.js?v=" + versionUpdate;
     document.body.appendChild(script);
   </script>
+
 
 
   <meta charset="utf-8">
@@ -57,7 +58,7 @@
           'timeZone': userTimeZone,
           'singleEvents': true,
           'timeMin': (new Date()).toISOString(), //gathers only events not happened yet
-          'maxResults': 5,
+          'maxResults': 25,
           'orderBy': 'startTime'
         });
       }).then(function (response) {
@@ -85,9 +86,10 @@
             if (entry.summary) {
               event["name"] = entry.summary;
               event["eventdate"] = startsAt;
-              events.push(event);
+              if (!events.some(e => e.name == event.name)) {
+                events.push(event);
+              }
             }
-
 
           });
           console.log(events);
@@ -108,37 +110,51 @@
 
   <script>
 
+
     var arrElements = [
-      { "name": "Electron", "eventdate": "" },
-      { "name": "Falcon 9 B5", "eventdate": "" },
-      { "name": "New Shepard", "eventdate": "" },
-      { "name": "SpaceShipTwo", "eventdate": "" },
-      { "name": "Gaofen 14", "eventdate": "" }
+      { "name": "Electron", "eventdate": "" }, 
+      { "name": "Falcon 9 B5", "eventdate": "" }, 
+      { "name": "New Shepard", "eventdate": "" }, 
+      { "name": "SpaceShipTwo", "eventdate": "" }
     ];
 
     function setAllEvenDates(arrEvents) {
-      for (var i = 0; i < arrEvents.length; i++) {
+      for (let i = 0; i < arrEvents.length; i++) {
         setEventDate(arrEvents[i].name, arrEvents[i].eventdate);
       }
     }
 
-
     function setEventDate(eventname, eventdate) {
       for (var i = 0; i < arrElements.length; i++) {
         if (eventname.search(arrElements[i].name) != -1) {
-          arrElements[i].eventdate = eventdate;
+          var now = new Date().getTime();
+          var newEventDate = new Date(eventdate).getTime();
+          if (newEventDate > now) {
+            if (arrElements[i].eventdate == "" || newEventDate < new Date(arrElements[i].eventdate).getTime()) {
+              arrElements[i].eventdate = eventdate;
+            }
+          }
         }
       }
     }
 
     function setAllInterval() {
-      //return;
       // Update the count down every 1 second
       var x = setInterval(function () {
         for (var i = 0; i < arrElements.length; i++) {
+          var nextLaunchDate = null;
           if (arrElements[i].eventdate != "") {
             var now = new Date().getTime();
             var countDownDate = new Date(arrElements[i].eventdate).getTime();
+            if (countDownDate > now) {
+              nextLaunchDate = arrElements[i].eventdate;
+            }
+          }
+          if (nextLaunchDate == null) {
+            document.getElementById(arrElements[i].name).innerHTML = "UNSCHEDULED";
+          } else {
+            var now = new Date().getTime();
+            var countDownDate = new Date(nextLaunchDate).getTime();
             var distance = countDownDate - (now - 3600000);
             var days = Math.floor(distance / (1000 * 60 * 60 * 24));
             var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -147,16 +163,12 @@
             document.getElementById(arrElements[i].name).innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
             if (distance < 0) {
               document.getElementById(arrElements[i].name).innerHTML = "EXPIRED";
-
             }
-
-          }
-          if (arrElements[i].eventdate == "") {
-            document.getElementById(arrElements[i].name).innerHTML = "UNSCHEDULED";
           }
         }
       }, 1000);
     }
+
 
   </script>
 
@@ -191,11 +203,11 @@
 
   <div class="gallery-item">
     <!-- <div class="twitter"> -->
-      <a class="twitter-timeline" data-height="700" href="https://twitter.com/SpacetrafficN?ref_src=twsrc%5Etfw">Tweets
-        by
-        SpacetrafficN
-      </a>
-      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <a class="twitter-timeline" data-height="700" href="https://twitter.com/SpacetrafficN?ref_src=twsrc%5Etfw">Tweets
+      by
+      SpacetrafficN
+    </a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <!-- </div> -->
   </div>
 
@@ -414,7 +426,7 @@
 
 
 
-  <!-- <div class=gallery-item-news6>
+<!-- <div class=gallery-item-news6>
 
     <a href="/News" target="_blank" loading="lazy" target="_blank">
       <img class="gallery-image-news" src="{% static 'images/dragon_ramp.jpg' %}" alt="relativity space">
