@@ -58,7 +58,7 @@
           'timeZone': userTimeZone,
           'singleEvents': true,
           'timeMin': (new Date()).toISOString(), //gathers only events not happened yet
-          'maxResults': 25,
+          'maxResults': 70,
           'orderBy': 'startTime'
         });
       }).then(function (response) {
@@ -117,7 +117,8 @@
       { "name": "New Shepard", "eventdate": "" }, 
       { "name": "SpaceShipTwo", "eventdate": "" },
       { "name": "Terran 1", "eventdate": "" },
-      { "name": "Super Heavy", "eventdate": "" }
+      { "name": "Super Heavy", "eventdate": "" },
+      { "name": "Falcon Heavy", "eventdate": "" }
     ];
 
     function setAllEvenDates(arrEvents) {
@@ -450,11 +451,9 @@
 
   <div class="gallery-item">
 
-    <!-- icona -->
 
+<!--STARSHIP-->
 
-    <!-- <img class="icon_electron"
-             alt="Rocketlab electron"> -->
     <div id='companyname'>
       Space X
     </div>
@@ -503,7 +502,65 @@
     </div>
   </div>
 
+   <!--FALCON HEAVY-->
+
+
+  <div class="gallery-item">
+
    
+
+
+    <div id='companyname'>
+      Space X
+    </div>
+
+
+    <!-- link to watch live -->
+
+    <div class="videoWrapper">
+      <iframe width="971" height="546" src="https://www.spacex.com/launches/" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+    <div class='livenote'>
+      <h3>Live about 15/30 min before the end of countdown</h3>
+    </div>
+
+    <!-- <img src="images/picture.jpg"> -->
+
+    <a href="{% static 'images\Falcon_heavy.jpg' %}" target="_blank">
+      <img class="gallery-image" src="{% static 'images\Falcon_heavy.jpg' %}" alt="Space X Falcon heavy">
+    </a>
+
+
+    <div class="css-typing-falcon_heavy">
+      <p>
+        Falcon Heavy
+      </p>
+      <p>
+        Height = 70 meters
+      </p>
+      <p>
+        Thrust first stage = 15200 kN
+      </p>
+      <p>
+        Key person : ELON MUSK
+      </p>
+
+
+
+      <!-- <div id=utc>UTC</div> -->
+      <div class='countdown'>
+        <div id="Falcon Heavy">please wait...</div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+
+
 
 
 </div>
