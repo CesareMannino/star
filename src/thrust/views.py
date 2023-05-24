@@ -44,3 +44,9 @@ def rocket_compare_view(request,*args,**kwargs):
     return render(request,"rocket_compare.html",{})
 
 
+def virgin25_view(request,*args,**kwargs):
+    return render(request,"virgin25.html",{})
+
+
+
+

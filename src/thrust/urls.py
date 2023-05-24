@@ -4,6 +4,9 @@ from django.contrib.sitemaps.views import sitemap
 from django.urls import path, include
 from thrust.sitemaps import StaticViewSitemap
 from . import views
+from django.contrib.staticfiles.storage import staticfiles_storage
+from django.views.generic.base import RedirectView
+
 
 sitemaps = {
     'static': StaticViewSitemap
@@ -20,7 +23,8 @@ urlpatterns = [
     path('rocket_compare/', rocket_compare_view, name='rocket_compare_view'),
     path('robots.txt', TemplateView.as_view(template_name="robots.txt", content_type='text/plain')),
     path('sitemap.xml', sitemap, {'sitemaps':sitemaps},
-    name='django.contrib.sitemaps.views.sitemap')
+    name='django.contrib.sitemaps.views.sitemap'),
+     path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('favicon.jpg')))
 ]
 
 # path("New_Shepard/", New_Shepard_view), 

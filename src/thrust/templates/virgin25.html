@@ -1,0 +1,149 @@
+{% load static %}
+{%include "Navbar.html"%}
+
+<!doctype html>
+<html>
+    <head>
+
+
+     
+<title>Virgin Galactic's Unity 25 Launch: A New Era of Space Tourism SPCE</title>
+
+
+</head>
+
+
+<div id='news'>
+<div id="top_article">
+
+  <h2>Virgin Galactic Prepares for Unity 25: A New Era of Space Tourism</h2>
+  <p>May 25th, 2023</p>
+
+  <a href="/home" target="_blank" loading="lazy" target="_blank"><h1>COUNTDOWN</h1></a>
+
+  <a href="{% static 'images/virgin25.jpg' %}"
+          target="_blank">
+          <img class="gallery-image"
+            src="{% static 'images/virgin25.jpg' %}"
+            alt="Virgin Galactic Prepares for Unity 25">
+        </a>
+</div>
+<article_description>
+    <p>The Unity 25 mission crew. Credit: Virgin Galactic</p>
+</article_description>
+
+<div id="bottom_article">
+
+  <p>Virgin Galactic announced the opening of the flight window for its upcoming spaceflight, Unity 25, on May 25, 2023. The mission marks the company's fifth spaceflight and serves as the final assessment of the spaceflight system and astronaut experience ahead of Virgin Galactic’s first commercial flight planned for the end of June​1​​2​.
+  </p>
+
+
+  <a href="{% static 'images/unity-25.jpeg' %}"
+  target="_blank">
+  <img class="gallery-image"
+    src="{% static 'images/unity-25.jpeg' %}"
+    alt="The Unity 25 mission crew">
+</a>
+</div>
+<div id="bottom_article">
+
+    <p>The Unity 25 mission specialists, Beth Moses, Luke Mays, Jamila Gilbert, and Christopher Huie, will begin astronaut training on May 22, 2023. The crew includes two pilots and four passengers, all employees at Virgin Galactic. Both pilots have flown SpaceShipTwo to space previously, and CJ Sturckow has flown to space on the Space Shuttle. Of the four passengers, only Beth Moses has flown to space before, and the other three are flying to space for the first time​3​​4​.
+
+        The launch will involve the use of two vehicles: the VSS Unity and the VMS Eve. VMS Eve, a WhiteKnightTwo mothership, will take off from Spaceport America in New Mexico, and carry VSS Unity in a parasite configuration before releasing it. The spaceplane will ignite its rocket engine and fly to over 50 mi (80 km) in altitude, above the U.S. definition for the start of space, but below the internationally recognized Kármán line at 62 mi (100 km). It will then reenter the atmosphere and land on the same runway it took off from​5​.
+        
+        Following a successful launch and return, Virgin Galactic is set to commence its commercial operations, marking a new era in space tourism. The company, which competes with the Jeff Bezos-owned Blue Origin, charges $450,000 for a seat on its spaceplane​6​.
+    </p>
+
+  </div>
+</html>
+
+<style>
+/* youtube */
+@media screen and (max-width: 700px) {
+  iframe {
+    width:340px; 
+    height:215px;
+  }
+}
+
+/* * {*/
+/*   border: 1px solid red !important;*/
+/*}*/
+
+ /* * {
+   border: 1px solid red !important;
+} */
+
+
+body {
+  overflow-x: hidden;
+    position:relative;
+    /*background-image: url(../images/about.jpg);*/
+    min-height:200rem;
+    background-color: #fafafa;
+    /*background-size: 122rem;*/
+}
+
+
+
+
+#top_article {
+  
+    margin:0 auto;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
+    color:red;
+    font-size: 1rem;
+    max-width: 40rem;
+    text-align: center;
+
+}
+
+h2{
+  background-color: black;
+}
+
+article_description {
+    position:relative;
+  font-family: 'Haettenschweiler';
+  font-weight: 1000;
+  top:-1rem;
+  text-align: center;
+
+}
+.gallery-image{
+  margin: 0 auto;
+  position: relative;
+    display: block;
+    max-width: 90%;
+    max-height: auto;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: transform 400ms ease-out;
+}
+
+#bottom_article{
+
+    margin:0 auto;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
+    font-size: 1rem;
+    max-width: 35rem;
+    text-align: left;
+}
+
+
+
+
+/* MOBILE PHONE VERSION  */
+
+
+@media screen and (max-width: 600px) { 
+ #news{
+    position: relative;
+    top:10rem;
+
+  }
+}
+
+
+</style>

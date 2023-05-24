@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <title>SpaceTraffic.net</title>
-{% load static %}
+
 
 
 <!-- cache eraser -->
@@ -14,8 +14,9 @@
 </header>
 
 <head>
+  {% load static %}
 
-
+  <link rel="icon" type="image/x-icon" href="{% static 'favicon.jpg' %}" />
 
 
 
@@ -42,7 +43,7 @@
   <div class="topnav" id="myTopnav">
 
     <a href="/home" class="active"></a>
-    <a href="/crew1">News</a>
+    <a href="/articles">News</a>
     <a href="/contact">Contact</a>
     <a href="/about">About</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
