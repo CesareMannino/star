@@ -47,6 +47,6 @@ urlpatterns = [
     path('rocketlab/', rocketlab_view),
   path('rocket_compare/', rocket_compare_view),
   path('virgin25/', virgin25_view),
-  path('galactic01/', galactic01_view),
+  path('galactic01/', galactic01_view)
 
 ]
