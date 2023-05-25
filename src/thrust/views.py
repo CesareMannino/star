@@ -48,5 +48,9 @@ def virgin25_view(request,*args,**kwargs):
     return render(request,"virgin25.html",{})
 
 
+def galactic01_view(request,*args,**kwargs):
+    return render(request,"galactic01.html",{})
+
+
 
 
