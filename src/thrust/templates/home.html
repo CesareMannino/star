@@ -81,7 +81,7 @@
               endsAt = moment.utc(entry.end.date).format("L") + ' ' + moment.utc(entry.end.date).format("LT");
             }
             calendarRows.push(`<tr><td>${startsAt} - ${endsAt}</td><td>${entry.summary}</td></tr>`);
-            console.log(entry.summary);
+            console.log("this is entry summary:",entry.summary);
             event = {};
             if (entry.summary) {
               event["name"] = entry.summary;
@@ -111,15 +111,16 @@
   <script>
 
 
-    var arrElements = [
-      { "name": "Electron", "eventdate": "" }, 
-      { "name": "Falcon 9 B5", "eventdate": "" }, 
-      { "name": "New Shepard", "eventdate": "" }, 
-      { "name": "SpaceShipTwo", "eventdate": "" },
-      { "name": "Terran 1", "eventdate": "" },
-      { "name": "Super Heavy", "eventdate": "" },
-      { "name": "Falcon Heavy", "eventdate": "" }
-    ];
+ var arrElements = [
+  { "name": "Electron", "eventdate": "", "mission": "" }, 
+  { "name": "Falcon 9 B5", "eventdate": "", "mission": "" }, 
+  { "name": "New Shepard", "eventdate": "", "mission": "" }, 
+  { "name": "SpaceShipTwo", "eventdate": "", "mission": "" },
+  { "name": "Terran 1", "eventdate": "", "mission": "" },
+  { "name": "Super Heavy", "eventdate": "", "mission": "" },
+  { "name": "Falcon Heavy", "eventdate": "", "mission": "" }
+];
+
 
     function setAllEvenDates(arrEvents) {
       for (let i = 0; i < arrEvents.length; i++) {
@@ -127,51 +128,64 @@
       }
     }
 
-    function setEventDate(eventname, eventdate) {
-      for (var i = 0; i < arrElements.length; i++) {
-        if (eventname.search(arrElements[i].name) != -1) {
-          var now = new Date().getTime();
-          var newEventDate = new Date(eventdate).getTime();
-          if (newEventDate > now) {
-            if (arrElements[i].eventdate == "" || newEventDate < new Date(arrElements[i].eventdate).getTime()) {
-              arrElements[i].eventdate = eventdate;
-            }
-          }
+
+    function normalizeEventName(eventname) {
+  const parts = eventname.split('•');
+  if (parts.length > 1) {
+    return parts[1].trim();  // return the part after "•"
+  }
+  return eventname;
+}
+
+
+
+
+function setEventDate(eventname, eventdate) {
+  for (var i = 0; i < arrElements.length; i++) {
+    if (eventname.search(arrElements[i].name) != -1) {
+      var now = new Date().getTime();
+      var newEventDate = new Date(eventdate).getTime();
+      if (newEventDate > now) {
+        if (arrElements[i].eventdate == "" || newEventDate < new Date(arrElements[i].eventdate).getTime()) {
+          arrElements[i].eventdate = eventdate;
+          arrElements[i].mission = normalizeEventName(eventname); // set the mission name
         }
       }
     }
+  }
+}
 
-    function setAllInterval() {
-      // Update the count down every 1 second
-      var x = setInterval(function () {
-        for (var i = 0; i < arrElements.length; i++) {
-          var nextLaunchDate = null;
-          if (arrElements[i].eventdate != "") {
-            var now = new Date().getTime();
-            var countDownDate = new Date(arrElements[i].eventdate).getTime();
-            if (countDownDate > now) {
-              nextLaunchDate = arrElements[i].eventdate;
-            }
-          }
-          if (nextLaunchDate == null) {
-            document.getElementById(arrElements[i].name).innerHTML = "UNSCHEDULED";
-          } else {
-            var now = new Date().getTime();
-            var countDownDate = new Date(nextLaunchDate).getTime();
-            var distance = countDownDate - (now - 3600000);
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            document.getElementById(arrElements[i].name).innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-            if (distance < 0) {
-              document.getElementById(arrElements[i].name).innerHTML = "EXPIRED";
-            }
-          }
+
+function setAllInterval() {
+  // Update the count down every 1 second
+  var x = setInterval(function () {
+    for (var i = 0; i < arrElements.length; i++) {
+      var nextLaunchDate = null;
+      if (arrElements[i].eventdate != "") {
+        var now = new Date().getTime();
+        var countDownDate = new Date(arrElements[i].eventdate).getTime();
+        if (countDownDate > now) {
+          nextLaunchDate = arrElements[i].eventdate;
         }
-      }, 1000);
+      }
+      if (nextLaunchDate == null) {
+        document.getElementById(arrElements[i].name).innerHTML = "UNSCHEDULED";
+      } else {
+        var now = new Date().getTime();
+        var countDownDate = new Date(nextLaunchDate).getTime();
+        var distance = countDownDate - (now - 3600000);
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        document.getElementById(arrElements[i].name).innerHTML = arrElements[i].mission + ": " + days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+        if (distance < 0) {
+          document.getElementById(arrElements[i].name).innerHTML = "EXPIRED";
+        }
+      }
     }
-
+  }, 1000);
+}
 
   </script>
 
