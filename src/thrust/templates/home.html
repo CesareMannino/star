@@ -81,16 +81,18 @@
               endsAt = moment.utc(entry.end.date).format("L") + ' ' + moment.utc(entry.end.date).format("LT");
             }
             calendarRows.push(`<tr><td>${startsAt} - ${endsAt}</td><td>${entry.summary}</td></tr>`);
-            console.log("this is entry summary:",entry.summary);
             event = {};
             if (entry.summary) {
               event["name"] = entry.summary;
               event["eventdate"] = startsAt;
+              if (entry.description) {
+                event["description"] = entry.description;
+              } console.log("this is the description:", entry.description)
               if (!events.some(e => e.name == event.name)) {
                 events.push(event);
               }
             }
-
+            setEventDate(normalizeEventName(entry.summary), startsAt, entry.description);
           });
           console.log(events);
           setAllEvenDates(events);
@@ -111,52 +113,53 @@
   <script>
 
 
- var arrElements = [
-  { "name": "Electron", "eventdate": "", "mission": "" }, 
-  { "name": "Falcon 9 B5", "eventdate": "", "mission": "" }, 
-  { "name": "New Shepard", "eventdate": "", "mission": "" }, 
-  { "name": "SpaceShipTwo", "eventdate": "", "mission": "" },
-  { "name": "Terran 1", "eventdate": "", "mission": "" },
-  { "name": "Super Heavy", "eventdate": "", "mission": "" },
-  { "name": "Falcon Heavy", "eventdate": "", "mission": "" }
-];
+    var arrElements = [
+      { "name": "Electron", "eventdate": "", "mission": "", "description": "" },
+      { "name": "Falcon 9 B5", "eventdate": "", "mission": "", "description": "" },
+      { "name": "New Shepard", "eventdate": "", "mission": "", "description": "" },
+      { "name": "SpaceShipTwo", "eventdate": "", "mission": "", "description": "" },
+      { "name": "Terran 1", "eventdate": "", "mission": "", "description": "" },
+      { "name": "Super Heavy", "eventdate": "", "mission": "", "description": "" },
+      { "name": "Falcon Heavy", "eventdate": "", "mission": "", "description": "" }
+    ];
 
 
     function setAllEvenDates(arrEvents) {
       for (let i = 0; i < arrEvents.length; i++) {
-        setEventDate(arrEvents[i].name, arrEvents[i].eventdate);
+        setEventDate(arrEvents[i].name, arrEvents[i].eventdate, arrEvents[i].description);
       }
     }
 
 
     function normalizeEventName(eventname) {
-  const parts = eventname.split('•');
-  if (parts.length > 1) {
-    return parts[1].trim();  // return the part after "•"
-  }
-  return eventname;
-}
+      const parts = eventname.split('•');
+      if (parts.length > 1) {
+        return parts[1].trim();  // return the part after "•"
+      }
+      return eventname;
+    }
 
 
 
 
-function setEventDate(eventname, eventdate) {
-  for (var i = 0; i < arrElements.length; i++) {
-    if (eventname.search(arrElements[i].name) != -1) {
-      var now = new Date().getTime();
-      var newEventDate = new Date(eventdate).getTime();
-      if (newEventDate > now) {
-        if (arrElements[i].eventdate == "" || newEventDate < new Date(arrElements[i].eventdate).getTime()) {
-          arrElements[i].eventdate = eventdate;
-          arrElements[i].mission = normalizeEventName(eventname); // set the mission name
+    function setEventDate(eventname, eventdate, eventdescription) {
+      for (var i = 0; i < arrElements.length; i++) {
+        if (eventname.search(arrElements[i].name) != -1) {
+          var now = new Date().getTime();
+          var newEventDate = new Date(eventdate).getTime();
+          if (newEventDate > now) {
+            if (arrElements[i].eventdate == "" || newEventDate < new Date(arrElements[i].eventdate).getTime()) {
+              arrElements[i].eventdate = eventdate;
+              arrElements[i].mission = normalizeEventName(eventname); // set the mission name
+              arrElements[i].description = eventdescription; // set the description here
+            }
+          }
         }
       }
     }
-  }
-}
 
 
-function setAllInterval() {
+    function setAllInterval() {
   // Update the count down every 1 second
   var x = setInterval(function () {
     for (var i = 0; i < arrElements.length; i++) {
@@ -170,6 +173,8 @@ function setAllInterval() {
       }
       if (nextLaunchDate == null) {
         document.getElementById(arrElements[i].name).innerHTML = "UNSCHEDULED";
+        // Hide the "Read More" link if the launch is not scheduled
+        document.getElementById(arrElements[i].name + 'DescriptionShort').style.display = 'none';
       } else {
         var now = new Date().getTime();
         var countDownDate = new Date(nextLaunchDate).getTime();
@@ -182,9 +187,31 @@ function setAllInterval() {
         if (distance < 0) {
           document.getElementById(arrElements[i].name).innerHTML = "EXPIRED";
         }
+        // Set the description text
+        var fullDescription = arrElements[i].description;
+        var shortDescription = fullDescription.length > 100 ? fullDescription.substring(0, 70) + '...' : fullDescription;
+        document.getElementById(arrElements[i].name + 'DescriptionShortText').innerText = shortDescription;
+        document.getElementById(arrElements[i].name + 'DescriptionFullText').innerText = fullDescription;
       }
     }
   }, 1000);
+}
+
+
+    // script to load the description
+
+    function toggleDescription(rocketName) {
+  var shortDescriptionElement = document.getElementById(rocketName + 'DescriptionShort');
+  var fullDescriptionElement = document.getElementById(rocketName + 'DescriptionFull');
+  if (shortDescriptionElement.style.display === 'none') {
+    shortDescriptionElement.style.display = 'block';
+    fullDescriptionElement.style.display = 'none';
+  } else {
+    shortDescriptionElement.style.display = 'none';
+    fullDescriptionElement.style.display = 'block';
+  }
+  // Hide the "Read More" link if the full description is being shown, and show it if the short description is being shown
+  document.getElementById(rocketName + 'DescriptionShort').style.display = fullDescriptionElement.style.display === 'none' ? 'block' : 'none';
 }
 
   </script>
@@ -216,8 +243,6 @@ function setAllInterval() {
 
 <div class="gallery">
 
-
-
   <div class="gallery-item">
     <!-- <div class="twitter"> -->
     <a class="twitter-timeline" data-height="700" href="https://twitter.com/SpacetrafficN?ref_src=twsrc%5Etfw">Tweets
@@ -230,11 +255,7 @@ function setAllInterval() {
 
   <div class="gallery-item">
 
-    <!-- icona -->
 
-
-    <!-- <img class="icon_electron"
-             alt="Rocketlab electron"> -->
     <div id='companyname'>
       Rocket lab
     </div>
@@ -274,11 +295,22 @@ function setAllInterval() {
 
 
 
-      <!-- <div id=utc>UTC</div> -->
+
       <div class='countdown'>
         <div id="Electron">please wait...</div>
       </div>
 
+
+
+      <div id="ElectronDescriptionShort" class="descriptionShort">
+        <span id="ElectronDescriptionShortText"></span> <a href="#"
+          onclick="toggleDescription('Electron'); return false">Read
+          More</a>
+      </div>
+      <div id="ElectronDescriptionFull" class="descriptionFull" style="display: none;">
+        <span id="ElectronDescriptionFullText"></span> <a href="#"
+          onclick="toggleDescription('Electron');return false ">Read Less</a>
+      </div>
 
     </div>
   </div>
@@ -319,6 +351,16 @@ function setAllInterval() {
       <div class=countdown>
         <div id="Falcon 9 B5">please wait...</div>
       </div>
+      <div id="Falcon 9 B5DescriptionShort" class="descriptionShort">
+        <span id="Falcon 9 B5DescriptionShortText"></span> <a href="#"
+          onclick="toggleDescription('Falcon 9 B5'); return false">Read
+          More</a>
+      </div>
+      <div id="Falcon 9 B5DescriptionFull" class="descriptionFull" style="display: none;">
+        <span id="Falcon 9 B5DescriptionFullText"></span> <a href="#"
+          onclick="toggleDescription('Falcon 9 B5');return false ">Read Less</a>
+      </div>
+
     </div>
   </div>
 
@@ -362,6 +404,17 @@ function setAllInterval() {
       <div class='countdown'>
         <div id="New Shepard">please wait...</div>
       </div>
+        <div id="New ShepardDescriptionShort" class="descriptionShort">
+          <span id="New ShepardDescriptionShortText"></span> <a href="#"
+            onclick="toggleDescription('New Shepard'); return false">Read
+            More</a>
+        </div>
+        <div id="New ShepardDescriptionFull" class="descriptionFull" style="display: none;">
+          <span id="New ShepardDescriptionFullText"></span> <a href="#"
+            onclick="toggleDescription('New Shepard');return false ">Read Less</a>
+        </div>
+
+     
     </div>
   </div>
 
@@ -403,6 +456,19 @@ function setAllInterval() {
       <div class='countdown'>
         <div id="SpaceShipTwo">please wait...</div>
       </div>
+      <div id="SpaceShipTwoDescriptionShort" class="descriptionShort">
+        <span id="SpaceShipTwoDescriptionShortText"></span> <a href="#"
+          onclick="toggleDescription('SpaceShipTwo'); return false">Read
+          More</a>
+      </div>
+      <div id="SpaceShipTwoDescriptionFull" class="descriptionFull" style="display: none;">
+        <span id="SpaceShipTwoDescriptionFullText"></span> <a href="#"
+          onclick="toggleDescription('SpaceShipTwo');return false ">Read Less</a>
+      </div>
+
+
+
+
     </div>
   </div>
 
@@ -458,15 +524,26 @@ function setAllInterval() {
       </div>
 
 
+      <div id="Terran 1DescriptionShort" class="descriptionShort">
+        <span id="Terran 1DescriptionShortText"></span> <a href="#"
+          onclick="toggleDescription('Terran 1'); return false">Read
+          More</a>
+      </div>
+      <div id="Terran 1DescriptionFull" class="descriptionFull" style="display: none;">
+        <span id="Terran 1DescriptionFullText"></span> <a href="#"
+          onclick="toggleDescription('Terran 1');return false ">Read Less</a>
+      </div>
+
+
     </div>
   </div>
 
- 
+
 
   <div class="gallery-item">
 
 
-<!--STARSHIP-->
+    <!--STARSHIP-->
 
     <div id='companyname'>
       Space X
@@ -512,16 +589,28 @@ function setAllInterval() {
         <div id="Super Heavy">please wait...</div>
       </div>
 
+      <div id="Super HeavyDescriptionShort" class="descriptionShort">
+        <span id="Super HeavyDescriptionShortText"></span> <a href="#"
+          onclick="toggleDescription('Super Heavy'); return false">Read
+          More</a>
+      </div>
+      <div id="Super HeavyDescriptionFull" class="descriptionFull" style="display: none;">
+        <span id="Super HeavyDescriptionFullText"></span> <a href="#"
+          onclick="toggleDescription('Super Heavy');return false ">Read Less</a>
+      </div>
+
+
+      
 
     </div>
   </div>
 
-   <!--FALCON HEAVY-->
+  <!--FALCON HEAVY-->
 
 
   <div class="gallery-item">
 
-   
+
 
 
     <div id='companyname'>
@@ -566,6 +655,18 @@ function setAllInterval() {
       <!-- <div id=utc>UTC</div> -->
       <div class='countdown'>
         <div id="Falcon Heavy">please wait...</div>
+      </div>
+
+
+
+      <div id="Falcon HeavyDescriptionShort" class="descriptionShort">
+        <span id="Falcon HeavyDescriptionShortText"></span> <a href="#"
+          onclick="toggleDescription('Falcon Heavy'); return false">Read
+          More</a>
+      </div>
+      <div id="Falcon HeavyDescriptionFull" class="descriptionFull" style="display: none;">
+        <span id="Falcon HeavyDescriptionFullText"></span> <a href="#"
+          onclick="toggleDescription('Falcon Heavy');return false ">Read Less</a>
       </div>
 
 
@@ -631,7 +732,6 @@ function setAllInterval() {
  -->
 
 </div>
-
 
 
 

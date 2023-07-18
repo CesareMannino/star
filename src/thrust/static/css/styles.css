@@ -95,7 +95,7 @@ text-shadow: 0 0 15px #E1306C;
 
    body  {
 
-    min-height: 300rem;
+    min-height: 450rem;
     background-color: #000;
     position:relative;
     background-size: 300vw;
@@ -286,8 +286,16 @@ Remove or comment-out the code block below to see how the browser will fall-back
 text-align: center;
 font-size: 35px;
 margin-top: 0px;
+margin-bottom: 60px;
 color:red;
 }
+
+
+.descriptionShort, .descriptionFull {
+  font-family: 'Roboto', sans-serif;
+}
+
+
 
 
 #rockets {
