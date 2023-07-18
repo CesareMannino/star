@@ -115,7 +115,7 @@ text-shadow: 0 0 15px #E1306C;
 
   @media screen and (max-width: 900px) {
     body {
-  min-height:500rem;
+  min-height:700rem;
    }
 }
 
