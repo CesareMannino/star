@@ -132,12 +132,14 @@
 
 
     function normalizeEventName(eventname) {
-      const parts = eventname.split('•');
-      if (parts.length > 1) {
-        return parts[1].trim();  // return the part after "•"
-      }
-      return eventname;
-    }
+  if (!eventname) { return ''; } // Return an empty string if eventname is undefined
+  const parts = eventname.split('•');
+  if (parts.length > 1) {
+    return parts[1].trim();  // return the part after "•"
+  }
+  return eventname;
+}
+
 
 
 
@@ -370,7 +372,6 @@
       Blue Origin
     </div>
     <!-- link to watch live -->
-    <!-- link to watch live -->
     <div class="videoWrapper">
       <iframe width="971" height="546" src="https://www.youtube.com/embed/g9oTZu2HP8U" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -424,7 +425,6 @@
     <div id='companyname'>
       Virgin Galactic
     </div>
-    <!-- link to watch live -->
     <!-- link to watch live -->
     <div class="videoWrapper">
       <iframe width="971" height="546" src="https://www.youtube.com/embed/h8T9mVkGh3s" frameborder="0"
@@ -629,7 +629,6 @@
       <h3>Live about 15/30 min before the end of countdown</h3>
     </div>
 
-    <!-- <img src="images/picture.jpg"> -->
 
     <a href="{% static 'images\Falcon_heavy.jpg' %}" target="_blank">
       <img class="gallery-image" src="{% static 'images\Falcon_heavy.jpg' %}" alt="Space X Falcon heavy">
@@ -652,7 +651,6 @@
 
 
 
-      <!-- <div id=utc>UTC</div> -->
       <div class='countdown'>
         <div id="Falcon Heavy">please wait...</div>
       </div>
@@ -673,11 +671,6 @@
     </div>
   </div>
 
-
-
-
-
-
 </div>
 
 
@@ -686,11 +679,6 @@
       UTC:</u></div>
 
   <div id="wellness-calendar"></div><br>
-  <!-- Electron<p id="Electron"></p>
-  Falcon<p id="Falcon"></p>
-  newshepard<p id="NewShepard"></p>
-  SpaceShipTwo<p id="SpaceShipTwo"></p>
-  LongMarch<p id="Long March CZ-3B/E • Gaofen 14"></p> -->
   <div id='note'>legend: NET (not earlier than)</div>
 
 
@@ -701,35 +689,6 @@
 
 </body>
 
-
-
-
-
-
-
-
-
-
-
-<!-- <div class=gallery-item-news6>
-
-    <a href="/News" target="_blank" loading="lazy" target="_blank">
-      <img class="gallery-image-news" src="{% static 'images/dragon_ramp.jpg' %}" alt="relativity space">
-    </a>
-    <div class="bottom_text">
-      <h1><a href="/News" target="_blank">"Crew dragon with 6 astronaut on board</a>
-      </h1>
-
-
-
-      <a href="https://cdn.dogtownmedia.com/wp-content/uploads/2019/10/16161931/aispace2.jpg" loading="lazy"
-        target="_blank">
-      </a>
-
-
-    </div>
-  </div>
- -->
 
 </div>
 
